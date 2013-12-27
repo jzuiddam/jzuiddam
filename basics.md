@@ -4,6 +4,10 @@ title: Latexcursus &middot; Basics
 week: 1
 ---
 
+<div class="page-header">
+<h1>Basics</h1>
+</div>
+
 
 *test*
 **test**
