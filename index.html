@@ -1,12 +1,19 @@
 ---
+layout: default
 title: Latexcursus
 ---
 
+<h1>Latexcursus</h1>
 
-<!DOCTYPE html>
-<html>
-  <body>
-    <h1>Hello World</h1>
-    <p>I'm hosted with GitHub Pages.</p>
-  </body>
-</html>
+<h2>Lessen</h2>
+{% for week in site.weeks %}
+<h3>Week {{ week.number }} </h3>
+<dl>
+  {% for lesson in site.lessons %}
+  {% if lesson.week == week.number %}
+    <dt><a href="{{ lesson.url }}">{{ lesson.title }}</a></dt>
+    <dd>{{ lesson.desc }}</dd>
+  {% endif %}
+  {% endfor %}
+</dl>
+{% endfor %}
