@@ -1,0 +1,24 @@
+permalink: none
+lessons:
+  - 
+    title: Basics
+    url: basics.html
+    desc: Values, functions, classes, methods, inheritance, try-catch-finally. Expression-oriented programming
+    week: 1
+  -
+    title: Basics continued
+    url: basics2.html
+    desc: Case classes, objects, packages, apply, update, Functions are Objects (uniform access principle), pattern matching.
+    week: 1
+  -
+    title: Advanced
+    url: advanced.html
+    desc: Advanced stuff.
+    week: 2
+weeks:
+  -
+    url: basics.html
+    number: 1
+  -
+    url: advanced.html
+    number: 2
