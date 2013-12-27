@@ -7,9 +7,9 @@ title: Latexcursus
 <h1>Latexcursus <small>Bachelor Wiskunde UvA</small></h1>
 </div>
 
-<h2>Lessen</h2>
+## Lessen 
 {% for week in site.weeks %}
-<h3>Week {{ week.number }} </h3>
+<h4>Week {{ week.number }} </h4>
 <dl>
   {% for lesson in site.lessons %}
   {% if lesson.week == week.number %}
@@ -19,3 +19,9 @@ title: Latexcursus
   {% endfor %}
 </dl>
 {% endfor %}
+
+---
+## Voorwoord
+De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX).
+
+
