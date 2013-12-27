@@ -1,0 +1,13 @@
+
+
+
+
+
+
+/* Janky fix for preventing navbar from overlapping */
+h1[id] {
+  padding-top: 80px;
+  margin-top: -45px;
+}
+
+
