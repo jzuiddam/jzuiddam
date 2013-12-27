@@ -20,3 +20,21 @@ week: 1
 
 ---
 Dit is wiskunde $\sum_{i=1}^n a^i$.
+
+<div class="bs-example">
+\[
+\sum_{i=1}^n e^i
+\]
+</div>
+
+```tex
+\[
+\sum_{i=1}^n e^i
+\]
+```
+
+```tex
+\[
+\sum_{i=1}^n e^i
+\]
+```
