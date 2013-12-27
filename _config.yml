@@ -1,5 +1,6 @@
 
 markdown: redcarpet
+pygmentize: true
 
 redcarpet:
   extensions: [smart, tables]
