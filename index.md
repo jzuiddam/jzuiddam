@@ -8,13 +8,15 @@ title: Latexcursus
 </div>
 
 ## Lessen 
-{% for week in site.weeks %}
+{% for week in site.data.weeks %}
 <h4>Week {{ week.number }} </h4>
+{% assign t = 1 %}
 <dl>
-  {% for lesson in site.lessons %}
+  {% for lesson in site.data.lessons %}
   {% if lesson.week == week.number %}
-    <dt><a href="{{ lesson.url }}">{{ lesson.title }}</a></dt>
+    <dt><a href="/lessons/{{ lesson.url }}">{{ t }}. {{ lesson.title }}</a></dt>
     <dd>{{ lesson.desc }}</dd>
+  {% assign t = t | plus: 1 %}
   {% endif %}
   {% endfor %}
 </dl>

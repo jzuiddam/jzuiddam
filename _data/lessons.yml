@@ -1,0 +1,20 @@
+  - 
+    title: Hello world
+    url: helloworld.html
+    desc: Latexcode compileren in TeXworks en ShareLaTeX.
+    week: 1
+  - 
+    title: Hello world md
+    url: helloworld2.html
+    desc: Latexcode compileren in TeXworks en ShareLaTeX.
+    week: 1
+  -
+    title: Documentstructuur
+    url: documentstructuur.html
+    desc: Classes, packages, preamble, structuur.
+    week: 1
+  -
+    title: Tekst
+    url: tekst.html
+    desc: Tekstopmaak, alineaopmaak, speciale tekens.
+    week: 1
