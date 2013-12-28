@@ -96,4 +96,7 @@
   color: #bebec5;
 }
 
+.panel-body ol {
+  padding-left: 20px;
+}
 
