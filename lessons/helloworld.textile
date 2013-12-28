@@ -1,0 +1,94 @@
+---
+layout: lesson
+title: Hello world!
+---
+
+
+h2. Wat is LaTeX?
+
+TeX is een programmeertaal ontworpen door Donald Knuth voor het zetten van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen.
+
+Er zijn fundamentele verschillen tussen het schrijven van een tekst met LaTeX en het gebuiken van een tekstverwerker als Word.
+
+h5. Voordelen
+* De lay-out, fonts, tabellen, etc. zijn door het hele document hetzelfde.
+* Opmaak van wiskundige formules wordt een stuk makkelijker.
+* Indexen, voetnoten en referenties kunnen makkelijk worden gegenereerd.
+* Je wordt gedwongen je document goed te structureren.
+
+h5. Nadelen
+* Je kunt het eindresultaat niet direct zien.
+* Je moet wat LaTeX-commando's kennen voor het maken van een LaTeX-document.
+* Het kan moeilijk zijn om een bepaalde opmaak te krijgen.
+
+h2. LaTeX gebruiken
+
+In deze cursus leren we jullie werken met twee LaTexeditors: TeXworks en ShareLaTeX.
+
+- TeXworks := Dit is een eenvoudige editor die wordt meegeleverd met de meest gebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
+
+- ShareLaTeX := Dit is een online editor waarin meerdere mensen tegelijk kunnen werken.
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 1</h3>
+</div>
+<div class="panel-body">
+
+# Maak een "ShareLaTeX-account":https://www.sharelatex.com?r=e462e191&rm=d&rs=b.
+# Klik in ShareLaTeX op @New Project@ en kies @Blank Project@. Geef je project een naam. Je ziet nu links LaTeXcode. Klik op @Recompile@ om de uitvoer van deze code te zien.
+
+</div>
+</div>
+
+
+bc.. \documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Hello world!}
+\author{Jeroen Zuiddam}
+\date{December 2013}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\end{document}
+
+p. 
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 2</h3>
+</div>
+<div class="panel-body">
+
+# Open @TeXworks@ op je computer.
+# Plak in een leeg bestand de volgende code en sla het bestand op.
+
+{% highlight tex %}
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{Hello world!}
+\author{Jeroen Zuiddam}
+\date{December 2013}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+\end{document}
+{% endhighlight %}
+
+#3 Selecteer in het menu rechts naast de groene knop @pdfLaTeX@ en druk dan op de groene knop om je code te compileren.
+   
+</div>
+</div>
+
+Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets zullen we echter wel van je 
+
