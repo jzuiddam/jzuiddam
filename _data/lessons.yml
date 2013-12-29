@@ -3,18 +3,59 @@
     url: helloworld.html
     desc: Latexcode compileren in TeXworks en ShareLaTeX.
     week: 1
-  - 
-    title: Hello world md
-    url: helloworld2.html
-    desc: Latexcode compileren in TeXworks en ShareLaTeX.
-    week: 1
   -
     title: Documentstructuur
-    url: documentstructuur.html
+    url: structuur.html
     desc: Classes, packages, preamble, structuur.
     week: 1
   -
-    title: Tekst
-    url: tekst.html
+    title: Opmaak
+    url: opmaak.html
     desc: Tekstopmaak, alineaopmaak, speciale tekens.
     week: 1
+  -
+    title: Eenvoudige wiskunde
+    url: wiskunde1.html
+    desc: Wiskundeomgeving, symbolen
+    week: 1
+  -
+    title: Zelf wiskunde schrijven
+    url: wiskunde2.html
+    desc: Zelf een gegeven stelling bewijzen en opschrijven in LaTeX
+    week: 1
+  -
+    title: Foutmeldingen
+    url: fouten.html
+    desc: Errors en warnings
+    week: 1
+  -
+    title: Huiswerk
+    url: huiswerk.html
+    desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren
+    week: 1
+
+  - 
+    title: Feedback
+    url: feedback.html
+    desc: Latexcode compileren in TeXworks en ShareLaTeX.
+    week: 2
+  - 
+    title: Schrijfgids
+    url: schrijfgids.html
+    desc: Stijlregels voor wiskunde en LaTeX
+    week: 2
+  - 
+    title: Gevorderde wiskunde
+    url: wiskunde3.html
+    desc: Nummering, vertical alignment, custom operators, substack
+    week: 2
+  - 
+    title: Gevorderde documentstructuur
+    url: structuur2.html
+    desc: Een artikel schrijven
+    week: 2
+  - 
+    title: Huiswerk
+    url: huiswerk2.html
+    desc: Een huiswerkopgave LaTexen
+    week: 2
