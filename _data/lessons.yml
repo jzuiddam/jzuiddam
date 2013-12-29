@@ -29,6 +29,11 @@
     desc: Errors en warnings
     week: 1
   -
+    title: Thuis installeren
+    url: installatie.html
+    desc: LaTeX thuis installeren
+    week: 1
+  -
     title: Huiswerk
     url: huiswerk.html
     desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren
