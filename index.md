@@ -22,9 +22,8 @@ title: Latexcursus
 </dl>
 {% endfor %}
 
----
+
 ## Voorwoord
 De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX).
 
----
 
