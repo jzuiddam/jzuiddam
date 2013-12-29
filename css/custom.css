@@ -1,3 +1,30 @@
+
+/*
+ * Container
+ */
+
+.container {
+  width: auto;
+  max-width: 680px; /* 720 */
+  padding: 0 15px;
+}
+
+/*
+ * Panels
+ */
+
+.panel {
+  margin-top: 20px;
+}
+
+.panel-body ol, .panel-body ul {
+  padding-left: 20px;
+}
+
+.panel-body ol li + li, .panel-body ul li + li {
+  padding-top: 5px;
+}
+
 /*
  * Examples
  *
@@ -96,7 +123,14 @@
   color: #bebec5;
 }
 
-.panel-body ol {
-  padding-left: 20px;
-}
 
+
+
+/*
+ * Footer
+ */
+
+#footer {
+  margin-top: 30px;
+  height: 60px;
+}
