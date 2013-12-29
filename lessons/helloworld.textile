@@ -25,43 +25,16 @@ h2. LaTeX gebruiken
 
 In deze cursus leren we jullie werken met twee LaTexeditors: TeXworks en ShareLaTeX.
 
-- TeXworks := Dit is een eenvoudige editor die wordt meegeleverd met de meest gebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
+- TeXworks := Een eenvoudige editor die wordt meegeleverd met de meest gebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
 
-- ShareLaTeX := Dit is een online editor waarin meerdere mensen tegelijk kunnen werken.
+- ShareLaTeX := Een online editor waarin meerdere mensen tegelijk kunnen werken; handig wanneer je op een computer werkt waarop geen LaTeX staat.
+
+p. We gaan ervan uit dat je nu op een computer werkt met toegang tot TeXworks. Om LaTeX zelf te installeren zie de les "Thuis installeren":/lessons/installatie.html.
+
 
 <div class="panel panel-primary">
 <div class="panel-heading">
 <h3 class="panel-title">Opdracht 1</h3>
-</div>
-<div class="panel-body">
-
-# Maak een "ShareLaTeX-account":https://www.sharelatex.com?r=e462e191&rm=d&rs=b.
-# Klik in ShareLaTeX op @New Project@ en kies @Blank Project@. Geef je project een naam. Je ziet nu links LaTeXcode. Klik op @Recompile@ om de uitvoer van deze code te zien.
-
-</div>
-</div>
-
-
-bc.. \documentclass{article}
-\usepackage[utf8]{inputenc}
-
-\title{Hello world!}
-\author{Jeroen Zuiddam}
-\date{December 2013}
-
-\begin{document}
-
-\maketitle
-
-\section{Introduction}
-
-\end{document}
-
-p. 
-
-<div class="panel panel-primary">
-<div class="panel-heading">
-<h3 class="panel-title">Opdracht 2</h3>
 </div>
 <div class="panel-body">
 
@@ -73,22 +46,35 @@ p.
 \usepackage[utf8]{inputenc}
 
 \title{Hello world!}
-\author{Jeroen Zuiddam}
-\date{December 2013}
+\author{Hoe heet ik?}
+\date{}
 
 \begin{document}
 
 \maketitle
 
-\section{Introduction}
+\section{Inleiding}
 
 \end{document}
 {% endhighlight %}
 
-#3 Selecteer in het menu rechts naast de groene knop @pdfLaTeX@ en druk dan op de groene knop om je code te compileren.
+#3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop om je code te compileren.
+# Vul je eigen naam in als auteur en compileer.
    
 </div>
 </div>
 
-Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets zullen we echter wel van je 
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 2 (optioneel)</h3>
+</div>
+<div class="panel-body">
+
+# Maak een "ShareLaTeX-account":https://www.sharelatex.com?r=e462e191&rm=d&rs=b.
+# Klik in ShareLaTeX op @New Project@ en kies @Blank Project@. Geef je project een naam. Je ziet nu links LaTeXcode. Klik op @Recompile@ om de uitvoer van deze code te zien.
+
+</div>
+</div>
+
+p. Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets willen we wel dat je TeXWorks gebruikt.
 
