@@ -4,7 +4,7 @@ title: Latexcursus
 ---
 
 <div class="page-header">
-<h1>Latexcursus <small>Bachelor Wiskunde UvA</small></h1>
+<h1>{{ site.title }} <small>{{ site.subtitle }}</small></h1>
 </div>
 
 ## Lessen 
@@ -26,4 +26,5 @@ title: Latexcursus
 ## Voorwoord
 De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX).
 
+---
 
