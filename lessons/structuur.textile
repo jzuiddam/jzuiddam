@@ -16,7 +16,7 @@ LaTeX verschilt van tekstverwerkers zoals Word doordat het invoer met een bepaal
 \end{document}
 {% endhighlight %}
 
-Haarbij kan@article@ worden vervangen door een andere _document class_. Het gebied voor @\begin{document}@ heet de *preamble*. De preamble bevat commando's die betrekking hebben op het hele document. Tussen @\begin{document}@ en @\end{document}@ staat de tekst van je document.
+Haarbij kan @article@ worden vervangen door een andere _document class_. Het gebied voor @\begin{document}@ heet de *preamble*. De preamble bevat commando's die betrekking hebben op het hele document. Tussen @\begin{document}@ en @\end{document}@ staat de tekst van je document.
 
 
 h2. Preamble
