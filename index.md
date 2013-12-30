@@ -24,6 +24,7 @@ title: Latexcursus
 
 
 ## Voorwoord
-De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX).
+De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX). De bron van deze
+site vind je op [github](https://github.com/jzuiddam/jzuiddam.github.io).
 
 
