@@ -60,7 +60,8 @@ p. We gaan ervan uit dat je nu op een computer werkt met toegang tot TeXworks. O
 
 #3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop om je code te compileren.
 # Vul je eigen naam in als auteur en compileer.
-   
+
+In de volgende les zullen we zien wat bovenstaande code doet.
 </div>
 </div>
 
@@ -76,5 +77,5 @@ p. We gaan ervan uit dat je nu op een computer werkt met toegang tot TeXworks. O
 </div>
 </div>
 
-p. Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets willen we wel dat je TeXWorks gebruikt.
+p. Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets willen we wel dat je TeXworks gebruikt.
 
