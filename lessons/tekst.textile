@@ -26,7 +26,13 @@ LaTeX breekt woorden aan het einde van de regel af als dat nodig is. Voor de jui
 \usepackage[dutch]{babel}
 {% endhighlight %}
 
-Met @\-@ kun je afbreekpunten in een woord aangeven. Dit wordt dan het enige punt waar kan worden afgebroken. Dit is handig voor worden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten.
+Met @\-@ kun je afbreekpunten in een woord aangeven. Bijvoorbeeld 
+
+{% highlight latex %}
+tekst\-verwerkings\-programma's
+{% endhighlight %}
+
+De punten met @\-@ zijn dan de enige punten waar kan worden afgebroken. Dit is handig voor woorden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten. Gebruik dit alleen als een lang woord problemen geeft.
 
 h4. Aanhalingstekens
 
@@ -42,7 +48,7 @@ Aanhalingtekens zet je met een _backtick_ @`@ en een apostrof @'@.
 
 h4. Speciale tekens
 
-Er zijn twee manieren om speciale tekens in te voeren: via _unicode_ en via commando's
+Er zijn twee manieren om speciale tekens in te voeren: via _unicode_ en via commando's.
 
 h5. Unicode
 
@@ -56,7 +62,7 @@ te gebruiken in de preamble, kun je veel speciale tekens direct in je LaTeX-code
 
 h5. Commando's
 
-Een andere manier om speciale tekens te maken is met de volgende commando's.
+Een andere manier om speciale tekens te maken is door een commando toe te passen op een letter. 
 
 table(table table-condensed).
 |_. commando 	|_. uitvoer |_. omschrijving 			|
@@ -79,9 +85,9 @@ table(table table-condensed).
 |@\t{oo}@|o͡o 	|"tie" boven							|
 |@\o@ 	|ø	 	|o met schuine streep 					|
 
-h5. Kleiner dan < en groter dan >
+h5. Kleinder dan en groter dan: @<@, @>@
 
-Standaard geven < en > niet de uitvoer die je vewacht, maar ¡ en ¿. Dit is een probleem met de _font encoding_. Je krijgt de juiste tekens door @\textless@ en @\textgreater@ te gebruiken. Of gebruik @\usepackage[T1]{fontenc}@.
+Standaard geven @<@ en @>@ niet de uitvoer die je vewacht, maar ¡ en ¿. Dit is een probleem met de _font encoding_. Je krijgt de juiste tekens door @\textless@ en @\textgreater@ te gebruiken. Of gebruik @\usepackage[T1]{fontenc}@.
 
 h5. Math mode
 
@@ -111,5 +117,93 @@ Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschap
 Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
 {% endhighlight %}
 
+h3. Speciale paragrafen
+
+h4. Tekst letterlijk zetten
+
+De @verbatim@-omgeving zet gegeven tekst letterlijk, dat wil zeggen, LaTeX negeert eventuele commando's in de tekst. Gebruik het bijvoorbeeld wanneer je programmacode wilt zetten:
+
+{% highlight text %}
+\begin{verbatim}
+def gcd(a,b):
+    """
+    Algoritme van Euclides.
+    """
+    while a:
+            a, b = b%a, a
+    return b
+\end{verbatim}
+{% endhighlight %}
+
+h4. url's
+
+Het @hyperref@-package heeft het commando @\url@ om url's mee te zetten. Je laadt @hyperref@ met
+
+{% highlight latex %}
+\usepackage[hidelinks]{hyperref}
+{% endhighlight %}
+
+Een url zet je bijvoorbeeld met
+
+{% highlight latex %}
+\url{http://www.ctan.org}
+{% endhighlight %}
+
+h4. Citaten
+
+Er zijn drie standaardomgevingen voor quotes.
+
+- @quote@ := voor korte citaten of meerdere korte citaten
+
+- @quotation@ := voor langere citaten met meerdere alinea's
+
+- @verse@ := voor citaten waar regelafbreking belangrijk is, zoals poëzie. De regel breek je af met @\\@.
 
 
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+
+# Zet de volgende alinea's.
+
+<div class="example">
+
+De wiskundige wetenschap van het tellen heet combinatoriek. Tellen is relevant voor de kansrekening omdat, zoals we later zullen zien, bij bepaalde eenvoudige kansexperimenten kansen berekend kunnen worden door te tellen.
+&emsp;&emsp;Met verschillend bedoelen we hetzelfde als onderscheidbaar. We zullen het later ook over niet-onderscheidbare objecten hebben.
+&emsp;&emsp;Als we ook niet-onderscheidbare objecten toelaten wordt de situatie anders. We tellen nu het aantal volgordes van n objecten waarvan er een aantal niet-onderscheidbaar mogen zijn. Bijvoorbeeld het aantal volgordes voor de letters a, a, b, c.
+
+</div>
+
+#2 Zet de volgende namen, zowel met als zonder gebruik van unicode.
+## Kurt Gödel
+## Endre Szemerédi (winnaar van de Abelprijs 2012)
+## Muhammed al-Khowârizmi (oorsprong van het woord ‘algoritme’) 
+## Paul Erdős (tip: hij is Hongaars)
+# Zet het volgende citaat
+
+<div class="example">
+
+“A mathematician is a device for turning coffee into theorems.” — Paul Erdős (1913–1996)
+
+</div>
+
+#4 Laat je werk controleren door een van de docenten.
+
+</div>
+</div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+* Bijzondere symbolen (kopjes, speciale symbolen, accenten, aanhalingstekens, opsommingen) voer je in met commando’s.
+* Dubbele spaties worden genegeerd — hoe rommelig je ook tikt, LaTeX lijnt alles uit.
+* Harde returns in je bronbestand worden genegeerd: een harde return telt als een gewone spatie.
+* Lege witregels worden niet gezet als regels wit. In LaTeX telt een lege regel wit als een einde alinea (alinea wordt afgesloten, wordt gezet, LaTeX speurt vooruit naar materiaal voor de volgende alinea).
+* Alinea’s worden automatisch ingesprongen. Dat is goed. In de LaTeX-context willen we dat precies zo hebben.
+
+</div></div>
