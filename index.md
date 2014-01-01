@@ -25,6 +25,6 @@ title: Latexcursus
 
 ## Voorwoord
 De inhoud van deze lessen is voor een groot deel afkomstig van [Latex Wikibooks](http://en.wikibooks.org/wiki/LaTeX). De bron van deze
-site vind je op [github](https://github.com/jzuiddam/jzuiddam.github.io). De tekst is in het Nederlands, maar ik heb met opzet Engelstalige termen zoals "package" niet vertaald.
+site vind je op [github](https://github.com/jzuiddam/jzuiddam.github.io). De tekst is in het Nederlands, maar ik heb met opzet Engelse termen zoals "package" niet vertaald.
 
 
