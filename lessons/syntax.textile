@@ -9,7 +9,7 @@ Een LaTeX-bestand is een tekstbestand met de extensie @.tex@ dat voldoet aan bep
 
 h2. Lokale structuur -- _syntax_
 
-h4. Tekens
+h4. Toegestane tekens
 
 De tekens
 
@@ -167,7 +167,21 @@ Een datum kun je opgeven met @\date{datum}@. Als je geen datum opgeeft, zet LaTe
 <h3 class="panel-title">Opdracht</h3>
 </div>
 <div class="panel-body">
-# Maak in LaTeX een artikel met als titel "Een bewijs van de Riemannhypothese" en jezelf als auteur.
+
+# Maak in LaTeX met zo min mogelijk code een artikel met als titel "Een bewijs van de Riemannhypothese" en jezelf als auteur.
 # Controleer dat LaTeX de datum in het Nederlands zet, dus niet "January 6, 2014".
+# Laat je werk controleren door een van de docenten.
+
+</div></div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+* Wat zijn toegestane tekens, spaties, groepen, commando's, omgevingen, commentaar?
+* Wat is de globale structuur van een LaTeX-bestand? Wat doen: @\documentclass@, @article@-class, @\usepackage@, @babel@-package, @document@-omgeving, @\title@, @\author@, @\and@, @\date@, @\maketitle@
+
 </div></div>
 
