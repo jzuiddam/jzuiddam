@@ -3,21 +3,21 @@ layout: lesson
 title: Wiskunde schrijven
 ---
 
-Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Voor moeilijkere wiskunde gebruiken we @mathtools@ een uitbreiding van @amsmath@
+Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Voor moeilijkere wiskunde gebruiken we @mathtools@, een uitbreiding van @amsmath@
 
 {% highlight latex %}
 \usepackage{mathtools}
 {% endhighlight %}
 
-In deze les behandelen we veelgebruikte commando's voor het zetten van wiskunde. Zie de documentatie van "amsmath":http://www.ctan.org/pkg/amsmath en van "mathtools":http://www.ctan.org/pkg/mathtools voor een compleet overzicht.
+In deze les behandelen we veelgebruikte commando's voor het zetten van wiskunde. Zie de "Short Math Guide for LaTeX":ftp://ftp.ams.org/ams/doc/amsmath/short-math-guide.pdf en de documentatie van "amsmath":http://www.ctan.org/pkg/amsmath en "mathtools":http://www.ctan.org/pkg/mathtools voor een compleet overzicht.
 
 h2. Wiskundige omgevingen
 
-Er zijn twee manieren om wiskunde te zetten:
-* *inline*: in een tekstregel,
-* *displayed*: gecentreerd op een eigen regel.
-
-_Inline_ wiskunde zet je tussen @$@'s.
+Wiskunde die in een tekstregel staat zoals $1+1=2$ noemen we *inline* wiskunde. Wiskunde gecentreerd op een eigen regel zoals
+\[
+1+1=2
+\]
+heet een *display*. _Inline_ wiskunde zet je tussen @$@'s.
 
 <div class="example">
 We weten dat $1+1=2$.
@@ -129,7 +129,7 @@ Een breuk maak je met @\frac{teller}{noemer}@. Een binomiaalcoëfficiënt maak j
 
 <div class="example">
 \[
-\frac{\frac{1}{x}+\frac{1}{y}}{y-z} \tfrac12 \frac12
+\frac{\frac{1}{x}+\frac{1}{y}}{y-z} 
 \]
 </div>
 
@@ -286,15 +286,423 @@ P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
 
 h2. Opmaak
 
-h2. Plus en min
+table(table).
+|_.commando 	|_. voorbeeld		 	|_.						|_. gebruik |
+| @\mathrm@		| $\mathrm{ABCDEF}$		| $\mathrm{abcdef}$ 	|  |
+| @\mathit@		| $\mathit{ABCDEF}$		| $\mathit{abcdef}$ 	|  |
+| @\mathbf@		| $\mathbf{ABCDEF}$		| $\mathbf{abcdef}$ 	| verzamelingen, vectoren |
+| @\mathsf@		| $\mathsf{ABCDEF}$		| $\mathsf{abcdef}$ 	| |
+| @\mathtt@		| $\mathtt{ABCDEF}$		| $\mathtt{abcdef}$ 	| |
+| @\mathcal@	| $\mathcal{ABCDEF}$	| $\mathcal{abcde}$  	| categorieën, big-oh notatie |
+| @\mathfrak@	| $\mathfrak{ABCDEF}$	| $\mathfrak{abcdef}$ 	| Lie-algebra's, idealen |
+| @\mathbb@		| $\mathbb{ABCDEF}$		|  						| verzamelingen |
+
+table(table).
+|_.commando 												|_.uitvoer 												|
+| @a'@, @a''@, @a'''@										| $a'$, $a''$, $a'''$									|
+| @\hat{a}@, @\widehat{aa}@									| $\hat{a}$, $\widehat{aa}$								|
+| @\bar{a}@, @\underline{a}@, @\overline{aa}@ 				| $\bar{a}$, $\underline{a}$, $\overline{aa}$ 			|
+| @\grave{a}@, @\acute{a}@, @\breve{a}@, @\check{a}@		| $\grave{a}$, $\acute{a}$, $\breve{a}$, $\check{a}$	|
+| @\dot{a}@, @\ddot{a}@, @\dddot{a}@						| $\dot{a}$, $\ddot{a}$, $\dddot{a}$					|
+| @\not=@													| $\not=$												|
+| @\vec{a}@, @\overrightarrow{aa}@, @\overleftarrow{aa}@	| $\vec{a}$, $\overrightarrow{aa}$, $\overleftarrow{aa}$|
+| @\tilde{a}@, @\widetilde{aa}@								| $\tilde{a}$, $\widetilde{aa}$							|
+
+
 
 h2. Horizontale witruimte
 
-h2. Stellingen, definities.
+Soms is het nodig horizontale witruime te maken. Het commando @\quad@ geeft een witruimte even groot als de huidige fontgrootte, dus 10pt bij een 10pt font. Een @\qquad@ geeft twee keer zoveel witruimte. Deze commando's werken ook in _text mode_. In _math mode_ zijn er de volgende extra commando's
+
+table(table).
+|_.commando |_.lengte |
+| @\,@ | 3/18 quad |
+| @\:@ | 4/18 quad |
+| @\;@ | 5/18 quad |
+| @\!@ | $-$3/18 quad|
+
+
+<div class="example">
+\[
+\int y\, dx
+\]
+</div>
+
+{% highlight latex %}
+\int y\, dx
+{% endhighlight %}
+
+h2. Punten
+
+table(table).
+|_. commando |_. uitvoer |_. doel |
+| @1,2,\ldots,n@ | $1,2,\ldots,n$ | voor elementen gescheiden door komma's |
+| @1\cdot 2\cdots n@ | $1\cdot 2 \cdots n$ | voor vermenigvuldiging en andere binaire relaties zoals $+$, $\otimes$, $\subseteq$ |
+| @\dots@  | | geeft @\ldots@ of @\cdots@ aan de hand van de context |
 
 h2. Lijst van symbolen
 
-h3. Griekse letters
+<!-- ['\\exists', '\\nexists', '\\forall', '\\neg', '\\subset\, '\\supset', '\\in', '\\notin', '\\ni', '\\vee', '\\wedge']  -->
+<!-- ['\\rightarrow', '\\leftarrow', '\\mapsto', '\\implies', '\\Rightarrow', '\\leftrightarrow', '\\iff', '\\Leftrightarrow', '\\top', '\\bot', '\\emptyset''] -->
+
+
+
+h5. Verzamelingen, logica, functies
+
+| @\exists@ | $\exists$ 	| &emsp;&emsp;&emsp;&emsp; | @\rightarrow@ | $\rightarrow$ |
+| @\nexists@ | $\nexists$ 	| &emsp;&emsp;&emsp;&emsp; | @\leftarrow@ | $\leftarrow$ |
+| @\forall@ | $\forall$ 	| &emsp;&emsp;&emsp;&emsp; | @\mapsto@ | $\mapsto$ |
+| @\neg@ | $\neg$ 			| &emsp;&emsp;&emsp;&emsp; | @\implies@ | $\implies$ |
+| @\subset@ | $\subset$ 	| &emsp;&emsp;&emsp;&emsp; | @\Rightarrow@ | $\Rightarrow$ |
+| @\supset@ | $\supset$ 	| &emsp;&emsp;&emsp;&emsp; | @\leftrightarrow@ | $\leftrightarrow$ |
+| @\in@ | $\in$ 			| &emsp;&emsp;&emsp;&emsp; | @\iff@ | $\iff$ |
+| @\notin@ | $\notin$ 		| &emsp;&emsp;&emsp;&emsp; | @\Leftrightarrow@ | $\Leftrightarrow$ |
+| @\ni@ | $\ni$ 			| &emsp;&emsp;&emsp;&emsp; | @\top@ | $\top$ |
+| @\vee@ | $\vee$ 			| &emsp;&emsp;&emsp;&emsp; | @\bot@ | $\bot$ |
+| @\wedge@ | $\wedge$ 		| &emsp;&emsp;&emsp;&emsp; | @\emptyset@ | $\emptyset$ |
+
+
+
+
+
+<!--
+['\\in',
+'\\leq',
+'\\ll',
+'\\prec',
+'\\preceq',
+'\\sim',
+'\\simeq',
+'\\equiv',
+'\\subset',
+'\\subseteq',
+'\\sqsubseteq',
+'\\smile',
+'\\perp',
+'\\mid',
+'\\vdash',
+'\\propto',
+'\\bowtie',
+'\\sqsubset',
+'\\Join',
+'\\ni ',
+'\\geq',
+'\\gg',
+'\\succ',
+'\\succeq',
+'\\approx',
+'\\cong',
+'\\doteq',
+'\\supset',
+'\\supseteq',
+'\\sqsupseteq',
+'\\frown',
+'\\models',
+'\\parallel',
+'\\dashv',
+'\\asymp',
+'\\sqsupset'] -->
+
+h5. Binaire relaties
+
+| @<@ | $ < $ 						|&emsp;&emsp;&emsp;&emsp;| @>@ | $ > $ |
+| @=@ | $=$ 						|&emsp;&emsp;&emsp;&emsp;| @:@ | $:$ |
+| @\in@ | $\in$ 					|&emsp;&emsp;&emsp;&emsp;| @\ni@ | $\ni $ |
+| @\leq@ | $\leq$ 					|&emsp;&emsp;&emsp;&emsp;| @\geq@ | $\geq$ |
+| @\ll@ | $\ll$ 					|&emsp;&emsp;&emsp;&emsp;| @\gg@ | $\gg$ |
+| @\prec@ | $\prec$ 				|&emsp;&emsp;&emsp;&emsp;| @\succ@ | $\succ$ |
+| @\preceq@ | $\preceq$ 			|&emsp;&emsp;&emsp;&emsp;| @\succeq@ | $\succeq$ |
+| @\sim@ | $\sim$ 					|&emsp;&emsp;&emsp;&emsp;| @\approx@ | $\approx$ |
+| @\simeq@ | $\simeq$ 				|&emsp;&emsp;&emsp;&emsp;| @\cong@ | $\cong$ |
+| @\equiv@ | $\equiv$ 				|&emsp;&emsp;&emsp;&emsp;| @\doteq@ | $\doteq$ |
+| @\subset@ | $\subset$ 			|&emsp;&emsp;&emsp;&emsp;| @\supset@ | $\supset$ |
+| @\subseteq@ | $\subseteq$ 		|&emsp;&emsp;&emsp;&emsp;| @\supseteq@ | $\supseteq$ |
+| @\sqsubseteq@ | $\sqsubseteq$ 	|&emsp;&emsp;&emsp;&emsp;| @\sqsupseteq@ | $\sqsupseteq$ |
+| @\smile@ | $\smile$ 				|&emsp;&emsp;&emsp;&emsp;| @\frown@ | $\frown$ |
+| @\perp@ | $\perp$ 				|&emsp;&emsp;&emsp;&emsp;| @\models@ | $\models$ |
+| @\mid@ | $\mid$ 					|&emsp;&emsp;&emsp;&emsp;| @\parallel@ | $\parallel$ |
+| @\vdash@ | $\vdash$ 				|&emsp;&emsp;&emsp;&emsp;| @\dashv@ | $\dashv$ |
+| @\propto@ | $\propto$ 			|&emsp;&emsp;&emsp;&emsp;| @\asymp@ | $\asymp$ |
+| @\bowtie@ | $\bowtie$ 			|&emsp;&emsp;&emsp;&emsp;| |
+| @\sqsubset@ | $\sqsubset$ 		|&emsp;&emsp;&emsp;&emsp;| @\sqsupset@ | $\sqsupset$ |
+| @\Join@ | $\Join$ 				|&emsp;&emsp;&emsp;&emsp;| |
+
+
+<!--['\\alpha',
+'\\beta',
+'\\gamma',
+'\\delta',
+'\\epsilon',
+'\\zeta',
+'\\eta',
+'\\theta',
+'\\varepsilon',
+'\\vartheta',
+'\\iota',
+'\\kappa',
+'\\lambda',
+'\\mu',
+'\\nu',
+'\\xi',
+'\\pi',
+'\\rho',
+'\\varpi',
+'\\varrho',
+'\\sigma',
+'\\tau',
+'\\upsilon',
+'\\phi',
+'\\chi',
+'\\psi',
+'\\omega',
+'\\varsigma',
+'\\varphi'] -->
+
+h5. Griekse kleine letters
+
+| @\alpha@ | $\alpha$ 			|&emsp;&emsp;&emsp;&emsp;| @\iota@ | $\iota$ 		|&emsp;&emsp;&emsp;&emsp; | @\sigma@ | $\sigma$ 	|
+| @\beta@ | $\beta$ 			|&emsp;&emsp;&emsp;&emsp;| @\kappa@ | $\kappa$ 		|&emsp;&emsp;&emsp;&emsp; | @\tau@ | $\tau$ 		|
+| @\gamma@ | $\gamma$ 			|&emsp;&emsp;&emsp;&emsp;| @\lambda@ | $\lambda$ 	|&emsp;&emsp;&emsp;&emsp; | @\upsilon@ | $\upsilon$ |
+| @\delta@ | $\delta$ 			|&emsp;&emsp;&emsp;&emsp;| @\mu@ | $\mu$ 			|&emsp;&emsp;&emsp;&emsp; | @\phi@ | $\phi$ 		|
+| @\epsilon@ | $\epsilon$ 		|&emsp;&emsp;&emsp;&emsp;| @\nu@ | $\nu$ 			|&emsp;&emsp;&emsp;&emsp; | @\chi@ | $\chi$ 		|
+| @\zeta@ | $\zeta$ 			|&emsp;&emsp;&emsp;&emsp;| @\xi@ | $\xi$ 			|&emsp;&emsp;&emsp;&emsp; | @\psi@ | $\psi$ 		|
+| @\eta@ | $\eta$ 				|&emsp;&emsp;&emsp;&emsp;| @\pi@ | $\pi$ 			|&emsp;&emsp;&emsp;&emsp; | @\omega@ | $\omega$ 	|
+| @\theta@ | $\theta$ 			|&emsp;&emsp;&emsp;&emsp;| @\rho@ | $\rho$ 			|&emsp;&emsp;&emsp;&emsp; |							|
+|||||||||
+| @\varepsilon@ | $\varepsilon$ |&emsp;&emsp;&emsp;&emsp;| @\varpi@ | $\varpi$ 		|&emsp;&emsp;&emsp;&emsp;| @\varsigma@ | $\varsigma$|
+| @\vartheta@ | $\vartheta$ 	|&emsp;&emsp;&emsp;&emsp;| @\varrho@ | $\varrho$ 	|&emsp;&emsp;&emsp;&emsp;| @\varphi@ | $\varphi$ 	|
+
+h5. Griekse hoofdletters
+
+<!--['\\Gamma',
+'\\Delta',
+'\\Theta',
+'\\Lambda',
+'\\varGamma',
+'\\varDelta',
+'\\varTheta',
+'\\varLambda',
+'\\Phi',
+'\\Psi',
+'\\Omega',
+'\\varPhi',
+'\\varPsi',
+'\\varOmega']-->
+
+
+| @\Gamma@ | $\Gamma$ 			|&emsp;&emsp;&emsp;&emsp;| @\Phi@ | $\Phi$ |
+| @\Delta@ | $\Delta$ 			|&emsp;&emsp;&emsp;&emsp;| @\Psi@ | $\Psi$ |
+| @\Theta@ | $\Theta$ 			|&emsp;&emsp;&emsp;&emsp;| @\Omega@ | $\Omega$ |
+| @\Lambda@ | $\Lambda$ 		|&emsp;&emsp;&emsp;&emsp;|  |
+||||
+| @\varGamma@ | $\varGamma$ 	|&emsp;&emsp;&emsp;&emsp;| @\varPhi@ | $\varPhi$ |
+| @\varDelta@ | $\varDelta$ 	|&emsp;&emsp;&emsp;&emsp;| @\varPsi@ | $\varPsi$ |
+| @\varTheta@ | $\varTheta$ 	|&emsp;&emsp;&emsp;&emsp;| @\varOmega@ | $\varOmega$ |
+| @\varLambda@ | $\varLambda$ 	|
+
+<!--['\\arccos',
+'\\arcsin',
+'\\arctan',
+'\\arg',
+'\\cos',
+'\\cosh',
+'\\cot',
+'\\coth',
+'\\csc',
+'\\deg',
+'\\dim',
+'\\exp',
+'\\hom',
+'\\ker',
+'\\lg',
+'\\ln',
+'\\log',
+'\\sec',
+'\\sin',
+'\\sinh',
+'\\tan',
+'\\tanh']-->
+
+h5. Operatoren zonder 'limieten'
+
+| @\arccos@ | $\arccos$ |&emsp;&emsp;&emsp;&emsp;| @\cot@ | $\cot$ 		|&emsp;&emsp;&emsp;&emsp;| @\hom@ | $\hom$ 	|&emsp;&emsp;&emsp;&emsp;| @\sin@ | $\sin$ |
+| @\arcsin@ | $\arcsin$ |&emsp;&emsp;&emsp;&emsp;| @\coth@ | $\coth$	|&emsp;&emsp;&emsp;&emsp;| @\ker@ | $\ker$ 	|&emsp;&emsp;&emsp;&emsp;| @\sinh@ | $\sinh$ |
+| @\arctan@ | $\arctan$ |&emsp;&emsp;&emsp;&emsp;| @\csc@ | $\csc$ 		|&emsp;&emsp;&emsp;&emsp;| @\lg@ | $\lg$ 	|&emsp;&emsp;&emsp;&emsp;| @\tan@ | $\tan$ |
+| @\arg@ | $\arg$ 		|&emsp;&emsp;&emsp;&emsp;| @\deg@ | $\deg$ 		|&emsp;&emsp;&emsp;&emsp;| @\ln@ | $\ln$ 	|&emsp;&emsp;&emsp;&emsp;| @\tanh@ | $\tanh$ |
+| @\cos@ | $\cos$ 		|&emsp;&emsp;&emsp;&emsp;| @\dim@ | $\dim$ 		|&emsp;&emsp;&emsp;&emsp;| @\log@ | $\log$ 	|
+| @\cosh@ | $\cosh$ 	|&emsp;&emsp;&emsp;&emsp;| @\exp@ | $\exp$ 		|&emsp;&emsp;&emsp;&emsp;| @\sec@ | $\sec$ 	|
+
+
+
+
+<!--['\\det',
+'\\gcd',
+'\\inf',
+'\\lim',
+'\\liminf',
+'\\injlim',
+'\\varliminf',
+'\\varinjlim',
+'\\limsup',
+'\\max',
+'\\min',
+'\\Pr',
+'\\sup',
+'\\projlim',
+'\\varlimsup',
+'\\varprojlim']-->
+
+h5. Operatoren met 'limieten'
+
+| @\det@ | $\det$ 				|&emsp;&emsp;&emsp;&emsp;| @\limsup@ | $\limsup$ |
+| @\gcd@ | $\gcd$ 				|&emsp;&emsp;&emsp;&emsp;| @\max@ | $\max$ |
+| @\inf@ | $\inf$ 				|&emsp;&emsp;&emsp;&emsp;| @\min@ | $\min$ |
+| @\lim@ | $\lim$ 				|&emsp;&emsp;&emsp;&emsp;| @\Pr@ | $\Pr$ |
+| @\liminf@ | $\liminf$ 		|&emsp;&emsp;&emsp;&emsp;| @\sup@ | $\sup$ |
+| @\injlim@ | $\injlim$ 		|&emsp;&emsp;&emsp;&emsp;| @\projlim@ | $\projlim$ |
+| @\varliminf@ | $\varliminf$ 	|&emsp;&emsp;&emsp;&emsp;| @\varlimsup@ | $\varlimsup$ |
+| @\varinjlim@ | $\varinjlim$ 	|&emsp;&emsp;&emsp;&emsp;| @\varprojlim@ | $\varprojlim$ |
+
+
+<!--['+',
+'\\pm',
+'\\times',
+'\\circ',
+'\\div',
+'\\cap',
+'\\sqcap',
+'\\wedge or \land',
+'\\triangleleft',
+'\\bigtriangleup',
+'\\oplus',
+'\\otimes',
+'\\odot',
+'\\dagger',
+'\\setminus',
+'\\wr',
+'\\ast',
+'\\diamond',
+'\\lhd',
+'\\unlhd',
+'\\dotplus',
+'\\ltimes',
+'\\leftthreetimes',
+'\\circleddash',
+'\\barwedge',
+'\\curlywedge',
+'\\veebar',
+'\\doublecap or \Cap',
+'\\circledast',
+'\\boxminus',
+'\\boxdot',
+'\\divideontimes',
+'\\And',
+'-',
+'\\mp',
+'\\cdot',
+'\\bigcirc',
+'\\bmod',
+'\\cup',
+'\\sqcup',
+'\\vee or \lor',
+'\\triangleright',
+'\\bigtriangledown',
+'\\ominus',
+'\\oslash',
+'\\bullet',
+'\\ddagger',
+'\\smallsetminus',
+'\\amalg',
+'\\star',
+'',
+'\\rhd',
+'\\unrhd',
+'\\centerdot',
+'\\rtimes',
+'\\rightthreetimes',
+'\\uplus',
+'\\doublebarwedge',
+'\\curlyvee',
+'\\intercal',
+'\\doublecup or \Cup',
+'\\circledcirc',
+'\\boxtimes',
+'\\boxplus',
+'\\vartriangle']-->
+
+h5. Binaire operatoren
+
+| @+@ | $+$ 									|&emsp;&emsp;&emsp;&emsp;| @-@ | $-$ |
+| @\pm@ | $\pm$ 								|&emsp;&emsp;&emsp;&emsp;| @\mp@ | $\mp$ |
+| @\times@ | $\times$ 							|&emsp;&emsp;&emsp;&emsp;| @\cdot@ | $\cdot$ |
+| @\circ@ | $\circ$ 							|&emsp;&emsp;&emsp;&emsp;| @\bigcirc@ | $\bigcirc$ |
+| @\div@ | $\div$ 								|&emsp;&emsp;&emsp;&emsp;| @\bmod@ | $\bmod$ |
+| @\cap@ | $\cap$ 								|&emsp;&emsp;&emsp;&emsp;| @\cup@ | $\cup$ |
+| @\sqcap@ | $\sqcap$ 							|&emsp;&emsp;&emsp;&emsp;| @\sqcup@ | $\sqcup$ |
+| @\wedge@ or @\land@ | $\wedge$ 				|&emsp;&emsp;&emsp;&emsp;| @\vee@ or @\lor@ | $\vee$ |
+| @\triangleleft@ | $\triangleleft$ 			|&emsp;&emsp;&emsp;&emsp;| @\triangleright@ | $\triangleright$ |
+| @\bigtriangleup@ | $\bigtriangleup$ 			|&emsp;&emsp;&emsp;&emsp;| @\bigtriangledown@ | $\bigtriangledown$ |
+| @\oplus@ | $\oplus$ 							|&emsp;&emsp;&emsp;&emsp;| @\ominus@ | $\ominus$ |
+| @\otimes@ | $\otimes$ 						|&emsp;&emsp;&emsp;&emsp;| @\oslash@ | $\oslash$ |
+| @\odot@ | $\odot$ 							|&emsp;&emsp;&emsp;&emsp;| @\bullet@ | $\bullet$ |
+| @\dagger@ | $\dagger$ 						|&emsp;&emsp;&emsp;&emsp;| @\ddagger@ | $\ddagger$ |
+| @\setminus@ | $\setminus$ 					|&emsp;&emsp;&emsp;&emsp;| @\smallsetminus@ | $\smallsetminus$ |
+| @\wr@ | $\wr$ 								|&emsp;&emsp;&emsp;&emsp;| @\amalg@ | $\amalg$ |
+| @\ast@ | $\ast$ 								|&emsp;&emsp;&emsp;&emsp;| @\star@ | $\star$ |
+| @\diamond@ | $\diamond$ 						|&emsp;&emsp;&emsp;&emsp;|  |  |
+| @\lhd@ | $\lhd$ 								|&emsp;&emsp;&emsp;&emsp;| @\rhd@ | $\rhd$ |
+| @\unlhd@ | $\unlhd$ 							|&emsp;&emsp;&emsp;&emsp;| @\unrhd@ | $\unrhd$ |
+| @\dotplus@ | $\dotplus$ 						|&emsp;&emsp;&emsp;&emsp;| @\centerdot@ | $\centerdot$ |
+| @\ltimes@ | $\ltimes$ 						|&emsp;&emsp;&emsp;&emsp;| @\rtimes@ | $\rtimes$ |
+| @\leftthreetimes@ | $\leftthreetimes$ 		|&emsp;&emsp;&emsp;&emsp;| @\rightthreetimes@ | $\rightthreetimes$ |
+| @\circleddash@ | $\circleddash$ 				|&emsp;&emsp;&emsp;&emsp;| @\uplus@ | $\uplus$ |
+| @\barwedge@ | $\barwedge$ 					|&emsp;&emsp;&emsp;&emsp;| @\doublebarwedge@ | $\doublebarwedge$ |
+| @\curlywedge@ | $\curlywedge$ 				|&emsp;&emsp;&emsp;&emsp;| @\curlyvee@ | $\curlyvee$ |
+| @\veebar@ | $\veebar$ 						|&emsp;&emsp;&emsp;&emsp;| @\intercal@ | $\intercal$ |
+| @\doublecap@ or @\Cap@ | $\doublecap$		 	|&emsp;&emsp;&emsp;&emsp;| @\doublecup@ or @\Cup@ | $\doublecup$ |
+| @\circledast@ | $\circledast$ 				|&emsp;&emsp;&emsp;&emsp;| @\circledcirc@ | $\circledcirc$ |
+| @\boxminus@ | $\boxminus$ 					|&emsp;&emsp;&emsp;&emsp;| @\boxtimes@ | $\boxtimes$ |
+| @\boxdot@ | $\boxdot$ 						|&emsp;&emsp;&emsp;&emsp;| @\boxplus@ | $\boxplus$ |
+| @\divideontimes@ | $\divideontimes$ 			|&emsp;&emsp;&emsp;&emsp;| @\vartriangle@ | $\vartriangle$ |
+| @\And@ | $\And$ 								| |||
+
+
+<!--['\\partial',
+'\\imath',
+'\\jmath',
+'\\ell',
+'\\Re',
+'\\Im',
+'\\wp',
+'\\nabla',
+'\\Box',
+'\\infty',
+'\\aleph',
+'\\beth',
+'\\gimel']-->
+
+h5. Overig
+
+| @\partial@ | $\partial$ |
+| @\eth@ | $\eth$ |
+| @\hbar@ | $\hbar$ |
+| @\imath@ | $\imath$ |
+| @\jmath@ | $\jmath$ |
+| @\ell@ | $\ell$ |
+| @\Re@ | $\Re$ |
+| @\Im@ | $\Im$ |
+| @\wp@ | $\wp$ |
+| @\nabla@ | $\nabla$ |
+| @\Box@ | $\Box$ |
+| @\infty@ | $\infty$ |
+| @\aleph@ | $\aleph$ |
+| @\beth@ | $\beth$ |
+| @\gimel@ | $\gimel$ |
+| @\angle@ | $\angle$ |
+| @\natural@ | $\natural$ |
+
+
+
 
 ---
 
