@@ -1,0 +1,115 @@
+---
+layout: lesson
+title: Tekst schrijven
+---
+
+h2. Tekstopmaak
+
+h4. Spatiëring
+
+De spatiëring tussen woorden wordt automatisch door LaTeX bepaald.  Het is tegen de LaTeXfilosofie om handmatig witruimte in te voegen. 
+
+
+h5. Non-breaking space
+
+Een *non-breaking space* is een spatie die niet vergroot kan worden en waarop de regel niet wordt afgebroken. Je voegt een non-breaking space in met @~@. Je gebruikt dit bijvoorbeeld om initialen bij de achternaam te houden:
+
+{% highlight latex %}
+O.~P.~Losser
+{% endhighlight %}
+
+h4. Woordafbreking
+
+LaTeX breekt woorden aan het einde van de regel af als dat nodig is. Voor de juiste woordafbreking moet je het package @babel@ laden met de juiste taaloptie
+
+{% highlight latex %}
+\usepackage[dutch]{babel}
+{% endhighlight %}
+
+Met @\-@ kun je afbreekpunten in een woord aangeven. Dit wordt dan het enige punt waar kan worden afgebroken. Dit is handig voor worden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten.
+
+h4. Aanhalingstekens
+
+Aanhalingtekens zet je met een _backtick_ @`@ en een apostrof @'@.
+
+<div class="example">
+'quote', "quote", "Een 'quote' in een quote"
+</div>
+
+{% highlight latex %}
+`quote', ``quote'', ``Een `quote' in een quote''
+{% endhighlight %}
+
+h4. Speciale tekens
+
+Er zijn twee manieren om speciale tekens in te voeren: via _unicode_ en via commando's
+
+h5. Unicode
+
+Door 
+
+{% highlight latex %}
+\usepackage[utf8]{inputenc}
+{% endhighlight %}
+
+te gebruiken in de preamble, kun je veel speciale tekens direct in je LaTeX-code zetten zoals je dat in bijvoorbeeld Word gewend bent.
+
+h5. Commando's
+
+Een andere manier om speciale tekens te maken is met de volgende commando's.
+
+table(table table-condensed).
+|_. commando 	|_. uitvoer |_. omschrijving 			|
+|@\`{o}@|ò	 	|accent grave, backtick 				|
+|@\'{o}@|ó	 	|accent aigu 							|
+|@\^{o}@|ô	 	|circumflex 							|
+|@\"{o}@|ö	 	|umlaut, trema				 			|
+|@\H{o}@|ő	 	|Hongaarse umlaut, dubbel accent aigu	|
+|@\~{o}@|õ	 	|tilde 									|
+|@\c{c}@|ç	 	|cedille 								|
+|@\k{a}@|ą	 	|ogonek 								|
+|@\l@   |ł	 	|schuine streep 		 				|
+|@\={o}@|ō	 	|macron boven							|
+|@\b{o}@|+o+ 	|macron onder		 					|
+|@\.{o}@|ȯ	 	|punt boven								|
+|@\d{u}@|ụ	 	|punt onder		 						|
+|@\r{a}@|å	 	|corona, ring 							|
+|@\u{o}@|ŏ	 	|breve 				 					|
+|@\v{s}@|š	 	|caron, hacek 						 	|
+|@\t{oo}@|o͡o 	|"tie" boven							|
+|@\o@ 	|ø	 	|o met schuine streep 					|
+
+h5. Kleiner dan < en groter dan >
+
+Standaard geven < en > niet de uitvoer die je vewacht, maar ¡ en ¿. Dit is een probleem met de _font encoding_. Je krijgt de juiste tekens door @\textless@ en @\textgreater@ te gebruiken. Of gebruik @\usepackage[T1]{fontenc}@.
+
+h5. Math mode
+
+In de volgende les zullen we _math mode_ zien. Er zijn commando's voor speciale tekens die alleen in math mode werken.
+
+h4. Streepjes
+
+LaTex kent drie soorten streepjes in tekst: het *afbreekstreepje* ==-==, de *en dash* – en de *em dash* —. Deze zet je met @-@, @--@, en @---@. Gebruik de _en dash_ om een bereik aan te geven, bijvoorbeeld 'rijen 1–10'. Gebruik de _em dash_ als _gedachtestreepje_: 'He was running, Watson—running desperately.' In het Nederlands is het gebruikelijk om de _en dash_ omgeven door spaties te gebruiken als gedachtestreepje: 'Jacqueline vertrok – zonder nog een woord te zeggen.'
+
+h4. Ellips
+
+Een *ellips* is een rij van drie puntjes die aangeeft dat tekst is weggelaten. Om de juiste spatiëring te krijgen zet je een ellips met @\ldots@.
+
+
+h2. Paragraafopmaak
+
+Een paragraaf maak je met een lege regel. LaTeX springt dan automatisch in.
+
+<div class="example">
+&emsp;&emsp; Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
+&emsp;&emsp; Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
+</div>
+
+{% highlight latex %}
+Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
+
+Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
+{% endhighlight %}
+
+
+
