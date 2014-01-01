@@ -55,6 +55,7 @@ Hello world!
 #3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop om je code te compileren.
 # Ga na dat er geen fouten zijn opgetreden tijdens het compileren door het log-bestand te bekijken. Ga hiervoor in TeXworks naar @Window -> Show Console Output@.
 # Handig: Selecteer @Format -> Syntax Coloring -> LaTeX@ om de code te kleuren. Dit zal handig zijn als je veel ingewikkelde code hebt.
+
 </div>
 </div>
 
