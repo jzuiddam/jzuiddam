@@ -1,0 +1,405 @@
+---
+layout: lesson
+title: Wiskunde schrijven
+---
+
+Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Voor moeilijkere wiskunde gebruiken we @mathtools@ een uitbreiding van @amsmath@
+
+{% highlight latex %}
+\usepackage{mathtools}
+{% endhighlight %}
+
+In deze les behandelen we veelgebruikte commando's voor het zetten van wiskunde. Zie de documentatie van "amsmath":http://www.ctan.org/pkg/amsmath en van "mathtools":http://www.ctan.org/pkg/mathtools voor een compleet overzicht.
+
+h2. Wiskundige omgevingen
+
+Er zijn twee manieren om wiskunde te zetten:
+* *inline*: in een tekstregel,
+* *displayed*: gecentreerd op een eigen regel.
+
+_Inline_ wiskunde zet je tussen @$@'s.
+
+<div class="example">
+We weten dat $1+1=2$.
+</div>
+
+{% highlight latex %}
+We weten dat $1+1=2$.
+{% endhighlight %}
+
+Wiskunde in een display zet je tussen @\[@ en @\]@.
+
+<div class="example">
+Bekijk de kromme gegeven door de vergelijking
+\[
+y = x + 2.
+\]
+</div>
+
+{% highlight latex %}
+Bekijk de kromme gegeven door de vergelijking
+\[
+y = x + 2.
+\]
+{% endhighlight %}
+
+Om de _displays_ automatisch te nummeren gebruik je de @equation@-omgeving.
+
+<div class="example">
+Omdat $a$ en $b$ beide oneven zijn, geldt
+\begin{equation}
+a + b = 2x
+\end{equation}
+en
+\begin{equation}
+a-b = 2y
+\end{equation}
+voor zekere $x$ en $y$.
+</div>
+
+{% highlight latex %}
+Omdat $a$ en $b$ beide oneven zijn, geldt
+\begin{equation}
+a + b = 2x
+\end{equation}
+en
+\begin{equation}
+a-b = 2y
+\end{equation}
+voor zekere $x$ en $y$.
+{% endhighlight %}
+
+LaTeX werkt in een andere modus in een wiskundige omgeving: *math mode*. Belangrijke verschillen met _text mode_ zijn de volgende.
+* Spaties en line breaks worden genegeerd; witruimte wordt bepaald door de gebruikte operatoren of met speciale commando's.
+* Lege regels zijn niet toegestaan.
+* Een letter wordt beschouwd als de naam van een variabele en wordt ook zo gezet. Als je normale tekst wilt zetten in _math mode_ dan gebruik je een speciaal commando.
+
+In de rest van deze les gaan we ervan uit dat we in _math mode_ werken.
+
+h2. Symbolen
+
+De symbolen
+
+{% highlight latex %}
++ - = ! / ( ) [ ] < > | ' :
+{% endhighlight %}
+
+kun je direct maken in _math mode_. Voor andere symbolen zijn er commando's. In de rest van deze les zullen we veel symbolen tegenkomen. Als je een symbool nodig hebt waarvan je het commando niet weet dan kun je "detexify":http://detexify.kirelabs.org/ het symbool voor je laten zoeken. Er zijn ook "overzichten":http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols van veelgebruikte symbolen.
+
+h2. Machten en indices
+
+Machten en indices maak je met het dakje @^@ en het lage streepje @_@. Bijvoorbeeld
+
+<div class="example">
+\[
+a^2\quad a_i\quad a_i^2
+\]
+</div>
+
+{% highlight latex %}
+a^2  a_i  a_i^2
+{% endhighlight %}
+
+De @_@ en @^@ binden aan de eerstvolgende _groep_. Herinner je dat we groepen maken met @{@ en @}@. Dus
+
+<div class="example">
+\[
+a^{n+1}\quad  a_{i/2}
+\]
+</div>
+
+{% highlight latex %}
+a^{n+1}  a_{i/2}
+{% endhighlight %}
+
+
+
+h2. Griekse letters
+
+Griekse letters maak je met de voordehandliggende commando's, bijvoorbeeld @\alpha@, @\Omega@. Zie het overzicht aan het eind.
+
+h2. Operatoren
+
+Een operator is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $\log$. LaTeX heeft standaard een aantal operatoren gedefinieerd, zie het overzicht. We zullen later zien hoe we zelf operatoren maken.
+
+
+h2. Breuken en binomiaalcoëfficiënten
+
+Een breuk maak je met @\frac{teller}{noemer}@. Een binomiaalcoëfficiënt maak je met @\binom{n}{k}@. Je kunt breuken in breuken gebruiken.
+
+<div class="example">
+\[
+\frac{\frac{1}{x}+\frac{1}{y}}{y-z} \tfrac12 \frac12
+\]
+</div>
+
+{% highlight latex %}
+\frac{\frac{1}{x}+\frac{1}{y}}{y-z}
+{% endhighlight %}
+
+We kunnen @\tfrac@ en @\tbinom@ gebruiken voor kleine breuken en binomialen, bijvoorbeeld _inline_.
+
+h2. Wortels
+
+Wortels maak je als @\sqrt{2}@ of @\sqrt[n]{2}@ voor $\sqrt[n]{2}$.
+
+h2. Sommen en integralen
+
+Een som en integraal maak je met @\sum@ en @\int@ waarbij je de limieten aangeeft met @^@ en @_@, bijvoorbeeld
+
+<div class="example">
+\[
+\sum_{i=1}^{10} t_i\quad \int_0^\infty e^{-x}\, dx
+\]
+</div>
+
+{% highlight latex %}
+\sum_{i=1}^{10} t_i
+\int_0^\infty e^{-x}\, dx
+{% endhighlight %}
+
+Er zijn meer operatoren die op deze manier limieten zette, zoals @\prod@ $\prod$ en @\bigcup@ $\bigcup$, zie het overzicht. Om meedere regels onder een som te zetten gebruik je @\substack@ en @\\@:
+
+
+<div class="example">
+\[
+\sum_{\substack{
+   0<i<m \\
+   0<j<n
+  }}
+ P(i,j)
+\]
+</div>
+
+{% highlight latex %}
+\sum_{\substack{
+0 < i < m \\
+0 < j < n
+}}
+P(i,j)
+{% endhighlight %}
+
+h2. Haakjes
+
+<div class="example">
+\[
+( a )\quad [ b ]\quad \{ c \}\quad \mid d \mid \quad \| e \|\quad
+\langle f \rangle\quad \lfloor g \rfloor\quad
+\lceil h \rceil\quad \ulcorner i \urcorner
+\]
+</div>
+
+{% highlight latex %}
+( a )  [ b ]  \{ c \}  | d |  \| e \| 
+\langle f \rangle 
+\lfloor g \rfloor 
+\lceil h \rceil 
+\ulcorner i \urcorner
+{% endhighlight %}
+
+Bovenstaande _delimiters_ kun je automatisch schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
+
+<div class="example">
+\[
+( \big( \Big( \bigg( \Bigg( \quad\quad \bigg(\frac{x^2}{y^3}\bigg) \quad\quad P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+\]
+</div>
+
+{% highlight latex %}
+( \big( \Big( \bigg( \Bigg(
+
+\bigg(\frac{x^2}{y^3}\bigg) 
+
+P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+{% endhighlight %}
+
+Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordehandliggende plaatsen. Dit geeft vaak te grote haakjes dus let goed op!
+
+h2. Matrices
+
+
+<div class="example">
+\[
+\begin{pmatrix}
+  a & b & -c \\
+  d & e & f \\
+  g & h & i
+ \end{pmatrix}
+ \qquad
+ \begin{bmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{bmatrix}
+ \qquad
+ \begin{vmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{vmatrix}
+\]
+</div>
+
+{% highlight latex %}
+\begin{pmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{pmatrix}
+
+ \begin{bmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{bmatrix}
+ 
+ \begin{vmatrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
+ \end{vmatrix}
+{% endhighlight %}
+
+Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je met @cdots@ $\cdots$, @\vdots@ $\vdots$ en @\ddots@ $\ddots$.
+
+h2. Tekst in wiskunde
+
+Tekst in _math mode_ zet je met @\text@.
+
+<div class="example">
+\begin{gather*}
+P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}\\[0.5em]
+P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}\\[0.5em]
+P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
+\end{gather*}
+</div>
+
+{% highlight latex %}
+P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}
+
+P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}
+
+% Fout:
+P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
+{% endhighlight %}
+
+
+h2. Opmaak
+
+h2. Plus en min
+
+h2. Horizontale witruimte
+
+h2. Stellingen, definities.
+
+h2. Lijst van symbolen
+
+h3. Griekse letters
+
+---
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 1</h3>
+</div>
+<div class="panel-body">
+# Maak een nieuw LaTeX-bestand met de volgende inhoud.
+
+{% highlight latex %}
+\documentclass[a4paper,12pt]{article}
+\usepackage[dutch]{babel}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{stelling}{Stelling}[section]
+\theoremstyle{definition}
+\newtheorem{definitie}[stelling]{Definitie}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+
+\begin{document}
+
+\begin{definitie}
+\end{definitie}
+
+\begin{stelling}[Ongelijkheid van Cauchy-Schwarz] 
+\end{stelling}
+
+\end{document}
+{% endhighlight %}
+
+#2 Zet de volgende definitie.
+
+<div class="example">
+
+*Definitie 1.* Als $P(X\in S)=1$ met $S$ eindig, dan is de _verwachting_
+\[
+ EX=\sum_{x\in S} xP(X=x).
+\]
+
+</div>
+
+#3 Zet de volgende stelling.
+
+<div class="example">
+
+*Stelling 2.* Als $X$ en $Y$ stochastische grootheden zijn met $EX^2 \lt \infty$ en $EY^2 \lt \infty$, dan geldt
+\[
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\Cov}{Cov}
+|\Cov(X,Y)|\le\sqrt{\Var(X)}\sqrt{\Var (Y)}.
+\]
+
+</div>
+
+
+</div></div>
+
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 2</h3>
+</div>
+<div class="panel-body">
+
+# Kies een van de volgende uitspraken.
+#* Er zijn oneindig veel priemgetallen
+#* Het getal $\sqrt2$ is niet rationaal
+# Maak een nieuw LaTeX-bestand met inhoud
+
+{% highlight latex %}
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[dutch]{babel}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+
+\theoremstyle{plain}
+\newtheorem{stelling}{Stelling}
+
+\begin{document}
+
+
+\end{document}
+{% endhighlight %}
+
+#3 Zet de gekozen stelling met de @stelling@-omgeving die in de preamble wordt gedefinieerd.
+# Bewijs de stelling en schrijf het bewijs in de @proof@-omgeving.
+
+</div></div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+* _math mode_ regels, "detexify":http://detexify.kirelabs.org.
+* @$@, @\[@ @\]@, @_@, @^@, @\alpha@, @\sin@, @\log@, @\frac@, @\binom@, @\sqrt[n]@, @\sum@, @\int@, @()@, @[]@, @\{ \}@, @| |@, @\big@, @\Big@, @\bigg@, @\Bigg@.
+
+</div></div>
