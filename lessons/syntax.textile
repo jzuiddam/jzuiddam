@@ -1,0 +1,173 @@
+---
+layout: lesson
+title: Syntax en structuur
+---
+
+
+Een LaTeX-bestand is een tekstbestand met de extensie @.tex@ dat voldoet aan bepaalde regels. Deze les gaat over deze regels op lokaal en globaal niveau. We behandelen tekens, _spaties_, groepen, omgevingen, commando's, commentaar, _document classes_, _packages_ en de _topmatter_.
+
+
+h2. Lokale structuur -- _syntax_
+
+h4. Tekens
+
+De tekens
+
+{% highlight latex %}
+a-z A-Z 0-9 + = * / ( ) [ ]
+{% endhighlight %}
+
+en de leestekens
+
+{% highlight latex %}
+, ; . ? ! : ` ' -
+{% endhighlight %}
+
+en de _spatie_, _tab_ en _enter_ kunnen direct in LaTeX gebruikt worden om teksten te schrijven. De tekens
+
+bc. # $ % ^ & _ { } ~ \
+
+zijn *speciale tekens*. Zij hebben een speciale betekenis in LaTeX. Je kunt ze als gewone tekens gebruiken door er een @\@ voor te zetten (behalve bij de backslash):
+
+{% highlight latex %}
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash{}
+{% endhighlight %}
+
+h4. Spaties
+
+Een _spatie_, _tab_, _enter_ of meerdere spaties worden in LaTeX allemaal behandeld als één uniforme 'spatie'.
+
+h4. Groepen
+
+Een *groep* is een stuk code omgeven door @{@ en @}@. Een groep wordt gebruikt om de werking van een commando te beperken of om een argument voor een commando aan te geven.
+
+h4. Commando's
+
+Een *commando* heeft een van de volgende twee vormen:
+
+* Eerst een @\@ en dan een naam bestaande uit alleen letters. De naam wordt afgesloten met een spatie, een getal of een _niet-letter_.
+* Eerst een @\@ en dan één niet-letter.
+
+De naam van een commando is _case sensitive_. Sommige commando's willen een argument, gegeven tussen @{@ en @}@ achter het commando. Sommige commando's accepteren een optioneel argument, gegeven tussen @[@ en @]@ achter het commando. De algemene syntax is:
+
+{% highlight latex %}
+\commandname[option1,option2,...]{argument1}{argument2}...
+{% endhighlight %}
+
+h4. Omgevingen
+
+Een *omgeving* heeft syntax
+
+{% highlight latex %}
+\begin{naam}
+
+\end{naam}
+{% endhighlight %}
+
+In een omgeving staat weer LaTeX-code. Een omgeving definieert automatisch een groep.
+
+h4. Commentaar
+
+Als LaTeX een @%@ tegenkomt op een regel dan negeert het de rest van de regel en alle witruimte aan het begin van de volgende regel. Je kunt dit gebruiken om commentaar te schrijven in je code. Bijvoorbeeld
+
+{% highlight latex %}
+\newcommand{\CC}{\mathbf{C}} % Dit commando definieert het lichaam C.
+{% endhighlight %}
+
+
+h2. Globale structuur
+
+Ieder LaTeX-bestand heeft de volgende structuur.
+
+{% highlight latex %}
+\documentclass{article}
+
+\begin{document}
+
+\end{document}
+{% endhighlight %}
+
+Haarbij kan @article@ worden vervangen door een andere _document class_. Het gebied voor @\begin{document}@ heet de *preamble*. De preamble bevat commando's die betrekking hebben op het hele document. Tussen @\begin{document}@ en @\end{document}@ staat de tekst van je document.
+
+
+h3. Document classes
+
+Een *document class* is een verzameling van instellingen die passen bij een bepaald type document. De document class stel je in met
+
+{% highlight latex %}
+\documentclass[options]{class}
+{% endhighlight %}
+
+waarbij @options@ een lijst is van opties gescheiden door komma's. Het commando
+
+{% highlight latex %}
+\documentclass[11pt,twoside,a4paper]{article}
+{% endhighlight %}
+
+geeft bijvoorbeeld een artikel met tekstgrootte 11pt, met opmaak voor dubbelzijdig printen op A4-papier.
+
+Er zijn veel document classes voor LaTeX. *Standard document classes* zijn classes die altijd aanwezig zijn. Belangrijke standard document classes zijn
+
+table(table).
+|_.class   |_.documenttype |
+| @article@ | artikelen in wetenschappelijke tijdschriften, korte rapporten aantekeningen |
+| @report@  | langere rapporten met hoofdstukken, kleine boeken, theses |
+| @book@    | boeken |
+| @beamer@  | presentaties |
+
+Veelgebruikte opties bij deze classes zijn de volgende.
+
+table(table).
+|_.optie   |_.beschrijving |
+| @10pt@, @11pt@, @12pt@ | stelt de grootte van de tekst in, standaard @10pt@ |
+| @a4paper@, @letterpaper@ | stelt de papiergrootte in, standaard hangt van je distributie af |
+| @twoside@, @oneside@ | bepaalt of het document voor enkelzijdig of dubbelzijdig printen wordt opgemaakt |
+
+
+h3. Packages
+
+Packages zijn uitbreidingen van LaTeX die functionaliteit toevoegen. Denk daarbij aan de mogelijkheid om plaatjes in te voegen of de bschikbaarheid van extra wiskundige symbolen. Moderne TeX-distributies bevatten een groot aantal packages, die je kunt gebruiken door
+
+{% highlight latex %}
+\usepackage[options]{packagename}
+{% endhighlight %}
+
+in de preamble te zetten, met @packagename@ de naam van het package en @options@ een lijst van opties. Zo kun je _hyperlinks_ in je document gebruiken met
+
+{% highlight latex %}
+\usepackage[hidelinks]{hyperref}
+{% endhighlight %}
+
+waarbij @hidelinks@ aangeeft dat links geen kleurtje krijgen. Een package dat in Nederlandse documenten niet mag ontbreken is
+
+{% highlight latex %}
+\usepackage[dutch]{babel}
+{% endhighlight %}
+
+Het @babel@-package met de optie @dutch@ zorgt er onder andere voor dat LaTeX standaardwoorden als _Hoofdstuk_ en _Inhoudsopgave_ in het Nederlands zet en de Nederlandse woordafbrekingsregels gebruikt. Gebruik de juiste taaloptie als je in een andere taal schrijft. 
+
+h3. Topmatter
+
+Na de preamble komt de documentomgeving, aangegeven met @\begin{document}@ @\end{document}@. Aan het begin van de documentomgeving geef je informatie over het document zelf, zoals de auteur, titel en datum. Dit heet de _topmatter_. Met het commando @\maketitle@ zet LaTeX de topmatter op de pagina volgens de opmaak van de document class. Een voorbeeld van de topmatter is
+
+{% highlight latex %}
+\title{Een nieuw bewijs voor een oude stelling}
+\author{Otto Piet Losser}
+\maketitle
+{% endhighlight %}
+
+Een datum kun je opgeven met @\date{datum}@. Als je geen datum opgeeft, zet LaTeX de huidige datum. Meerdere auteurs zet je met
+
+{% highlight latex %}
+\author{Otto Piet Losser \and Ineke Eva Mand}
+{% endhighlight %}
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+# Maak in LaTeX een artikel met als titel "Een bewijs van de Riemannhypothese" en jezelf als auteur.
+# Controleer dat LaTeX de datum in het Nederlands zet, dus niet "January 6, 2014".
+</div></div>
+
