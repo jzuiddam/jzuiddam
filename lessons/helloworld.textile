@@ -3,10 +3,11 @@ layout: lesson
 title: Hello world!
 ---
 
+Deze les gaat over wat LaTeX is en hoe je het gebruikt.
 
 h2. Wat is LaTeX?
 
-TeX is een programmeertaal ontworpen door Donald Knuth voor het zetten van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen.
+TeX is een programmeertaal ontworpen door Donald Knuth voor het zetten van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen. Deze cursus gaat over LaTeX.
 
 Er zijn fundamentele verschillen tussen het schrijven van een tekst met LaTeX en het gebuiken van een tekstverwerker als Word.
 
@@ -43,25 +44,16 @@ p. We gaan ervan uit dat je nu op een computer werkt met toegang tot TeXworks. O
 
 {% highlight tex %}
 \documentclass{article}
-\usepackage[utf8]{inputenc}
-
-\title{Hello world!}
-\author{Hoe heet ik?}
-\date{}
 
 \begin{document}
 
-\maketitle
-
-\section{Inleiding}
+Hello world!
 
 \end{document}
 {% endhighlight %}
 
 #3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop om je code te compileren.
-# Vul je eigen naam in als auteur en compileer.
 
-In de volgende les zullen we zien wat bovenstaande code doet.
 </div>
 </div>
 
