@@ -1,9 +1,171 @@
 ---
 layout: lesson
-title: Foutmeldingen
+title: Foutmeldingen en waarschuwingen
 ---
 
-h2. Veelvoorkomende fouten
+{{toc}}
 
-bc. ! Package babel Error: You haven't loaded the language dutch yet.
+Als LaTeX code tegenkomt die het niet begrijpt dan geeft het een foutmelding. Het kan ook waarschuwingen geven.
 
+h2. Foutmeldingen
+
+Standaard in TeXworks als LaTeX een fout tegenkomt dan laat het een foutmelding zien in de @console@ en wacht. Een foutmelding heeft de vorm
+
+{% highlight text %}
+! Undefined control sequence.
+l.6 \authr
+{% endhighlight %}
+
+De foutmelding begint met een uitroepteken en een beschrijving van de fout (@Undefined control sequence@), met daaronder het regelnummer (@6@) en het commando waar de fout optrad (@\authr@). Let op: _de plaats waar de fout optreed is vaak niet de plaats waar de fout in de code zit_. Als je bijvoorbeeld een @}@ vergeet dan komt LaTeX daar vaak pas aan het einde van de alinea achter. Na een foutmelding kun je in TeXworks op de rode knop drukken en het probleem oplossen of je voert een van de volgende termen in.
+
+table(table table-condensed).
+|_.invoer		|_.betekenis |
+|@x@			| stop  |
+|@h@			| geef meer informatie  |
+|@i correctie@	| voeg de gegeven correctie in op de plek van het probleem en ga door; de correctie wordt niet opgeslagen |
+|@r@			| ga door en stop niet meer bij fouten  |
+|@q@			| ga door, stop nier meer bij fouten en laat geen foutmeldingen zien |
+
+
+We bekijken nu een aantal veelvoorkomende fouten.
+
+h4. Too many }'s
+
+{% highlight text %}
+! Too many }'s.
+l.6 \date December 2004}
+{% endhighlight %}
+
+Er is een @}@ waar geen @{@ bij hoort. In dit geval komt dit doordat de @{@ na @\date@ is vergeten.
+
+h4. Undefined control sequence
+
+{% highlight text %}
+! Undefined control sequence.
+l.6 \dtae
+{December 2004}
+{% endhighlight %}
+
+Er is een onbekend commando gebruikt, in dit geval @\dtae@ wat @\date@ moet zijn.
+
+h4. Missing $ inserted
+
+{% highlight text %}
+! Missing $ inserted.
+<inserted text> 
+                $
+l.6 \alpha
+{% endhighlight %}
+
+Er is een math commando gebruikt in tekstmodus, in dit geval @\alpha@.
+
+h4. Runaway argument
+
+{% highlight text %}
+Runaway argument?
+{December 2004 \maketitle
+! Paragraph ended before \date was complete.
+<to be read again>
+\par
+l.8
+{% endhighlight %}
+
+In dit voorbeeld is de @}@ van het @\date@-commando vergeten
+
+h4. Missing package
+
+{% highlight text %}
+! LaTeX Error: File `babl.sty' not found.
+Type X to quit or <RETURN> to proceed,
+or enter new name. (Default extension: sty)
+Enter file name:
+{% endhighlight %}
+
+In dit voorbeeld is de naam @babel@ verkeerd geschreven. Het kan ook voorkomen dat de naam wel juist geschreven is maar dat het package niet geïnstalleerd is. Je kunt een package installeren met de TeX Live Utility of het @.sty@-bestand downloaden van "CTAN":http://www.ctan.org en in de map van je LaTeX-bestand zetten.
+
+h4. Package babel Error: You haven't loaded the language dutch yet.
+
+{% highlight text %}
+! Package babel Error: You haven't loaded the language dutch yet.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 \select@language{dutch}
+{% endhighlight %}
+
+Dit probleem treedt op wanneer je van taal wisselt met het @babel@-package. De oplossing is om het @.aux@-bestand te wissen. Doe dit in TeXworks met @File -> Remove Aux Files@.
+
+
+h2. Waarschuwingen
+
+LaTeX geeft soms waarschuwingen. Als je bijvoorbeerbeeld @\maketitle@ gebruikt maar geen auteur hebt opgegeven dan krijg je de melding
+
+{% highlight text %}
+LaTeX Warning: No \author given.
+{% endhighlight %}
+
+LaTeX zal niet stoppen na een waarschuwing. Om in TeXworks de waarschuwingen te zien, ga je naar @Window -> Show Console Output@.
+
+h4. Overfull hbox
+
+{% highlight text %}
+Overfull \hbox (10.00104pt too wide) in paragraph at lines 6--7
+[]\OT1/cmr/m/n/10
+{% endhighlight %}
+
+Deze waarschuwing geeft aan dat er een woord is dat niet goed op de regel past. Dit komt bijvoorbeeld doordat LaTeX niet weet hoe het een woord moet afbreken of doordat er een lange regel in _math mode_ in de zin staat. Je kunt dit oplossen door afbrekingspunten toe te voegen of de tekst te herschrijven. Desnoods kun je een @\\@ invoegen, maar dit moet je pas doen als de tekst helemaal af is. Het tegenovergestelde van _overfull_ is _underfull_.
+
+---
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+Repareer alle fouten in onderstaande LaTeX-code. Laat je werk controleren door een van de docenten.
+
+{% highlight text %}
+
+\documentclass{article}
+
+\usepackage[dutch]{babel}
+
+\begin{document}
+ 
+\sectoin*{Oneindig veel priemgetallen, door Alex van den Brandhof}
+Je kunt op heel veel manieren bewijzen dat er oneindig veel priemgetallen bestaan. Filip Saidak, wiskundige van de universiteit van North Carolina in Greensboro (VS), publiceerde onlangs in de American Mathematical Monthly een nieuw, verrassend eenvoudig bewijs.
+
+Een \emph{priemgetal} is een getal met precies twee delers. Het kleinste priemgetal is 2 en de rij gaat zo verder: $3, 5, 7, 11, 13, 17, \ldots Dat er nooit een eind aan deze rij komt, werd al 300 jaar voor Christus bewezen door de Griek Euclides. Hoewel het niet bekend is of Euclides de eerste is geweest die dit kon bewijzen, wordt de stelling dat er oneindig veel priemgetallen bestaan aan hem toegekend. Euclides is beroemd vanwege zijn dertiendelige boek De Elementen, waarin hij een logische opbouw van de wiskunde, met name de meetkunde, geeft.
+
+\subsection*{Bouwstenen}
+De priemgetallen worden wel beschouwd als de bouwstenen van de gehele getallen. Elk positief geheel getal is \' of priem, \'of het is te schrijven als een product van priemgetallen. Zo is 8 gelijk aan $2 \cdot 2 \cdot 2, 9 is gelijk aan $3 \cdot 3$ en 10 is gelijk aan 2 \cdot 5$. Zo'n product van priemgetallen (de priemfactoren) heet wel de \emph{priemfactorontbinding van het betreffende getal. Omdat het getal 1 per definitie geen priemgetal is, is de priemfactorontbinding van een geheel getal groter dan 1 uniek.
+
+\subsection*(Een nieuw bewijs}
+Filip Saidak, een Slowaaks wiskundige die tegenwoordig werkzaam is op de universiteit van North Carolina in Greensboro, publiceerde in de American Mathematical Monthly van december 2006 een nieuw bewijs van de stelling dat er oneindig veel priemgetallen bestaan. Saidaks bewijs luidt als volgt.
+
+Stel $n$ is een geheel getal groter dan 1. De getallen $n$ en $n + 1$ verschillen slechts 1 en hebben dus geen gemeenschappelijke priemfactoren. Dat betekent dat het getal $N_2 = n(n + 1)$$ ten minste twee verschillende priemfactoren heeft. Voor de getallen $N_2$ en $N_2 + 1$ geldt hetzelfde: zij verschillen slechts 1 en moeten dus ten minste twee verschillende priemfactoren hebben. Het getal $N_3 = N_2( N_2 + 1) = n(n + 1)[ n(n + 1) + 1}$ heeft dus minimaal drie verschillende priemfactoren.
+
+Dit proces kan eindeloos worden voortgezet: het getal $N_k$ heeft ten minste $k$ priemfactoren. Omdat dit voor elk positief geheel getal $k$ geldt, kan de rij priemgetallen nooit ophouden.
+
+\end{document}
+{% endhighlight %}
+
+Als je zelf aan een LaTeX-bestand werkt, is het een goede gewoonte om steeds nadat je een of twee nieuwe zinnen getikt hebt, je document te LaTeX-en totdat alle fouten verwijderd zijn. Als je dat niet doet, stapelen de fouten zich op en eindig je met een onafzienbare kluwen incorrecte code die bijna niet meer de debuggen valt.
+
+</div>
+</div>
+
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+* Wat zijn de onderdelen van een foutmelding? 
+* Wat doe je met een foutmelding? 
+* Waar vind je waarschuwingen?
+
+</div></div>
