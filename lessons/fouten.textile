@@ -1,0 +1,9 @@
+---
+layout: lesson
+title: Foutmeldingen
+---
+
+h2. Veelvoorkomende fouten
+
+bc. ! Package babel Error: You haven't loaded the language dutch yet.
+
