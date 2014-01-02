@@ -7,9 +7,8 @@ title: Latexcursus
 <h1>{{ site.title }} <small>{{ site.subtitle }}</small></h1>
 </div>
 
-## Lessen 
 {% for week in site.data.weeks %}
-<h4>Week {{ week.number }} </h4>
+<h2>Week {{ week.number }} </h2>
 {% assign t = 1 %}
 <dl>
   {% for lesson in site.data.lessons %}
