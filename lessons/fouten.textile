@@ -1,6 +1,8 @@
 ---
 layout: lesson
 title: Foutmeldingen en waarschuwingen
+prev: 'fouten.html'
+next: 'installatie.html'
 ---
 
 {{toc}}

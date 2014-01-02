@@ -1,6 +1,8 @@
 ---
 layout: lesson
 title: Thuis installeren
+prev: 'fouten.html'
+next: 'huiswerk.html'
 ---
 
 

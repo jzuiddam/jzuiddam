@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: Huiswerk
-categories: [week1]
+prev: 'fouten.html'
 ---
 
 <div class="panel panel-primary">

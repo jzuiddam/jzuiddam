@@ -1,6 +1,8 @@
 ---
 layout: lesson
 title: Tekst schrijven
+prev: 'tekst.html'
+next: 'wiskunde.html'
 ---
 
 h2. Tekstopmaak
