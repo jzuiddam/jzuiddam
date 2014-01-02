@@ -1,6 +1,8 @@
 ---
 layout: lesson
 title: Wiskunde schrijven
+prev: 'tekst.html'
+next: 'fouten.html'
 ---
 
 Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Voor moeilijkere wiskunde gebruiken we @mathtools@, een uitbreiding van @amsmath@
@@ -197,7 +199,7 @@ h2. Haakjes
 \ulcorner i \urcorner
 {% endhighlight %}
 
-Bovenstaande _delimiters_ kun je automatisch schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
+Bovenstaande _delimiters_ kun je schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
 
 <div class="example">
 \[
@@ -260,7 +262,7 @@ h2. Matrices
  \end{vmatrix}
 {% endhighlight %}
 
-Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je met @cdots@ $\cdots$, @\vdots@ $\vdots$ en @\ddots@ $\ddots$.
+Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je met @\cdots@ $\cdots$, @\vdots@ $\vdots$ en @\ddots@ $\ddots$.
 
 h2. Tekst in wiskunde
 
