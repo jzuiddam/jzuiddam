@@ -1,13 +1,15 @@
 ---
 layout: lesson
 title: Syntax en structuur
+prev: 'helloworld.html'
+next: 'tekst.html'
 ---
 
 
-Een LaTeX-bestand is een tekstbestand met de extensie @.tex@ dat voldoet aan bepaalde regels. Deze les gaat over deze regels op lokaal en globaal niveau. We behandelen tekens, _spaties_, groepen, omgevingen, commando's, commentaar, _document classes_, _packages_ en de _topmatter_.
+Een LaTeX-bestand is een tekstbestand met de extensie @.tex@ dat voldoet aan bepaalde regels. Deze les gaat over deze regels. We bekijken eerst de lokale structuur van LaTeX. Vervolgens kijken we naar de globale structuur van een heel LaTeX-document.
 
 
-h2. Lokale structuur -- _syntax_
+h2. Lokale structuur
 
 h4. Toegestane tekens
 
@@ -35,7 +37,7 @@ zijn *speciale tekens*. Zij hebben een speciale betekenis in LaTeX. Je kunt ze a
 
 h4. Spaties
 
-Een _spatie_, _tab_, _enter_ of meerdere spaties worden in LaTeX allemaal behandeld als één uniforme 'spatie'.
+Een _spatie_, _tab_, _enter_ of meerdere spaties worden in LaTeX allemaal behandeld als één uniforme 'spatie'. Meerdere enters hebben echter wel een speciale functie, namelijk een paragaraaf maken. Hierover later meer.
 
 h4. Groepen
 
@@ -56,7 +58,7 @@ De naam van een commando is _case sensitive_. Sommige commando's willen een argu
 
 h4. Omgevingen
 
-Een *omgeving* heeft syntax
+Een *omgeving* heeft de vorm
 
 {% highlight latex %}
 \begin{naam}
@@ -92,7 +94,7 @@ Haarbij kan @article@ worden vervangen door een andere _document class_. Het geb
 
 h3. Document classes
 
-Een *document class* is een verzameling van instellingen die passen bij een bepaald type document. De document class stel je in met
+Een *document class* is een verzameling van instellingen die past bij een bepaald type document. De document class stel je in met
 
 {% highlight latex %}
 \documentclass[options]{class}
@@ -106,11 +108,11 @@ waarbij @options@ een lijst is van opties gescheiden door komma's. Het commando
 
 geeft bijvoorbeeld een artikel met tekstgrootte 11pt, met opmaak voor dubbelzijdig printen op A4-papier.
 
-Er zijn veel document classes voor LaTeX. *Standard document classes* zijn classes die altijd aanwezig zijn. Belangrijke standard document classes zijn
+Er zijn veel document classes voor LaTeX. *Standard document classes* zijn classes die altijd beschikbaar zijn. Belangrijke standard document classes zijn
 
 table(table).
 |_.class   |_.documenttype |
-| @article@ | artikelen in wetenschappelijke tijdschriften, korte rapporten aantekeningen |
+| @article@ | artikelen in wetenschappelijke tijdschriften, korte rapporten, aantekeningen |
 | @report@  | langere rapporten met hoofdstukken, kleine boeken, theses |
 | @book@    | boeken |
 | @beamer@  | presentaties |
@@ -126,7 +128,7 @@ table(table).
 
 h3. Packages
 
-Packages zijn uitbreidingen van LaTeX die functionaliteit toevoegen. Denk daarbij aan de mogelijkheid om plaatjes in te voegen of de bschikbaarheid van extra wiskundige symbolen. Moderne TeX-distributies bevatten een groot aantal packages, die je kunt gebruiken door
+Packages zijn uitbreidingen van LaTeX die functionaliteit toevoegen. Denk daarbij aan de mogelijkheid om plaatjes in te voegen of de beschikbaarheid van extra wiskundige symbolen. Moderne _TeX-distributies_ (zie "Thuis installeren":installatie.html) bevatten een groot aantal packages, die je kunt gebruiken door
 
 {% highlight latex %}
 \usepackage[options]{packagename}
@@ -138,7 +140,7 @@ in de preamble te zetten, met @packagename@ de naam van het package en @options@
 \usepackage[hidelinks]{hyperref}
 {% endhighlight %}
 
-waarbij @hidelinks@ aangeeft dat links geen kleurtje krijgen. Een package dat in Nederlandse documenten niet mag ontbreken is
+waarbij @hidelinks@ aangeeft dat links geen kleurtje krijgen. _Een package dat in Nederlandse documenten niet mag ontbreken is_
 
 {% highlight latex %}
 \usepackage[dutch]{babel}
@@ -156,7 +158,7 @@ Na de preamble komt de documentomgeving, aangegeven met @\begin{document}@ @\end
 \maketitle
 {% endhighlight %}
 
-Een datum kun je opgeven met @\date{datum}@. Als je geen datum opgeeft, zet LaTeX de huidige datum. Meerdere auteurs zet je met
+Een datum kun je opgeven met @\date{datum}@. Als je geen @\date@ gebruikt, zet LaTeX de huidige datum. Meerdere auteurs zet je met
 
 {% highlight latex %}
 \author{Otto Piet Losser \and Ineke Eva Mand}
