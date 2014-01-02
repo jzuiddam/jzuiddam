@@ -1,6 +1,7 @@
 ---
 layout: lesson
 title: Hello world!
+next: 'syntax.html'
 ---
 
 Deze les gaat over wat LaTeX is en hoe je het gebruikt.
@@ -9,28 +10,31 @@ h2. Wat is LaTeX?
 
 TeX is een programmeertaal ontworpen door Donald Knuth voor het zetten van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen. Deze cursus gaat over LaTeX.
 
-Er zijn fundamentele verschillen tussen het schrijven van een tekst met LaTeX en het gebuiken van een tekstverwerker als Word.
+Er zijn fundamentele verschillen tussen LaTeX en tekstverwerkers zoals Word.
 
 h5. Voordelen
-* De lay-out, fonts, tabellen, etc. zijn door het hele document hetzelfde.
-* Opmaak van wiskundige formules wordt een stuk makkelijker.
-* Indexen, voetnoten en referenties kunnen makkelijk worden gegenereerd.
+* Je kunt je volledig concentreren op de structuur en inhoud van het document, zonder je druk te maken over opmaak.
+* De opmaak, fonts, tabellen, etc. zijn consistent.
+* Wiskundig kan gemakkelijk gezet worden.
+* Indexen, voetnoten en referenties kunnen gemakkelijk gemaakt worden.
 * Je wordt gedwongen je document goed te structureren.
 
 h5. Nadelen
-* Je kunt het eindresultaat niet direct zien.
-* Je moet wat LaTeX-commando's kennen voor het maken van een LaTeX-document.
+* Je ziet niet direct het eindresultaat tijdens het schrijven.
+* Je moet LaTeX-commando's kennen.
 * Het kan moeilijk zijn om een bepaalde opmaak te krijgen.
+
+De LaTeX-benadering wordt ook wel _What You See Is What You Mean_ genoemd; je ziet tijdens het schrijven niet het uiteindelijke document zelf maar de logische structuur van het document.
 
 h2. LaTeX gebruiken
 
-In deze cursus leren we jullie werken met twee LaTexeditors: TeXworks en ShareLaTeX.
+In deze cursus leren we jullie werken met twee LaTexeditors: TeXworks en ShareLaTeX. Wat je leert over LaTeX kun je natuurlijk wel in elke editor gebruiken.
 
 - TeXworks := Een eenvoudige editor die wordt meegeleverd met de meest gebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
 
 - ShareLaTeX := Een online editor waarin meerdere mensen tegelijk kunnen werken; handig wanneer je op een computer werkt waarop geen LaTeX staat.
 
-p. We gaan ervan uit dat je nu op een computer werkt met toegang tot TeXworks. Om LaTeX zelf te installeren zie de les "Thuis installeren":/lessons/installatie.html.
+p. We gaan er bij de eerste opdracht van uit dat je op een computer werkt met toegang tot TeXworks. Om LaTeX zelf te installeren zie de les "Thuis installeren":/lessons/installatie.html.
 
 
 <div class="panel panel-primary">
@@ -52,7 +56,7 @@ Hello world!
 \end{document}
 {% endhighlight %}
 
-#3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop om je code te compileren.
+#3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop. Deze actie noemen we _zetten_ of _typesetting_. LaTeX vertaalt de invoer naar een pdf-document en laat dat document in een tweede scherm zien.
 # Ga na dat er geen fouten zijn opgetreden tijdens het compileren door het log-bestand te bekijken. Ga hiervoor in TeXworks naar @Window -> Show Console Output@.
 # Handig: Selecteer @Format -> Syntax Coloring -> LaTeX@ om de code te kleuren. Dit zal handig zijn als je veel ingewikkelde code hebt.
 
@@ -66,7 +70,11 @@ Hello world!
 <div class="panel-body">
 
 # Maak een "ShareLaTeX-account":https://www.sharelatex.com?r=e462e191&rm=d&rs=b.
-# Klik in ShareLaTeX op @New Project@ en kies @Blank Project@. Geef je project een naam. Je ziet nu links LaTeXcode. Klik op @Recompile@ om de uitvoer van deze code te zien.
+# Klik in ShareLaTeX op @New Project@ en kies @Blank Project@. Geef je project een naam. 
+# Je ziet links LaTeX-code. Klik rechts op @Recompile@. Je ziet vervolgens rechts de uitvoer van de LaTeX-code.
+# Klik rechts op @Logs@ om de logs te bekijken.
+# Klik in het zijmenu links op @Share@. Daar kun je je document met andere delen om er samen aan te werken. (Met een gratis account kun je met één persoon delen.)
+# Klik in het zijmenu links op @Settings@ en dan @Export & Copy@. Daar kun je je _project_ downloaden als zip.
 
 </div>
 </div>
