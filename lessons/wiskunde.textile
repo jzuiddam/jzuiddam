@@ -221,7 +221,7 @@ h2. Matrices
 <div class="example">
 \[
 \begin{pmatrix}
-  a & b & -c \\
+  a & b & c \\
   d & e & f \\
   g & h & i
  \end{pmatrix}
