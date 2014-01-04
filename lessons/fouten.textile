@@ -85,6 +85,15 @@ Enter file name:
 
 In dit voorbeeld is de naam @babel@ verkeerd geschreven. Het kan ook voorkomen dat de naam wel juist geschreven is maar dat het package niet geïnstalleerd is. Je kunt een package installeren met de TeX Live Utility of het @.sty@-bestand downloaden van "CTAN":http://www.ctan.org en in de map van je LaTeX-bestand zetten.
 
+h4. \begin{itemize} ended by \end{document}.
+
+{% highlight text %}
+! LaTeX Error: \begin{itemize} on input line 15 ended by \end{document}.                                                  
+l.127 \end{document}
+{% endhighlight %}
+
+Er is een @\begin{itemize}@ aangetroffen zonder @\end{itemize}@. Dit is een typisch voorbeeld van een fout die pas heel laat herkend wordt.
+
 h4. Package babel Error: You haven't loaded the language dutch yet.
 
 {% highlight text %}
