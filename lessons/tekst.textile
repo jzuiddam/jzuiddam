@@ -1,58 +1,82 @@
 ---
 layout: lesson
 title: Tekst schrijven
-prev: 'tekst.html'
+prev: 'structuur.html'
 next: 'wiskunde.html'
 ---
 
-h2. Tekstopmaak
+In deze les gaan we tekst schrijven. Van de vorige les weten we dat dit gebeurt in de @document@-omgeving.
 
-h4. Spatiëring
+h2. Tekens
 
-De spatiëring tussen woorden wordt automatisch door LaTeX bepaald.  Het is tegen de LaTeXfilosofie om handmatig witruimte in te voegen. 
-
-
-h5. Non-breaking space
-
-Een *non-breaking space* is een spatie die niet vergroot kan worden en waarop de regel niet wordt afgebroken. Je voegt een non-breaking space in met @~@. Je gebruikt dit bijvoorbeeld om initialen bij de achternaam te houden:
+De tekens
 
 {% highlight latex %}
-O.~P.~Losser
+a-z A-Z 0-9 + = * / ( ) [ ]
 {% endhighlight %}
 
-h4. Woordafbreking
-
-LaTeX breekt woorden aan het einde van de regel af als dat nodig is. Voor de juiste woordafbreking moet je het package @babel@ laden met de juiste taaloptie
+en de leestekens
 
 {% highlight latex %}
-\usepackage[dutch]{babel}
+, ; . ? ! : ` ' -
 {% endhighlight %}
 
-Met @\-@ kun je afbreekpunten in een woord aangeven. Bijvoorbeeld 
-
-{% highlight latex %}
-tekst\-verwerkings\-programma's
-{% endhighlight %}
-
-De punten met @\-@ zijn dan de enige punten waar kan worden afgebroken. Dit is handig voor woorden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten. Gebruik dit alleen als een lang woord problemen geeft.
-
-h4. Aanhalingstekens
-
-Aanhalingtekens zet je met een _backtick_ @`@ en een apostrof @'@.
+en de _spatie_, _tab_ en _enter_ kunnen direct in LaTeX gebruikt worden om teksten te schrijven.
 
 <div class="example">
-'quote', "quote", "Een 'quote' in een quote"
+
+This is a handbook about TeX, a new typesetting system intended for the creation of beautiful books and especially for books that contain a lot of mathematics.
+
 </div>
 
 {% highlight latex %}
-`quote', ``quote'', ``Een `quote' in een quote''
+\documentclass{article}
+\begin{document}
+This is a handbook about TeX, a new typesetting system intended for the creation of beautiful books and especially for books that contain a lot of mathematics.
+\end{document}
 {% endhighlight %}
 
-h4. Speciale tekens
+Een _spatie_, _tab_, _enter_ of meerdere spaties worden in LaTeX allemaal behandeld als één uniforme 'spatie'.
 
-Er zijn twee manieren om speciale tekens in te voeren: via _unicode_ en via commando's.
+<div class="example">
 
-h5. Unicode
+Dit ziet er uit als een gewone zin.
+
+</div>
+
+{% highlight latex %}
+Dit      ziet er
+uit als een gewone zin.
+{% endhighlight %}
+
+Meerdere enters hebben echter wel een speciale functie, namelijk een _alinea_ maken. Hierover later meer.
+
+De volgende tekens zijn *gereserveerde tekens*.
+
+{% highlight text %}
+# $ % ^ & _ { } ~ \
+{% endhighlight %}
+
+In LaTex hebben zijn een speciale betekenis. Van @{@, @}@ en @\@ hebben we al gezien wat de speciale betekenis is. Als je gereserveerde karakters in je tekst wilt gebruiken, dan moet je commando's gebruiken:
+
+{% highlight latex %}
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash{}
+{% endhighlight %}
+
+
+
+Als LaTeX een @%@ tegenkomt op een regel dan negeert het de rest van de regel en alle witruimte aan het begin van de volgende regel. Je kunt dit gebruiken om _commentaar_ te schrijven in je code. Bijvoorbeeld
+
+{% highlight latex %}
+\newcommand{\CC}{\mathbf{C}} % Dit commando definieert het lichaam C.
+{% endhighlight %}
+
+
+h2. Accenten en speciale tekens
+
+Er zijn twee manieren om accenten zoals bij é, ñ en å en speciale tekens in te voeren: via _unicode_ en via commando's.
+
+h3. Unicode
 
 Door 
 
@@ -62,9 +86,9 @@ Door
 
 te gebruiken in de preamble, kun je veel speciale tekens direct in je LaTeX-code zetten zoals je dat in bijvoorbeeld Word gewend bent.
 
-h5. Commando's
+h3. Commando's
 
-Een andere manier om speciale tekens te maken is door een commando toe te passen op een letter. 
+Een andere manier om speciale tekens te maken is door een commando toe te passen op een letter. We beginnen met accenten op tekens.
 
 table(table table-condensed).
 |_. commando 	|_. uitvoer |_. omschrijving 			|
@@ -72,7 +96,7 @@ table(table table-condensed).
 |@\'{o}@|ó	 	|accent aigu 							|
 |@\^{o}@|ô	 	|circumflex 							|
 |@\"{o}@|ö	 	|umlaut, trema				 			|
-|@\H{o}@|ő	 	|Hongaarse umlaut, dubbel accent aigu	|
+|@\H{o}@|ő	 	|Hongaarse umlaut, dubbele accent aigu	|
 |@\~{o}@|õ	 	|tilde 									|
 |@\c{c}@|ç	 	|cedille 								|
 |@\k{a}@|ą	 	|ogonek 								|
@@ -83,47 +107,173 @@ table(table table-condensed).
 |@\d{u}@|ụ	 	|punt onder		 						|
 |@\r{a}@|å	 	|corona, ring 							|
 |@\u{o}@|ŏ	 	|breve 				 					|
-|@\v{s}@|š	 	|caron, hacek 						 	|
+|@\v{s}@|š	 	|caron, haček 						 	|
 |@\t{oo}@|o͡o 	|"tie" boven							|
 |@\o@ 	|ø	 	|o met schuine streep 					|
 
-h5. Kleinder dan en groter dan: @<@, @>@
+Merk op dat we de commando's die bestaan uit een niet-letter ook kunnen toepassen zonder @{@ @}@, dus @\'o@ werkt ook.
 
-Standaard geven @<@ en @>@ niet de uitvoer die je vewacht, maar ¡ en ¿. Dit is een probleem met de _font encoding_. Je krijgt de juiste tekens door @\textless@ en @\textgreater@ te gebruiken. Of gebruik @\usepackage[T1]{fontenc}@.
-
-h5. Math mode
-
-In de volgende les zullen we _math mode_ zien. Er zijn commando's voor speciale tekens die alleen in math mode werken.
-
-h4. Streepjes
 
 LaTex kent drie soorten streepjes in tekst: het *afbreekstreepje* ==-==, de *en dash* – en de *em dash* —. Deze zet je met @-@, @--@, en @---@. Gebruik de _en dash_ om een bereik aan te geven, bijvoorbeeld 'rijen 1–10'. Gebruik de _em dash_ als _gedachtestreepje_: 'He was running, Watson—running desperately.' In het Nederlands is het gebruikelijk om de _en dash_ omgeven door spaties te gebruiken als gedachtestreepje: 'Jacqueline vertrok – zonder nog een woord te zeggen.'
 
-h4. Ellips
 
 Een *ellips* is een rij van drie puntjes die aangeeft dat tekst is weggelaten. Om de juiste spatiëring te krijgen zet je een ellips met @\ldots@.
 
 
-h2. Paragraafopmaak
-
-Een paragraaf maak je met een lege regel. LaTeX springt dan automatisch in.
+*Aanhalingtekens* zet je met een _backtick_ @`@ en een apostrof @'@.
 
 <div class="example">
-&emsp;&emsp; Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
-&emsp;&emsp; Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
+'quote', "quote", "Een 'quote' in een quote"
 </div>
 
 {% highlight latex %}
+`quote', ``quote'', ``Een `quote' in een quote''
+{% endhighlight %}
+
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 1</h3>
+</div>
+<div class="panel-body">
+
+# Zet de volgende namen, zowel met als zonder gebruik van unicode. Tip: Erdős is Hongaars.
+
+<div class="example">
+Kurt Gödel, Endre Szemerédi, Muhammed al-Khowârizmi, Paul Erdős 
+</div>
+
+#2 Zet de zin
+
+<div class="example">
+“A mathematician is a device for turning coffee into theorems.” — Paul Erdős (1913–1996)
+</div>
+
+
+</div>
+</div>
+
+
+h2. Alinea's
+
+In LaTeX worden alinea's gevormd door een of meerdere lege regels te zetten. Bijvoorbeeld
+
+<div class="example" style="text-align: justify;">
+&emsp;&emsp; Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
+&emsp;&emsp; Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
+&emsp;&emsp; Hij startte het onderzoek naar verschijnselen die gebundeld zijn in de Ramsey-theorie en verrichtte baanbrekend werk inzake de toepassing van stochastische methoden.
+</div>
+
+{% highlight latex %}
+\documentclass{article}
+\begin{document}
+
 Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
 
 Hij hield zich in de eerste plaats bezig met getaltheorie, combinatoriek, verzamelingenleer, analyse en waarschijnlijkheidsrekening, maar droeg bij aan bijna alle deelgebieden van de wiskunde.
+
+
+Hij startte het onderzoek naar verschijnselen die gebundeld zijn in de Ramsey-theorie en verrichtte baanbrekend werk inzake de toepassing van stochastische methoden.
+
+\end{document}
 {% endhighlight %}
 
-h3. Speciale paragrafen
+Standaard zet LaTeX alinea's *uitgevuld*: witruimte wordt vergroot en verkleind om woorden uniform over de alinea te verdelen. LaTeX zal lange woorden afbreken als dat nodig is. Iedere taal heeft eigen regels voor woordafbreking. De juiste regels voor woordafbreking kun je laden met het package @babel@ met de juiste taaloptie
 
-h4. Tekst letterlijk zetten
+{% highlight latex %}
+\usepackage[dutch]{babel}
+{% endhighlight %}
 
-De @verbatim@-omgeving zet gegeven tekst letterlijk, dat wil zeggen, LaTeX negeert eventuele commando's in de tekst. Gebruik het bijvoorbeeld wanneer je programmacode wilt zetten:
+h3. Non-breaking space
+
+Een *non-breaking space* is een spatie die niet vergroot kan worden en waarop de regel niet wordt afgebroken. Je voegt een non-breaking space of _tie_ in met @~@. Je gebruikt dit bijvoorbeeld bij
+
+{% highlight latex %}
+Hoofdstuk~12   
+Stelling~1.2
+Bartel~Leendert van~der~Waerden
+Charles~XII
+van 0 tot~1
+{% endhighlight %}
+
+Er zijn geen vaste regels voor het zetten van _ties_; de juiste plaatsing hangt vaak af van de relatie tussen woorden.
+
+
+bq. “Ties”—denoted by ‘~’ in plain TeX—are the key to successful line breaking. Once you learn how to insert them, you will have graduated from the ranks of ordinary TeXnical typists to the select group of Distinguished TeXnicians. And it’s really not difficult to train yourself to insert occasional ties, almost without thinking, as you type a manuscript. -- Donald Knuth
+
+h3. Einde van een zin
+
+_LaTeX zet aan het einde van een zin meer witruimte;_ bovendien kan het na interpunctie meer witruimte zetten. De reden is dat het bij uitvulling vaak beter is om meer witruimte te zetten na interpunctie dan tussen gewone woorden. Dit levert goede uitvoer, _maar kan ook problemen geven_, namelijk wanneer er een punt midden in een zin staat; LaTeX kan dan denken dat een zin eindigt en meer witruimte zetten. Om dit op te lossen gebruik je een @\␣@, oftewel een slash gevolgd door een _spatie_.
+
+{% highlight latex %}
+De getallen 2, 3, 5, 7, etc.\ zijn interessant.
+{% endhighlight %}
+
+Als je bovendien wilt voorkomen dat LaTeX de regel afbreekt na de punt, gebruik je een @~@ in plaats van @\␣@.
+
+h3. Handmatige afbreekpunten
+
+Met @\-@ kun je handmatig potentiële afbreekpunten in een woord aangeven. Bijvoorbeeld 
+
+{% highlight latex %}
+tekst\-verwerkings\-programma's
+{% endhighlight %}
+
+De punten met @\-@ zijn dan de enige punten waar kan worden afgebroken. Dit is handig voor woorden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten. _Gebruik dit alleen als een woord problemen geeft._
+
+
+h2. Opmaak -- oftewel structuur
+
+Herinner je dat we de opmaak van tekst zoveel mogelijk willen bepalen door structuur aan onze tekst te geven. We behandelen een aantal belangrijke voorbeelden hiervan.
+
+h3. Nadruk
+
+Je geeft woorden nadruk met het commando @\emph@. Gewoonlijk wordt het argument van @\emph@ schuingedrukt, maar de opmaak kan veranderen met de omgeving.
+
+<div class="example">
+Dit is _belangrijk_.
+</div>
+
+{% highlight latex %}
+Dit is \emph{belangrijk}.
+{% endhighlight %}
+
+h3. Lijsten
+
+Lijsten zet je met de @itemize@-omgeving en @enumerate@-omgeving.
+
+<div class="example">
+* Eerste
+* Tweede
+* Derde
+</div>
+
+{% highlight latex %}
+\begin{itemize}
+  \item Eerste
+  \item Tweede
+  \item Derde
+\end{itemize}
+{% endhighlight %}
+
+<div class="example">
+# Eerste
+# Tweede
+# Derde
+</div>
+
+{% highlight latex %}
+\begin{enumerate}
+  \item Eerste
+  \item Tweede
+  \item Derde
+\end{enumerate}
+{% endhighlight %}
+
+
+h3. Tekst letterlijk zetten
+
+De @verbatim@-omgeving zet gegeven tekst letterlijk, dat wil zeggen, LaTeX negeert eventuele commando's in de tekst. Bovendien krijgt de tekst een _monospaced typewriter font_. Gebruik het bijvoorbeeld wanneer je programmacode wilt zetten:
 
 {% highlight text %}
 \begin{verbatim}
@@ -132,12 +282,12 @@ def gcd(a,b):
     Algoritme van Euclides.
     """
     while a:
-            a, b = b%a, a
+    	a, b = b%a, a
     return b
 \end{verbatim}
 {% endhighlight %}
 
-h4. url's
+h3. url's
 
 Het @hyperref@-package heeft het commando @\url@ om url's mee te zetten. Je laadt @hyperref@ met
 
@@ -151,7 +301,13 @@ Een url zet je bijvoorbeeld met
 \url{http://www.ctan.org}
 {% endhighlight %}
 
-h4. Citaten
+of
+
+{% highlight latex %}
+\href{http://www.ctan.org}{CTAN}
+{% endhighlight %}
+
+h3. Citaten
 
 Er zijn drie standaardomgevingen voor quotes.
 
@@ -164,34 +320,24 @@ Er zijn drie standaardomgevingen voor quotes.
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Opdracht</h3>
+<h3 class="panel-title">Opdracht 2</h3>
 </div>
 <div class="panel-body">
 
-# Zet de volgende alinea's.
+# Zet de volgende geneste lijsten door slechts gebruik te maken van @enumerate@ en @itemize@.
 
 <div class="example">
 
-De wiskundige wetenschap van het tellen heet combinatoriek. Tellen is relevant voor de kansrekening omdat, zoals we later zullen zien, bij bepaalde eenvoudige kansexperimenten kansen berekend kunnen worden door te tellen.
-&emsp;&emsp;Met verschillend bedoelen we hetzelfde als onderscheidbaar. We zullen het later ook over niet-onderscheidbare objecten hebben.
-&emsp;&emsp;Als we ook niet-onderscheidbare objecten toelaten wordt de situatie anders. We tellen nu het aantal volgordes van n objecten waarvan er een aantal niet-onderscheidbaar mogen zijn. Bijvoorbeeld het aantal volgordes voor de letters a, a, b, c.
+# Lijst een
+• Eerste
+• Tweede
+• Derde
+# Lijst twee
+(a) Eerste
+(b) Tweede
+==(c)== Derde
 
 </div>
-
-#2 Zet de volgende namen, zowel met als zonder gebruik van unicode.
-## Kurt Gödel
-## Endre Szemerédi (winnaar van de Abelprijs 2012)
-## Muhammed al-Khowârizmi (oorsprong van het woord ‘algoritme’) 
-## Paul Erdős (tip: hij is Hongaars)
-# Zet het volgende citaat
-
-<div class="example">
-
-“A mathematician is a device for turning coffee into theorems.” — Paul Erdős (1913–1996)
-
-</div>
-
-#4 Laat je werk controleren door een van de docenten.
 
 </div>
 </div>
@@ -202,10 +348,6 @@ De wiskundige wetenschap van het tellen heet combinatoriek. Tellen is relevant v
 </div>
 <div class="panel-body">
 
-* Bijzondere symbolen (kopjes, speciale symbolen, accenten, aanhalingstekens, opsommingen) voer je in met commando’s.
-* Dubbele spaties worden genegeerd — hoe rommelig je ook tikt, LaTeX lijnt alles uit.
-* Harde returns in je bronbestand worden genegeerd: een harde return telt als een gewone spatie.
-* Lege witregels worden niet gezet als regels wit. In LaTeX telt een lege regel wit als een einde alinea (alinea wordt afgesloten, wordt gezet, LaTeX speurt vooruit naar materiaal voor de volgende alinea).
-* Alinea’s worden automatisch ingesprongen. Dat is goed. In de LaTeX-context willen we dat precies zo hebben.
+
 
 </div></div>
