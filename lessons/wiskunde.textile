@@ -5,7 +5,7 @@ prev: 'tekst.html'
 next: 'fouten.html'
 ---
 
-Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Voor moeilijkere wiskunde gebruiken we @mathtools@, een uitbreiding van @amsmath@
+Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Wij gebruiken @mathtools@, een uitbreiding van @amsmath@, omdat we ook ingewikkelde wiskunde willen zetten:
 
 {% highlight latex %}
 \usepackage{mathtools}
@@ -36,6 +36,7 @@ Bekijk de kromme gegeven door de vergelijking
 \[
 y = x + 2.
 \]
+Is deze kromme interessant?
 </div>
 
 {% highlight latex %}
@@ -43,9 +44,12 @@ Bekijk de kromme gegeven door de vergelijking
 \[
 y = x + 2.
 \]
+Is deze kromme interessant?
 {% endhighlight %}
 
-Om de _displays_ automatisch te nummeren gebruik je de @equation@-omgeving.
+_Vergeet niet dat een lege regel een nieuwe alinea maakt;_ daarom staan er in bovenstaand voorbeeld geen lege regels voor of na de _display_.
+
+Om de _displays_ automatisch te nummeren gebruik je de @equation@-omgeving. We zullen later zien hoe we naar de nummers kunnen verwijzen.
 
 <div class="example">
 Omdat $a$ en $b$ beide oneven zijn, geldt
@@ -72,13 +76,13 @@ voor zekere $x$ en $y$.
 {% endhighlight %}
 
 LaTeX werkt in een andere modus in een wiskundige omgeving: *math mode*. Belangrijke verschillen met _text mode_ zijn de volgende.
-* Spaties en line breaks worden genegeerd; witruimte wordt bepaald door de gebruikte operatoren of met speciale commando's.
+* Spaties en line breaks worden genegeerd; witruimte wordt bepaald door de gebruikte operatoren of door speciale commando's.
 * Lege regels zijn niet toegestaan.
 * Een letter wordt beschouwd als de naam van een variabele en wordt ook zo gezet. Als je normale tekst wilt zetten in _math mode_ dan gebruik je een speciaal commando.
 
 In de rest van deze les gaan we ervan uit dat we in _math mode_ werken.
 
-h2. Symbolen
+h2. Tekens
 
 De symbolen
 
@@ -86,7 +90,22 @@ De symbolen
 + - = ! / ( ) [ ] < > | ' :
 {% endhighlight %}
 
-kun je direct maken in _math mode_. Voor andere symbolen zijn er commando's. In de rest van deze les zullen we veel symbolen tegenkomen. Als je een symbool nodig hebt waarvan je het commando niet weet dan kun je "detexify":http://detexify.kirelabs.org/ het symbool voor je laten zoeken. Er zijn ook "overzichten":http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols van veelgebruikte symbolen.
+kun je direct maken in _math mode_. Voor andere symbolen en accenten zijn er commando's. In de rest van deze les zullen we veel symbolen tegenkomen. Als je een symbool nodig hebt waarvan je het commando niet weet dan kun je "detexify":http://detexify.kirelabs.org/ het symbool voor je laten zoeken. Er zijn ook "overzichten":http://www.artofproblemsolving.com/Wiki/index.php/LaTeX:Symbols van veelgebruikte symbolen.
+
+Veelgebruikte accenten zijn de volgende.
+
+table(table).
+|_.commando                         |_.uitvoer                        |
+| @a'@, @a''@, @a'''@                   | $a'$, $a''$, $a'''$                 |
+| @\hat{a}@, @\widehat{aa}@                 | $\hat{a}$, $\widehat{aa}$               |
+| @\bar{a}@, @\underline{a}@, @\overline{aa}@         | $\bar{a}$, $\underline{a}$, $\overline{aa}$       |
+| @\grave{a}@, @\acute{a}@, @\breve{a}@, @\check{a}@    | $\grave{a}$, $\acute{a}$, $\breve{a}$, $\check{a}$  |
+| @\dot{a}@, @\ddot{a}@, @\dddot{a}@            | $\dot{a}$, $\ddot{a}$, $\dddot{a}$          |
+| @\not=@                         | $\not=$                       |
+| @\vec{a}@, @\overrightarrow{aa}@, @\overleftarrow{aa}@  | $\vec{a}$, $\overrightarrow{aa}$, $\overleftarrow{aa}$|
+| @\tilde{a}@, @\widetilde{aa}@               | $\tilde{a}$, $\widetilde{aa}$             |
+
+
 
 h2. Machten en indices
 
@@ -115,19 +134,53 @@ a^{n+1}  a_{i/2}
 {% endhighlight %}
 
 
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 1</h3>
+</div>
+<div class="panel-body">
 
-h2. Griekse letters
+Zet
 
-Griekse letters maak je met de voordehandliggende commando's, bijvoorbeeld @\alpha@, @\Omega@. Zie het overzicht aan het eind.
+<div class="example">
+
+\[
+a^{b^c}
+\]
+
+</div>
+
+</div></div>
+
+
 
 h2. Operatoren
 
-Een operator is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $\log$. LaTeX heeft standaard een aantal operatoren gedefinieerd, zie het overzicht. We zullen later zien hoe we zelf operatoren maken.
+Een *operator* is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $\log$. LaTeX heeft standaard een aantal operatoren gedefinieerd, zie het overzicht. We maken zelf een operator met @DeclareMathOperator@ in de preamble.
+
+<div class="example">
+\[
+\DeclareMathOperator{\ord}{ord}
+\ord{}_a\,\, f = 2
+\]
+</div>
+
+{% highlight latex %}
+\documentclass{article}
+\usepackage{mathtools}
+\DeclareMathOperator{\ord}{ord}
+
+\begin{document}
+\[
+\ord_a f = 2
+\]
+\end{document}
+{% endhighlight %}
 
 
-h2. Breuken en binomiaalcoëfficiënten
+h2. Veelgebruikte constructies
 
-Een breuk maak je met @\frac{teller}{noemer}@. Een binomiaalcoëfficiënt maak je met @\binom{n}{k}@. Je kunt breuken in breuken gebruiken.
+Een *breuk* maak je met @\frac{teller}{noemer}@. Een *binomiaalcoëfficiënt* maak je met @\binom{n}{k}@. Je kunt breuken in breuken gebruiken.
 
 <div class="example">
 \[
@@ -141,13 +194,11 @@ Een breuk maak je met @\frac{teller}{noemer}@. Een binomiaalcoëfficiënt maak j
 
 We kunnen @\tfrac@ en @\tbinom@ gebruiken voor kleine breuken en binomialen, bijvoorbeeld _inline_.
 
-h2. Wortels
 
-Wortels maak je als @\sqrt{2}@ of @\sqrt[n]{2}@ voor $\sqrt[n]{2}$.
+*Wortels* maak je als @\sqrt{2}@ of @\sqrt[n]{2}@ voor $\sqrt[n]{2}$.
 
-h2. Sommen en integralen
 
-Een som en integraal maak je met @\sum@ en @\int@ waarbij je de limieten aangeeft met @^@ en @_@, bijvoorbeeld
+Een *som* en *integraal* maak je met @\sum@ en @\int@ waarbij je de limieten aangeeft met @^@ en @_@, bijvoorbeeld
 
 <div class="example">
 \[
@@ -160,7 +211,7 @@ Een som en integraal maak je met @\sum@ en @\int@ waarbij je de limieten aangeef
 \int_0^\infty e^{-x}\, dx
 {% endhighlight %}
 
-Er zijn meer operatoren die op deze manier limieten zette, zoals @\prod@ $\prod$ en @\bigcup@ $\bigcup$, zie het overzicht. Om meedere regels onder een som te zetten gebruik je @\substack@ en @\\@:
+Er zijn meer operatoren die op deze manier limieten zetten, zoals @\prod@ $\prod$ en @\bigcup@ $\bigcup$, zie het overzicht. Om meedere regels onder een som te zetten gebruik je @\substack@ en @\\@:
 
 
 <div class="example">
@@ -181,44 +232,13 @@ Er zijn meer operatoren die op deze manier limieten zette, zoals @\prod@ $\prod$
 P(i,j)
 {% endhighlight %}
 
-h2. Haakjes
 
-<div class="example">
-\[
-( a )\quad [ b ]\quad \{ c \}\quad \mid d \mid \quad \| e \|\quad
-\langle f \rangle\quad \lfloor g \rfloor\quad
-\lceil h \rceil\quad \ulcorner i \urcorner
-\]
-</div>
+Met @\ldots@ $\ldots$ en @\cdots@ $\cdots$ maak je *puntjes*. Welke puntjes je moet gebruiken hangt af van de context. Zo schrijven we bijvoorbeeld @1,2\ldots,n@ $1,2,\ldots,n$ en @1\cdot 2 \cdots n@ $1\cdot 2\cdots n$. In het algemeen proberen we de puntjes zo te kiezen dat ze op gelijke hoogte liggen met de omringende operatoren. Het commando @\dots@ probeert dit automatisch te doen.
 
-{% highlight latex %}
-( a )  [ b ]  \{ c \}  | d |  \| e \| 
-\langle f \rangle 
-\lfloor g \rfloor 
-\lceil h \rceil 
-\ulcorner i \urcorner
-{% endhighlight %}
 
-Bovenstaande _delimiters_ kun je schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
 
-<div class="example">
-\[
-( \big( \Big( \bigg( \Bigg( \quad\quad \bigg(\frac{x^2}{y^3}\bigg) \quad\quad P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
-\]
-</div>
 
-{% highlight latex %}
-( \big( \Big( \bigg( \Bigg(
-
-\bigg(\frac{x^2}{y^3}\bigg) 
-
-P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
-{% endhighlight %}
-
-Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordehandliggende plaatsen. Dit geeft vaak te grote haakjes dus let goed op!
-
-h2. Matrices
-
+*Matrices* maak je met de @pmatrix@-omgeving of een van de varianten. Kolommen worden begrensd door @&@ en rijen door @\\@.
 
 <div class="example">
 \[
@@ -264,6 +284,46 @@ h2. Matrices
 
 Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je met @\cdots@ $\cdots$, @\vdots@ $\vdots$ en @\ddots@ $\ddots$.
 
+
+
+h2. Haakjes
+
+<div class="example">
+\[
+( a )\quad [ b ]\quad \{ c \}\quad \mid d \mid \quad \| e \|\quad
+\langle f \rangle\quad \lfloor g \rfloor\quad
+\lceil h \rceil\quad \ulcorner i \urcorner
+\]
+</div>
+
+{% highlight latex %}
+( a )  [ b ]  \{ c \}  | d |  \| e \| 
+\langle f \rangle 
+\lfloor g \rfloor 
+\lceil h \rceil 
+\ulcorner i \urcorner
+{% endhighlight %}
+
+Bovenstaande _delimiters_ kun je schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
+
+<div class="example">
+\[
+( \big( \Big( \bigg( \Bigg( \quad\quad \bigg(\frac{x^2}{y^3}\bigg) \quad\quad P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+\]
+</div>
+
+{% highlight latex %}
+( \big( \Big( \bigg( \Bigg(
+
+\bigg(\frac{x^2}{y^3}\bigg) 
+
+P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+{% endhighlight %}
+
+Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordehandliggende plaatsen. Dit geeft vaak te grote haakjes dus let goed op!
+
+
+
 h2. Tekst in wiskunde
 
 Tekst in _math mode_ zet je met @\text@.
@@ -286,39 +346,13 @@ P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
 {% endhighlight %}
 
 
-h2. Opmaak
-
-table(table).
-|_.commando 	|_. voorbeeld		 	|_.						|_. gebruik |
-| @\mathrm@		| $\mathrm{ABCDEF}$		| $\mathrm{abcdef}$ 	|  |
-| @\mathit@		| $\mathit{ABCDEF}$		| $\mathit{abcdef}$ 	|  |
-| @\mathbf@		| $\mathbf{ABCDEF}$		| $\mathbf{abcdef}$ 	| verzamelingen, vectoren |
-| @\mathsf@		| $\mathsf{ABCDEF}$		| $\mathsf{abcdef}$ 	| |
-| @\mathtt@		| $\mathtt{ABCDEF}$		| $\mathtt{abcdef}$ 	| |
-| @\mathcal@	| $\mathcal{ABCDEF}$	| $\mathcal{abcde}$  	| categorieën, big-oh notatie |
-| @\mathfrak@	| $\mathfrak{ABCDEF}$	| $\mathfrak{abcdef}$ 	| Lie-algebra's, idealen |
-| @\mathbb@		| $\mathbb{ABCDEF}$		|  						| verzamelingen |
-
-table(table).
-|_.commando 												|_.uitvoer 												|
-| @a'@, @a''@, @a'''@										| $a'$, $a''$, $a'''$									|
-| @\hat{a}@, @\widehat{aa}@									| $\hat{a}$, $\widehat{aa}$								|
-| @\bar{a}@, @\underline{a}@, @\overline{aa}@ 				| $\bar{a}$, $\underline{a}$, $\overline{aa}$ 			|
-| @\grave{a}@, @\acute{a}@, @\breve{a}@, @\check{a}@		| $\grave{a}$, $\acute{a}$, $\breve{a}$, $\check{a}$	|
-| @\dot{a}@, @\ddot{a}@, @\dddot{a}@						| $\dot{a}$, $\ddot{a}$, $\dddot{a}$					|
-| @\not=@													| $\not=$												|
-| @\vec{a}@, @\overrightarrow{aa}@, @\overleftarrow{aa}@	| $\vec{a}$, $\overrightarrow{aa}$, $\overleftarrow{aa}$|
-| @\tilde{a}@, @\widetilde{aa}@								| $\tilde{a}$, $\widetilde{aa}$							|
-
-
-
 h2. Horizontale witruimte
 
 Soms is het nodig horizontale witruime te maken. Het commando @\quad@ geeft een witruimte even groot als de huidige fontgrootte, dus 10pt bij een 10pt font. Een @\qquad@ geeft twee keer zoveel witruimte. Deze commando's werken ook in _text mode_. In _math mode_ zijn er de volgende extra commando's
 
-table(table).
+table(table table-condensed).
 |_.commando |_.lengte |
-| @\,@ | 3/18 quad |
+| @\,@ | 3/18 quad &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;    |
 | @\:@ | 4/18 quad |
 | @\;@ | 5/18 quad |
 | @\!@ | $-$3/18 quad|
@@ -334,13 +368,24 @@ table(table).
 \int y\, dx
 {% endhighlight %}
 
-h2. Punten
+h2. Opmaak
 
 table(table).
-|_. commando |_. uitvoer |_. doel |
-| @1,2,\ldots,n@ | $1,2,\ldots,n$ | voor elementen gescheiden door komma's |
-| @1\cdot 2\cdots n@ | $1\cdot 2 \cdots n$ | voor vermenigvuldiging en andere binaire relaties zoals $+$, $\otimes$, $\subseteq$ |
-| @\dots@  | | geeft @\ldots@ of @\cdots@ aan de hand van de context |
+|_.commando 	|_. voorbeeld		 	|_.						|_. gebruik |
+| @\mathrm@		| $\mathrm{ABCDEF}$		| $\mathrm{abcdef}$ 	|  |
+| @\mathit@		| $\mathit{ABCDEF}$		| $\mathit{abcdef}$ 	|  |
+| @\mathbf@		| $\mathbf{ABCDEF}$		| $\mathbf{abcdef}$ 	| verzamelingen, vectoren |
+| @\mathsf@		| $\mathsf{ABCDEF}$		| $\mathsf{abcdef}$ 	| |
+| @\mathtt@		| $\mathtt{ABCDEF}$		| $\mathtt{abcdef}$ 	| |
+| @\mathcal@	| $\mathcal{ABCDEF}$	| $\mathcal{abcde}$  	| categorieën, big-oh notatie |
+| @\mathfrak@	| $\mathfrak{ABCDEF}$	| $\mathfrak{abcdef}$ 	| Lie-algebra's, idealen |
+| @\mathbb@		| $\mathbb{ABCDEF}$		|  						| verzamelingen |
+
+
+
+
+
+
 
 h2. Lijst van symbolen
 
@@ -710,7 +755,7 @@ h5. Overig
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Opdracht 1</h3>
+<h3 class="panel-title">Opdracht 2</h3>
 </div>
 <div class="panel-body">
 # Maak een nieuw LaTeX-bestand met de volgende inhoud.
@@ -771,7 +816,7 @@ h5. Overig
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Opdracht 2</h3>
+<h3 class="panel-title">Opdracht 3</h3>
 </div>
 <div class="panel-body">
 
