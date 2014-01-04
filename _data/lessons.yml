@@ -4,19 +4,19 @@
     desc: Latexcode compileren in TeXworks en ShareLaTeX.
     week: 1
   -
-    title: Syntax en structuur
-    url: syntax.html
-    desc: Tekens, spaties, groepen, commando's, omgevingen, commentaar, document classes, packages, preamble, topmatter
+    title: Structuur
+    url: structuur.html
+    desc: Structuur van een LaTeX-bestand, document classes, packages, topmatter, groepen, commando's, omgevingen, zelf commando's maken.
     week: 1
   -
     title: Tekst schrijven
     url: tekst.html
-    desc: Tekstopmaak, alineaopmaak, speciale tekens.
+    desc: Tekens, accenten en speciale tekens, alinea's, non-breaking space, nadruk, lijsten, verbatim, url, citaten.
     week: 1
   -
     title: Wiskunde schrijven
     url: wiskunde.html
-    desc: Wiskundeomgeving, symbolen
+    desc: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
     week: 1
   -
     title: Foutmeldingen
