@@ -1,0 +1,25 @@
+---
+layout: default
+title: Latexcursus
+---
+
+<div class="page-header">
+<h1>{{ site.title }} <small>{{ site.subtitle }}</small></h1>
+</div>
+
+{% for week in site.data.lessons %}
+<h2>{{ week.week }} </h2>
+{% assign t = 1 %}
+<dl>
+  {% for lesson in week.lessons %}
+    <dt><a href="{{ lesson.url }}">{{ t }}. {{ lesson.title }}</a></dt>
+    <dd>{{ lesson.desc }}</dd>
+  {% assign t = t | plus: 1 %}
+  {% endfor %}
+</dl>
+{% endfor %}
+
+
+<h2>Voorwoord</h2>
+<p>De inhoud van deze lessen is voor een groot deel afkomstig van <a href="http://en.wikibooks.org/wiki/LaTeX">Latex Wikibooks</a>. De bron van deze site vind je op <a href="https://github.com/jzuiddam/jzuiddam.github.io">github</a>. De tekst is in het Nederlands, maar ik heb met opzet Engelse termen zoals “package” niet vertaald.</p>
+

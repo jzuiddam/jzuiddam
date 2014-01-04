@@ -1,61 +1,55 @@
   - 
-    title: Hello world
-    url: helloworld.html
-    desc: Latexcode compileren in TeXworks en ShareLaTeX.
-    week: 1
-  -
-    title: Structuur
-    url: structuur.html
-    desc: Structuur van een LaTeX-bestand, document classes, packages, topmatter, groepen, commando's, omgevingen, zelf commando's maken.
-    week: 1
-  -
-    title: Tekst schrijven
-    url: tekst.html
-    desc: Tekens, accenten en speciale tekens, alinea's, non-breaking space, nadruk, lijsten, verbatim, url, citaten.
-    week: 1
-  -
-    title: Wiskunde schrijven
-    url: wiskunde.html
-    desc: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
-    week: 1
-  -
-    title: Foutmeldingen
-    url: fouten.html
-    desc: Errors en warnings
-    week: 1
-  -
-    title: Thuis installeren
-    url: installatie.html
-    desc: LaTeX thuis installeren
-    week: 1
-  -
-    title: Huiswerk
-    url: huiswerk.html
-    desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren
-    week: 1
-
+    week: Week 1
+    lessons:
+      - 
+        title: Hello world
+        url: helloworld.html
+        desc: Latexcode compileren in TeXworks en ShareLaTeX.
+      -
+        title: Structuur
+        url: structuur.html
+        desc: Structuur van een LaTeX-bestand, document classes, packages, topmatter, groepen, commando's, omgevingen, zelf commando's maken.
+      -
+        title: Tekst schrijven
+        url: tekst.html
+        desc: Tekens, accenten en speciale tekens, alinea's, non-breaking space, nadruk, lijsten, verbatim, url, citaten.
+      -
+        title: Wiskunde schrijven
+        url: wiskunde.html
+        desc: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
+      -
+        title: Foutmeldingen
+        url: fouten.html
+        desc: Errors en warnings
+      -
+        title: Thuis installeren
+        url: installatie.html
+        desc: LaTeX thuis installeren
+      -
+        title: Huiswerk
+        url: huiswerk.html
+        desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren
   - 
-    title: Feedback
-    url: feedback.html
-    desc: Latexcode compileren in TeXworks en ShareLaTeX.
-    week: 2
-  - 
-    title: Schrijfgids
-    url: schrijfgids.html
-    desc: Stijlregels voor wiskunde en LaTeX
-    week: 2
-  - 
-    title: Gevorderde wiskunde
-    url: wiskunde3.html
-    desc: Nummering, vertical alignment, custom operators, substack
-    week: 2
-  - 
-    title: Gevorderde documentstructuur
-    url: structuur2.html
-    desc: Een artikel schrijven
-    week: 2
-  - 
-    title: Huiswerk
-    url: huiswerk2.html
-    desc: Een huiswerkopgave LaTexen
-    week: 2
+    week: Week 2
+    lessons:
+      - 
+        title: Feedback
+        url: feedback.html
+        desc: Latexcode compileren in TeXworks en ShareLaTeX.
+      - 
+        title: Schrijfgids
+        url: schrijfgids.html
+        desc: Stijlregels voor wiskunde en LaTeX
+      - 
+        title: Gevorderde wiskunde
+        url: wiskunde3.html
+        desc: Nummering, vertical alignment, custom operators, substack
+      - 
+        title: Gevorderde documentstructuur
+        url: structuur2.html
+        desc: Een artikel schrijven
+      - 
+        title: Huiswerk
+        url: huiswerk2.html
+        desc: Een huiswerkopgave LaTexen
+        

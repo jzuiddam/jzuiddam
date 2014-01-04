@@ -15,7 +15,7 @@ Er zijn fundamentele verschillen tussen LaTeX en tekstverwerkers zoals Word.
 h5. Voordelen
 * Je kunt je volledig concentreren op de structuur en inhoud van het document, zonder je druk te maken over opmaak.
 * De opmaak, fonts, tabellen, etc. zijn consistent.
-* Wiskundig kan gemakkelijk gezet worden.
+* Wiskunde kan gemakkelijk gezet worden.
 * Indexen, voetnoten en referenties kunnen gemakkelijk gemaakt worden.
 * Je wordt gedwongen je document goed te structureren.
 
@@ -30,7 +30,7 @@ h2. LaTeX gebruiken
 
 In deze cursus leren we jullie werken met twee LaTexeditors: TeXworks en ShareLaTeX. Wat je leert over LaTeX kun je natuurlijk wel in elke editor gebruiken.
 
-- TeXworks := Een eenvoudige editor die wordt meegeleverd met de meest gebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
+- TeXworks := Een eenvoudige editor die wordt meegeleverd met de meestgebruikte LaTeXdistributies MiKTeX en TeX Live. Deze editor is (als het goed is) geïnstalleerd op de UvA.
 
 - ShareLaTeX := Een online editor waarin meerdere mensen tegelijk kunnen werken; handig wanneer je op een computer werkt waarop geen LaTeX staat.
 
@@ -58,7 +58,7 @@ Hello world!
 
 #3 Selecteer @pdfLaTeX@ in het menu rechts naast de groene knop en druk dan op de groene knop. Deze actie noemen we _zetten_ of _typesetting_. LaTeX vertaalt de invoer naar een pdf-document en laat dat document in een tweede scherm zien.
 # Ga na dat er geen fouten zijn opgetreden tijdens het compileren door het log-bestand te bekijken. Ga hiervoor in TeXworks naar @Window -> Show Console Output@.
-# Handig: Selecteer @Format -> Syntax Coloring -> LaTeX@ om de code te kleuren. Dit zal handig zijn als je veel ingewikkelde code hebt.
+# Handig: Selecteer @Format -> Syntax Coloring -> LaTeX@ om de code te kleuren. Dit is handig als je veel ingewikkelde code hebt.
 
 </div>
 </div>

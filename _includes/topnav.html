@@ -15,16 +15,14 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
-      {% for week in site.data.weeks %}
+      {% for week in site.data.lessons %}
       {% assign t = 1 %}
       <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Week {{ week.number }} <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{ week.week }} <b class="caret"></b></a>
         <ul class="dropdown-menu">
-          {% for lesson in site.data.lessons %}
-          {% if lesson.week == week.number %}
-          <li><a href="/lessons/{{ lesson.url }}">{{ t }}. {{ lesson.title }}</a></li>
+          {% for lesson in week.lessons %}
+          <li><a href="{{ lesson.url }}">{{ t }}. {{ lesson.title }}</a></li>
           {% assign t = t | plus: 1 %}
-          {% endif %}
           {% endfor %}
         </ul>
       </li>
