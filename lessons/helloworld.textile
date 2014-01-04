@@ -1,7 +1,7 @@
 ---
 layout: lesson
 title: Hello world!
-next: 'syntax.html'
+next: 'structuur.html'
 ---
 
 Deze les gaat over wat LaTeX is en hoe je het gebruikt.
@@ -87,8 +87,8 @@ p. Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets willen we w
 </div>
 <div class="panel-body">
 
-* Hoe open ik TeXworks en eventueel ShareLaTeX.
-* Hoe compileer ik een LaTeX-bestand.
+* Hoe open ik TeXworks en eventueel ShareLaTeX?
+* Hoe compileer ik een LaTeX-bestand?
 
 </div>
 </div>
