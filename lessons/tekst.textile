@@ -57,7 +57,7 @@ De volgende tekens zijn *gereserveerde tekens*.
 # $ % ^ & _ { } ~ \
 {% endhighlight %}
 
-In LaTex hebben zijn een speciale betekenis. Van @{@, @}@ en @\@ hebben we al gezien wat de speciale betekenis is. Als je gereserveerde karakters in je tekst wilt gebruiken, dan moet je commando's gebruiken:
+In LaTex hebben zij een speciale betekenis. Van @{@, @}@ en @\@ hebben we al gezien wat de speciale betekenis is. Als je gereserveerde karakters in je tekst wilt gebruiken, dan moet je commando's gebruiken:
 
 {% highlight latex %}
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash{}
