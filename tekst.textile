@@ -30,7 +30,7 @@ This is a handbook about TeX, a new typesetting system intended for the creation
 </div>
 
 {% highlight latex %}
-\documentclass{article}
+\documentclass[a4paper]{article}
 \begin{document}
 This is a handbook about TeX, a new typesetting system intended for the creation of beautiful books and especially for books that contain a lot of mathematics.
 \end{document}
@@ -71,6 +71,7 @@ Als LaTeX een @%@ tegenkomt op een regel dan negeert het de rest van de regel en
 \newcommand{\CC}{\mathbf{C}} % Dit commando definieert het lichaam C.
 {% endhighlight %}
 
+Commentaar is ook handig om tijdelijk een stuk tekst uit de uitvoer te laten.
 
 h2. Accenten en speciale tekens
 
@@ -84,11 +85,11 @@ Door
 \usepackage[utf8]{inputenc}
 {% endhighlight %}
 
-te gebruiken in de preamble, kun je veel speciale tekens direct in je LaTeX-code zetten zoals je dat in bijvoorbeeld Word gewend bent.
+te gebruiken in de preamble, kun je veel speciale tekens direct in je LaTeX-code zetten door ze te maken met speciale toetscombinaties (welke hangt van je besturingssysteem af) of door ze te kopiëren uit andere documenten of internet.
 
 h3. Commando's
 
-Een andere manier om speciale tekens te maken is door een commando toe te passen op een letter. We beginnen met accenten op tekens.
+Een andere manier om speciale tekens te maken is met LaTeX-commando's. We beginnen met accenten op tekens.
 
 table(table table-condensed).
 |_. commando 	|_. uitvoer |_. omschrijving 			|
@@ -165,7 +166,7 @@ In LaTeX worden alinea's gevormd door een of meerdere lege regels te zetten. Bij
 </div>
 
 {% highlight latex %}
-\documentclass{article}
+\documentclass[a4paper]{article}
 \begin{document}
 
 Erdős' hoge productiviteit blijkt uit het feit dat hij ongeveer 1500 wetenschappelijke artikelen heeft geproduceerd, de meeste in samenwerking met anderen. Hij heeft samengewerkt met zo'n 500 collega's. Hij beschouwde wiskundig onderzoek als een sociale bezigheid en heeft zo de manier van wiskunde beoefenen blijvend veranderd.
@@ -222,7 +223,7 @@ tekst\-verwerkings\-programma's
 De punten met @\-@ zijn dan de enige punten waar kan worden afgebroken. Dit is handig voor woorden met speciale tekens, omdat LaTeX die niet automatisch afbreekt. Hetzelfde geldt voor woorden die een streepje bevatten. _Gebruik dit alleen als een woord problemen geeft._
 
 
-h2. Opmaak -- oftewel structuur
+h2. Structuur
 
 Herinner je dat we de opmaak van tekst zoveel mogelijk willen bepalen door structuur aan onze tekst te geven. We behandelen een aantal belangrijke voorbeelden hiervan.
 
@@ -232,10 +233,14 @@ Je geeft woorden nadruk met het commando @\emph@. Gewoonlijk wordt het argument 
 
 <div class="example">
 Dit is _belangrijk_.
+
+_Dit is_ belangrijk.
 </div>
 
 {% highlight latex %}
-Dit is \emph{belangrijk}.
+Dit is \emph{belangrijk}. 
+
+\emph{Dit is \emph{belangrijk}.}
 {% endhighlight %}
 
 h3. Lijsten
@@ -287,6 +292,14 @@ def gcd(a,b):
 \end{verbatim}
 {% endhighlight %}
 
+Je kunt ook in de regel verbatim gebruiken met @\verb@.
+
+{% highlight text %}
+Met het commando \verb!\author! stel je de auteur in.
+{% endhighlight %}
+
+Het eerste teken na @\verb@ bepaalt wat het teken is waar @\verb@ stopt. Een andere niet-letter in plaats dan @!@ werkt dus ook.
+
 h3. url's
 
 Het @hyperref@-package heeft het commando @\url@ om url's mee te zetten. Je laadt @hyperref@ met
@@ -318,6 +331,8 @@ Er zijn drie standaardomgevingen voor quotes.
 - @verse@ := voor citaten waar regelafbreking belangrijk is, zoals poëzie. De regel breek je af met @\\@.
 
 
+
+
 <div class="panel panel-primary">
 <div class="panel-heading">
 <h3 class="panel-title">Opdracht 2</h3>
@@ -347,7 +362,14 @@ Er zijn drie standaardomgevingen voor quotes.
 <h3 class="panel-title">Onthouden</h3>
 </div>
 <div class="panel-body">
-
+* Wat zijn de gereserveerde tekens?
+* Hoe maak je commentaar?
+* Hoe maak je speciale tekens, streepjes, ellips, aanhalingstekens?
+* Hoe maak je een alinea?
+* Waarom moet je opletten bij een punt achter een afkorting?
+* Wat is een non-breaking space?
+* Hoe geef je nadruk?
+* Hoe maak je lijsten?
 
 
 </div></div>
