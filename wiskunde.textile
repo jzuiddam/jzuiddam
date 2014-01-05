@@ -49,7 +49,7 @@ Is deze kromme interessant?
 
 _Vergeet niet dat een lege regel een nieuwe alinea maakt;_ daarom staan er in bovenstaand voorbeeld geen lege regels voor of na de _display_.
 
-Om de _displays_ automatisch te nummeren gebruik je de @equation@-omgeving. We zullen later zien hoe we naar de nummers kunnen verwijzen.
+Om de _displays_ automatisch te *nummeren* gebruik je de @equation@-omgeving. We zullen later zien hoe we naar de nummers kunnen verwijzen.
 
 <div class="example">
 Omdat $a$ en $b$ beide oneven zijn, geldt
@@ -140,7 +140,7 @@ a^{n+1}  a_{i/2}
 </div>
 <div class="panel-body">
 
-Zet
+Zet de toren
 
 <div class="example">
 
@@ -156,7 +156,7 @@ a^{b^c}
 
 h2. Operatoren
 
-Een *operator* is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $\log$. LaTeX heeft standaard een aantal operatoren gedefinieerd, zie het overzicht. We maken zelf een operator met @DeclareMathOperator@ in de preamble.
+Een *operator* is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $\log$. LaTeX heeft standaard een aantal operatoren gedefinieerd, zie het overzicht. We maken zelf een operator met @\DeclareMathOperator@ in de preamble.
 
 <div class="example">
 \[
@@ -166,7 +166,7 @@ Een *operator* is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $
 </div>
 
 {% highlight latex %}
-\documentclass{article}
+\documentclass[a4paper]{article}
 \usepackage{mathtools}
 \DeclareMathOperator{\ord}{ord}
 
@@ -288,6 +288,8 @@ Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je me
 
 h2. Haakjes
 
+*Haakdjes* en andere *delimiters* zet je zo:
+
 <div class="example">
 \[
 ( a )\quad [ b ]\quad \{ c \}\quad \mid d \mid \quad \| e \|\quad
@@ -326,7 +328,7 @@ Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordeh
 
 h2. Tekst in wiskunde
 
-Tekst in _math mode_ zet je met @\text@.
+Tekst in _math mode_ zet je met @\text@. Je moet daarbij goed op de witruimte lettern. Hieronder zie je twee goede regels en een foute.
 
 <div class="example">
 \begin{gather*}
@@ -370,7 +372,9 @@ table(table table-condensed).
 
 h2. Opmaak
 
-table(table).
+Met de volgende commando's kunnen we andere fonts kiezen. Voor de laatste twee heb je het package @amssymb@ nodig.
+
+table(table table-condensed).
 |_.commando 	|_. voorbeeld		 	|_.						|_. gebruik |
 | @\mathrm@		| $\mathrm{ABCDEF}$		| $\mathrm{abcdef}$ 	|  |
 | @\mathit@		| $\mathit{ABCDEF}$		| $\mathit{abcdef}$ 	|  |
@@ -381,7 +385,26 @@ table(table).
 | @\mathfrak@	| $\mathfrak{ABCDEF}$	| $\mathfrak{abcdef}$ 	| Lie-algebra's, idealen |
 | @\mathbb@		| $\mathbb{ABCDEF}$		|  						| verzamelingen |
 
+Het liefst gebruiken we bovenstaande commando's niet direct in de code, maar in een commando, opdat we inhoud en opmaak zoveel mogelijk scheiden. Bijvoorbeeld
 
+
+<div class="example">
+We werken over het lichaam van complexe getallen $\mathbb{C}$.
+</div>
+
+{% highlight latex %}
+\documentclass[a4paper]{article}
+\usepackage[dutch]{babel}
+\usepackage{mathtools}
+\usepackage{amssymb}
+
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\CC}{\field{C}}
+
+\begin{document}
+We werken over het lichaam van complexe getallen $\CC$.
+\end{document}
+{% endhighlight %}
 
 
 
@@ -772,9 +795,6 @@ h5. Overig
 \theoremstyle{definition}
 \newtheorem{definitie}[stelling]{Definitie}
 
-\DeclareMathOperator{\Var}{Var}
-\DeclareMathOperator{\Cov}{Cov}
-
 \begin{document}
 
 \begin{definitie}
@@ -797,11 +817,11 @@ h5. Overig
 
 </div>
 
-#3 Zet de volgende stelling.
+#3 Zet de volgende stelling. Gebruik @\DeclareMathOperator@.
 
 <div class="example">
 
-*Stelling 2.* Als $X$ en $Y$ stochastische grootheden zijn met $EX^2 \lt \infty$ en $EY^2 \lt \infty$, dan geldt
+*Stelling 2* (Ongelijkheid van Cauchy-Schwarz) *.* Als $X$ en $Y$ stochastische grootheden zijn met $EX^2 \lt \infty$ en $EY^2 \lt \infty$, dan geldt
 \[
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
@@ -854,7 +874,10 @@ h5. Overig
 </div>
 <div class="panel-body">
 
-* _math mode_ regels, "detexify":http://detexify.kirelabs.org.
-* @$@, @\[@ @\]@, @_@, @^@, @\alpha@, @\sin@, @\log@, @\frac@, @\binom@, @\sqrt[n]@, @\sum@, @\int@, @()@, @[]@, @\{ \}@, @| |@, @\big@, @\Big@, @\bigg@, @\Bigg@.
+* Hoe krijg ik een wiskundeomgeving? Welke regels gelden in _math mode_?
+* Hoe maak ik speciale tekens? Wat is "detexify":http://detexify.kirelabs.org?
+* Wat doen @$@, @\[@ @\]@, @_@, @^@, @\alpha@, @\sin@, @\log@, @\frac@, @\binom@, @\sqrt[n]@, @\sum@, @\int@, @()@, @[]@, @\{ \}@, @| |@, @\big@, @\Big@, @\bigg@, @\Bigg@?
+* Hoe maak ik een eigen operator?
+* Hoe maak ik horizontale witruimte?
 
 </div></div>
