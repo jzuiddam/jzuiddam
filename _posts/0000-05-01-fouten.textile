@@ -1,8 +1,8 @@
 ---
 layout: lesson
 title: Foutmeldingen en waarschuwingen
-prev: 'fouten.html'
-next: 'installatie.html'
+category: week1
+description: Errors en warnings.
 ---
 
 {{toc}}

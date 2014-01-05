@@ -1,8 +1,8 @@
 ---
 layout: lesson
 title: Thuis installeren
-prev: 'fouten.html'
-next: 'huiswerk.html'
+category: week1
+description: LaTeX thuis installeren.
 ---
 
 

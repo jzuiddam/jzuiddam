@@ -17,11 +17,13 @@
       {{ content }}
 
       <ul class="pager">
-        {% if page.prev %}
-        <li><a href="{{ page.prev }}">Vorige les</a></li>
+        {% if page.previous.url and page.previous.category == page.category%}
+        <li><a href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a></li>
         {% endif %}
-        {% if page.next %}
-        <li><a href="{{ page.next }}">Volgende les</a></li>
+        {% if page.next.url and page.next.category == page.category %}
+        <li><a href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a></li>
+        {% else %}
+        <li class="disabled"><a>Einde van deze week!</a></li>
         {% endif %}
       </ul>
     </div>

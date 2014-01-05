@@ -1,0 +1,7 @@
+---
+layout: lesson
+title: Gevorderde documentstructuur
+category: week2
+description: Een artikel schrijven.
+disabled: true
+---

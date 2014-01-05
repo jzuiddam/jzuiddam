@@ -1,8 +1,8 @@
 ---
 layout: lesson
 title: Wiskunde schrijven
-prev: 'tekst.html'
-next: 'fouten.html'
+category: week1
+description: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
 ---
 
 Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Wij gebruiken @mathtools@, een uitbreiding van @amsmath@, omdat we ook ingewikkelde wiskunde willen zetten:

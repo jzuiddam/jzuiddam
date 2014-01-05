@@ -1,0 +1,7 @@
+---
+layout: lesson
+title: Huiswerk
+category: week2
+description: Een huiswerkopgave LaTexen.
+disabled: true
+---

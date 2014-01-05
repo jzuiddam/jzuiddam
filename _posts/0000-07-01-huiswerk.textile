@@ -1,7 +1,8 @@
 ---
 layout: lesson
 title: Huiswerk
-prev: 'fouten.html'
+category: week1
+description: Een huiswerkopgave LaTexen en LaTeX thuis installeren.
 ---
 
 <div class="panel panel-primary">

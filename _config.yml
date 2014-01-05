@@ -1,8 +1,16 @@
 markdown: maruku
 pygments: true
 
+permalink: /:categories/:title/
+
 title: "Latexcursus"
 subtitle: "UvA Bachelor Wiskunde 2014"
+
+
+weeks:
+  week1: Week 1
+  week2: Week 2
+
 
 content:
   - 
@@ -27,36 +35,32 @@ content:
       -
         title: Foutmeldingen
         url: fouten.html
-        desc: Errors en warnings
+        desc: Errors en warnings.
       -
         title: Thuis installeren
         url: installatie.html
-        desc: LaTeX thuis installeren
+        desc: LaTeX thuis installeren.
       -
         title: Huiswerk
         url: huiswerk.html
-        desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren
+        desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren.
   - 
     week: Week 2
     lessons:
       - 
-        title: Feedback
-        url: feedback.html
-        desc: Latexcode compileren in TeXworks en ShareLaTeX.
-      - 
         title: Schrijfgids
         url: schrijfgids.html
-        desc: Stijlregels voor wiskunde en LaTeX
+        desc: Stijlregels voor wiskunde en LaTeX.
       - 
         title: Gevorderde wiskunde
         url: wiskunde3.html
-        desc: Nummering, vertical alignment, custom operators, substack
+        desc: 
       - 
         title: Gevorderde documentstructuur
         url: structuur2.html
-        desc: Een artikel schrijven
+        desc: Een artikel schrijven.
       - 
         title: Huiswerk
         url: huiswerk2.html
-        desc: Een huiswerkopgave LaTexen
+        desc: Een huiswerkopgave LaTexen.
         

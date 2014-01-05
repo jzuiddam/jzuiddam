@@ -7,14 +7,21 @@ title: Latexcursus
 <h1>{{ site.title }} <small>{{ site.subtitle }}</small></h1>
 </div>
 
-{% for week in site.content %}
-<h2>{{ week.week }} </h2>
 {% assign t = 1 %}
+{% for week in site.weeks %}
+<h2>{{ week[1] }} </h2>
 <dl>
-  {% for lesson in week.lessons %}
-    <dt><a href="{{ lesson.url }}">{{ t }}. {{ lesson.title }}</a></dt>
-    <dd>{{ lesson.desc }}</dd>
-  {% assign t = t | plus: 1 %}
+  {% for post in site.posts reversed %}
+    {% if post.category == week[0] %}
+    {% if post.disabled %}
+    <dt class="disabled"><a>{{ t }}. {{ post.title }}</a>
+    <dd class="disabled">{{ post.description }}</dd>
+    {% else %}
+    <dt><a href="{{ post.url }}">{{ t }}. {{ post.title }}</a></dt>
+    <dd>{{ post.description }}</dd>
+    {% endif %}
+  	{% assign t = t | plus: 1 %}
+    {% endif %}
   {% endfor %}
 </dl>
 {% endfor %}

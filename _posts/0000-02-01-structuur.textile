@@ -1,8 +1,8 @@
 ---
 layout: lesson
 title: Structuur
-prev: 'helloworld.html'
-next: 'tekst.html'
+category: week1
+description: Structuur van een LaTeX-bestand, document classes, packages, topmatter, groepen, commando's, omgevingen, zelf commando's maken.
 ---
 
 Deze les gaat over de structuur van een LaTeX-document en over hoe we zelf structuren kunnen maken.

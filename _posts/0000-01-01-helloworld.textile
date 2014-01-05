@@ -1,7 +1,8 @@
 ---
 layout: lesson
 title: Hello world!
-next: 'structuur.html'
+category: week1
+description: Latexcode compileren in TeXworks en ShareLaTeX.
 ---
 
 Deze les gaat over wat LaTeX is en hoe je het gebruikt.

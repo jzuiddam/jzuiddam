@@ -1,8 +1,8 @@
 ---
 layout: lesson
 title: Tekst schrijven
-prev: 'structuur.html'
-next: 'wiskunde.html'
+category: week1
+description: Tekens, accenten en speciale tekens, alinea's, non-breaking space, nadruk, lijsten, verbatim, url, citaten.
 ---
 
 In deze les gaan we tekst schrijven. Van de vorige les weten we dat dit gebeurt in de @document@-omgeving.

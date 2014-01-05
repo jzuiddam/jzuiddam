@@ -1,0 +1,7 @@
+---
+layout: lesson
+title: Gevorderde wiskunde
+category: week2
+description: 
+disabled: true
+---
