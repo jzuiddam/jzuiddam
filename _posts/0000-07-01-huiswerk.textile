@@ -11,7 +11,7 @@ description: Een huiswerkopgave LaTexen en LaTeX thuis installeren.
 </div>
 <div class="panel-body">
 
-# Installeer een "LaTeXdistributie":/lessons/installatie.html op je eigen computer.
+# Installeer een "LaTeXdistributie":{% post_url 0000-06-01-installatie %} op je eigen computer.
 # Test je installatie door in TeXWorks een voorbeeld te compileren.
 
 </div>
