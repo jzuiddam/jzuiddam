@@ -5,12 +5,14 @@ prev: 'helloworld.html'
 next: 'tekst.html'
 ---
 
+Deze les gaat over de structuur van een LaTeX-document en over hoe we zelf structuren kunnen maken.
+
 h2. Een LaTeX-document
 
-Ieder LaTeX-bestand heeft de volgende structuur.
+Ieder LaTeX-document heeft de volgende structuur.
 
 {% highlight latex %}
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \begin{document}
 
@@ -47,7 +49,7 @@ Het @babel@-package met de optie @dutch@ zorgt er onder andere voor dat LaTeX st
 
 h3. Topmatter
 
-Na de preamble komt de documentomgeving, aangegeven met @\begin{document}@ @\end{document}@. Aan het begin van de documentomgeving geef je informatie over het document zelf, zoals de auteur, titel en datum. Dit heet de _topmatter_. Met het commando @\maketitle@ zet LaTeX de topmatter op de pagina volgens de opmaak van de document class. Een voorbeeld van de topmatter is
+Na de preamble komt de documentomgeving, aangegeven met @\begin{document}@ en @\end{document}@. Aan het begin van de documentomgeving geef je informatie over het document zelf, zoals de auteur, titel en datum. Dit heet de _topmatter_. Met het commando @\maketitle@ zet LaTeX de topmatter op de pagina volgens de opmaak van de document class. Een voorbeeld van de topmatter is
 
 {% highlight latex %}
 \title{Een nieuw bewijs voor een oude stelling}
@@ -87,7 +89,7 @@ We zien dat LaTeX aan de hand van de structuur van de invoer weet hoe het de tek
 
 </div></div>
 
-h2. Structuur maken
+h2. Structureren
 
 In LaTeX geven we structuur aan met _groepen_, _commando's_ en _omgevingen_.
 
@@ -156,7 +158,6 @@ Het getal \favogetalarg{zes} is mijn favoriet.
 #6 Met @[1]@ geven we aan dat het commando één argument verwacht en dit argument gebruiken we met @#1@. Kun je een commando maken met meer argumenten?
 </div></div>
 
----
 
 <div class="panel panel-success">
 <div class="panel-heading">
@@ -166,7 +167,7 @@ Het getal \favogetalarg{zes} is mijn favoriet.
 
 * Wat is de globale structuur van een LaTeX-bestand? 
 * Wat doen: @\documentclass@, @\usepackage@, @\title@, @\author@, @\and@, @\date@, @\maketitle@?
-* het @babel@-package
+* Wat doet het @babel@-package?
 * Waarom scheiden we opmaak en inhoud?
 * Wat is een group, commando, omgeving?
 * Hoe maak je een commando?
