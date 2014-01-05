@@ -139,7 +139,7 @@ Repareer alle fouten in onderstaande LaTeX-code. Laat je werk controleren door e
 
 {% highlight text %}
 
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \usepackage[dutch]{babel}
 
