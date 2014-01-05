@@ -6,61 +6,7 @@ permalink: /:categories/:title/
 title: "Latexcursus"
 subtitle: "UvA Bachelor Wiskunde 2014"
 
-
 weeks:
   week1: Week 1
   week2: Week 2
-
-
-content:
-  - 
-    week: Week 1
-    lessons:
-      - 
-        title: Hello world
-        url: helloworld.html
-        desc: Latexcode compileren in TeXworks en ShareLaTeX.
-      -
-        title: Structuur
-        url: structuur.html
-        desc: Structuur van een LaTeX-bestand, document classes, packages, topmatter, groepen, commando's, omgevingen, zelf commando's maken.
-      -
-        title: Tekst schrijven
-        url: tekst.html
-        desc: Tekens, accenten en speciale tekens, alinea's, non-breaking space, nadruk, lijsten, verbatim, url, citaten.
-      -
-        title: Wiskunde schrijven
-        url: wiskunde.html
-        desc: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
-      -
-        title: Foutmeldingen
-        url: fouten.html
-        desc: Errors en warnings.
-      -
-        title: Thuis installeren
-        url: installatie.html
-        desc: LaTeX thuis installeren.
-      -
-        title: Huiswerk
-        url: huiswerk.html
-        desc: Een huiswerkopgave LaTexen en LaTeX thuis installeren.
-  - 
-    week: Week 2
-    lessons:
-      - 
-        title: Schrijfgids
-        url: schrijfgids.html
-        desc: Stijlregels voor wiskunde en LaTeX.
-      - 
-        title: Gevorderde wiskunde
-        url: wiskunde3.html
-        desc: 
-      - 
-        title: Gevorderde documentstructuur
-        url: structuur2.html
-        desc: Een artikel schrijven.
-      - 
-        title: Huiswerk
-        url: huiswerk2.html
-        desc: Een huiswerkopgave LaTexen.
-        
+  
