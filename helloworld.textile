@@ -8,7 +8,7 @@ Deze les gaat over wat LaTeX is en hoe je het gebruikt.
 
 h2. Wat is LaTeX?
 
-TeX is een programmeertaal ontworpen door Donald Knuth voor het zetten van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen. Deze cursus gaat over LaTeX.
+TeX is een programmeertaal ontworpen door Donald Knuth voor het schrijven van wiskundige teksten. LaTeX is een zogenaamd macro-pakket gebaseerd op TeX. Het heeft als doel het maken van TeX-documenten te vereenvoudigen. Deze cursus gaat over LaTeX.
 
 Er zijn fundamentele verschillen tussen LaTeX en tekstverwerkers zoals Word.
 
@@ -44,10 +44,10 @@ p. We gaan er bij de eerste opdracht van uit dat je op een computer werkt met to
 <div class="panel-body">
 
 # Open @TeXworks@ op je computer.
-# Plak in een leeg bestand de volgende code en sla het bestand op.
+# Plak in een leeg bestand de volgende code en sla het bestand op als @helloworld.tex@. De extensie van LaTeX-documenten is altijd @.tex@.
 
 {% highlight tex %}
-\documentclass{article}
+\documentclass[a4paper]{article}
 
 \begin{document}
 
