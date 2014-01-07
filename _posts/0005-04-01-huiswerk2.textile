@@ -1,7 +1,23 @@
 ---
 layout: lesson
-title: Huiswerk
+title: Voorbeeldtoets en huiswerk
 category: week2
 description: Een huiswerkopgave LaTexen.
 disabled: true
 ---
+
+De toets van volgende week bestaat uit twee onderdelen:
+# Zet een gegeven tekst met LATEX.
+# Bedenk zelf het bewijs van een gegeven stelling en schrijf die met LATEX op.
+
+Je mag gebruik maken van internet tijdens de toets. We letten er op of je netjes wiskunde kan opschrijven met LaTeX. Zie de "Schrijfgids":{% post_url 0005-01-01-schrijfgids %} voor de regels die we hanteren. Op Blackboard vind je een voorbeeldtoets, onder Toetsen.
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+
+Maak Opgave 2 van de voorbeeldtoets en lever die in op Blackboard. Die kijken we na. Deadline: zondagavond 19–01, 24:00 uur.
+
+</div></div>

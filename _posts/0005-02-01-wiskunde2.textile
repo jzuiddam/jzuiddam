@@ -5,3 +5,140 @@ category: week2
 description: 
 disabled: true
 ---
+
+<div class="hide">
+<notextile>
+\[
+	\newcommand{\field}[1]{\mathbb{#1}}
+	\newcommand{\Q}{\field Q}
+	\newcommand{\C}{\field C}
+	\newcommand{\R}{\field R}
+	\newcommand{\ideal}[1]{\mathfrak{#1}}
+	\newcommand{\ggd}{\mathrm{ggd}}
+	\DeclareMathOperator{\Tr}{Tr}
+	\DeclareMathOperator{\ord}{ord}
+\]
+</notextile>
+</div>
+
+
+h2. Omgevingen
+
+
+
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+
+Zet de volgende wiskundige uitdrukkingen in displays.
+
+<notextile>
+<div class="example">
+\[
+\cos z = \frac{e^{iz} + e^{-iz}}{2}= \sum_{n=0}^{\infty} \frac{(-1)^nz^{2n}}{(2n)!}=1-\frac{z^2}{2!}+\frac{z^4}{4!}-\cdots \text{ met convergentiestraal $\infty$}
+\]
+</div>
+
+
+<div class="example">
+\[
+	g(z)=
+	\begin{cases}
+	f(\frac{1}{z}) & \text{als $z\ne 0$};\\
+	f(\infty) & \text{als $z=0$}.
+	\end{cases}
+	\label{eq:cont_g}
+\]
+</div>
+
+<small class="hint pull-right">
+
+Hint: Gebruik de cases-omgeving.
+
+</small>
+
+<div class="example">
+
+\[
+\Q^* = \{x\in \Q : x\not = 0\} = \Q - \{0\}
+\]
+
+</div>
+
+
+<small class="hint pull-right">
+
+Hint: De $\Q$ is gezet in de stijl _blackboard bold_.
+
+</small>
+
+<div class="example">
+
+\[
+\begin{pmatrix}
+a & b\\
+c & d
+\end{pmatrix} \cdot
+\begin{pmatrix}
+e & f\\
+g & h
+\end{pmatrix} = 
+\begin{pmatrix}
+ae+bg & af+bh\\
+ce+dg & cf + dh
+\end{pmatrix}
+\]
+
+</div>
+
+
+<div class="example">
+
+\[
+\partial A = \overline{A} \setminus A^\circ
+\]
+
+</div>
+
+<small class="hint pull-right">
+
+Hint: Deze schuine streep is een soort minteken voor verzamelingen.
+
+</small>
+
+<div class="example">
+
+\[
+\Phi_n(X) = \prod_{\substack{\zeta\in\C^*:\\ \text{orde}(\zeta)=n}}(X-\zeta)
+\]
+
+</div>
+
+<small class="hint pull-right">
+
+Hint: gebruik het substack-commando.
+
+</small>
+
+<div class="example">
+
+\[
+M_R = \left( \frac4\pi \right)^s \frac{n!}{n^n} \sqrt{|\Delta{(R)}|}
+\]
+
+</div>
+
+<small class="hint pull-right">
+
+Let erop dat de haakjes de juiste grootte hebben.
+
+</small>
+</notextile>
+
+
+Laat je werk controleren.
+
+</div></div>

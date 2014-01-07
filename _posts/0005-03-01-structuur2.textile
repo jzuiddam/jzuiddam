@@ -5,3 +5,22 @@ category: week2
 description: Een artikel schrijven.
 disabled: true
 ---
+
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht</h3>
+</div>
+<div class="panel-body">
+
+Maak een zo compact mogelijk LATEX-artikel, dat het volgende doet:
+# het is een artikel
+# jij bent auteur; de titel is “A short proof of the Four Color Theorem” (gebruik LATEX om dit te formatten)
+# neem na de titel een illustratie op van het vierkleurenprobleem (alleen centreren, geen onderschrift oid. toevoegen)
+# maak vier genummerde secties: Introduction, Definitions, Lemmas, Proof
+# maak een inhoudsopgave (via LATEX, niet zelf gaan tikken)
+# maak de titels in de inhoudsopgave klikbaar (als hyperreferenties, dus)
+# maak een bibliografie met tenminste  ́e ́en verwijzing: het artikel van Appel en Haken met hun bewijs van de vierkleurenstelling, inclusief het aantal pagina’s (p. xx–yy).
+# de introductie bevat een verwijzing naar een artikel uit je bibliografie (“The proof of Appel and Haken of the Four Colour Theorem comprised X pages [citatienummer]’).
+# Neem in je In Definition-sectie een zin op: “We define ⇤ to be:”, met daarna een gedisplayde en genummerde vergelijking met de formule ⇤ = 1/
+
+</div></div>
