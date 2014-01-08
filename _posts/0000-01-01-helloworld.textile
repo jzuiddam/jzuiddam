@@ -83,6 +83,15 @@ Hello world!
 
 p. Je mag vanaf nu zelf kiezen welke editor je gebruikt. Op de toets willen we wel dat je TeXworks gebruikt.
 
+h2. Andere bronnen
+
+We moedigen jullie aan om naast deze website ook andere bronnen te gebruiken als je ergens niet uitkomt. Op veel LaTeXvragen kun je antwoord krijgen door even te googlen. Deze bronnen zijn van hoge kwaliteit:
+
+- "http://tex.stackexchange.com":http://tex.stackexchange.com := Een zeer actieve vraag-en-antwoord-site voor TeX en LaTeX.
+- "http://www.ctan.org":http://www.ctan.org := Hier vind je veel _LaTeX-packages_ en hun handleidingen.
+- "detexify":http://detexify.kirelabs.org/classify.html := Vind symbolen door ze te tekenen.
+
+
 <div class="panel panel-success">
 <div class="panel-heading">
 <h3 class="panel-title">Onthouden</h3>
