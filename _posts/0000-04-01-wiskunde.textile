@@ -31,11 +31,13 @@ We weten dat $1+1=2$.
 
 Wiskunde in een display zet je tussen @\[@ en @\]@.
 
+
 <div class="example">
 Bekijk de kromme gegeven door de vergelijking
 \[
 y = x + 2.
 \]
+
 Is deze kromme interessant?
 </div>
 
@@ -306,20 +308,20 @@ h2. Haakjes
 \ulcorner i \urcorner
 {% endhighlight %}
 
-Bovenstaande _delimiters_ kun je schalen met @\big@, @\Big@, @\bigg@, @\Bigg@.
+Bovenstaande _delimiters_ kun je schalen met @\bigl@, @\bigr@; @\Bigl@, @\Bigr@; @\biggl@, @\biggr@; @\Biggl@, @\Biggr@.
 
 <div class="example">
 \[
-( \big( \Big( \bigg( \Bigg( \quad\quad \bigg(\frac{x^2}{y^3}\bigg) \quad\quad P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+( \bigl( \Bigl( \biggl( \Biggl( \quad\quad \biggl(\frac{x^2}{y^3}\biggr) \quad\quad P\biggl(A=2 \biggm| \frac{A^2}{B}>4\biggr)
 \]
 </div>
 
 {% highlight latex %}
-( \big( \Big( \bigg( \Bigg(
+( \bigl( \Bigl( \biggl( \Biggl(
 
-\bigg(\frac{x^2}{y^3}\bigg) 
+\biggl(\frac{x^2}{y^3}\biggr)
 
-P\bigg(A=2\,\, \bigg|\, \frac{A^2}{B}>4\bigg)
+P\biggl(A=2 \biggm| \frac{A^2}{B}>4\biggr)
 {% endhighlight %}
 
 Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordehandliggende plaatsen. Dit geeft vaak te grote haakjes dus let goed op!
