@@ -26,7 +26,7 @@ In deze les behandelen we vuistregels bij het schrijven van wiskunde. De eerste 
 
 h2. A. Wiskunde opschrijven
 
-Nieuwe wiskunde bedenken is knap, maar het goed opschrijven is net zo waardevol. Door aandacht te besteden aan de volgende handvatten help je de lezer van je tekst enorm.
+Nieuwe wiskunde bedenken is knap, maar het goed opschrijven is net zo waardevol. Door aandacht te besteden aan de volgende punten help je de lezer van je tekst enorm.
 
 h3. A.1. Schrijf zinnen met een hoofdletter en een punt
 
