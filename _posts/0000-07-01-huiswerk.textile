@@ -29,42 +29,10 @@ Zelf twee opgaven van Hoofdstuk 5, Stochastiek 1 in LaTeX zetten, dat is de bedo
 # Gebruik de volgende modelcode.
 
 {% highlight tex %}
-% LaTeX-modelbestand voor inleveren huiswerk 
-% BSc wiskunde, Universiteit van Amsterdam
-%
-% Auteur: Chris Zaal, Gerrit Oomens
-% Datum: 13 januari 2010
-
-%% Documentclass
 \documentclass[a4paper,12pt]{letter} 
-
-%% Packages
-% ams-packages
-% amsmath oa. voor align en align*
-% amsthm voor de definities hieronder van opgave en oplossing en voor \qed
-\usepackage{amsmath, amssymb, amsthm}
-
-% Nederlandse vertaling van termen en juiste woordafbreking
+\usepackage{mathtools, amssymb, amsthm}
 \usepackage[dutch]{babel}
 
-% Plaatjes importeren
-\usepackage{graphicx}    %voor als je een keer een plaatje wil importeren met \includegraphics
-
-%% Extra layout instellingen
-% wil je geen paginanummering, gebruik dan empty ipv. plain
-\pagestyle{plain}
-
-% voor makkelijk enumerate aanpassen
-\usepackage{enumerate}
-
-%% zelf-gedefinieerde environment voor opgaven en uitwerkingen
-% zie de handleiding van amsthm > www.math.boun.edu.tr/assistants/topaloglu/latex/amsthm.pdf
-% met onderstaande commando's heb je nu tot je beschikking:
-% \begin{opgave} ... \end{opgave} met automatische witregels boven en onder, \\ is dus niet nodig
-% \begin{oplossing} ... \end{oplossing}, met automatische witregels boven en onder, \\ is dus niet nodig
-% \begin{uitwerking} ... \end{uitwerking}, met automatische witregels boven en onder, \\ is dus niet nodig
-% \begin{bewijs} ... \end{bewijs}, met automatische witregels boven en onder, \\ is dus niet nodig
-% zie zonodig: http://www.math.boun.edu.tr/assistants/topaloglu/latex/amsthm.pdf
 \theoremstyle{plain}                            
 \newtheorem{opgave}{Opgave}        
 \theoremstyle{remark}                                       
@@ -125,7 +93,7 @@ Hier de tekst van de uitwerking.
 {% endhighlight %}
 
 
-# Zet de uitwerking van twee huiswerkopgaven (naar keuze) van H5 van Stochastiek 1 in LaTeX. Maak deze opdracht zelfstandig — van alleen maar meekijken leer je niks.
+#2 Zet de uitwerking van twee huiswerkopgaven (naar keuze) van H5 van Stochastiek 1 in LaTeX. Maak deze opdracht zelfstandig — van alleen maar meekijken leer je niks.
 # Submit je werk op Blackboard: zowel tex-bestand, log-bestand als pdf-bestand submitten. Je log-bestand mag geen LaTeX-errors meer vermelden. Deadline: zondagavond 14-1, 24:00 uur. Niet veel later sluit deze assigment en kun je niet meer inleveren. Niet ingeleverd? Dan geen feedback.
 
 Belangrijk om te onthouden.
