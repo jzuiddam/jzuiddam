@@ -5,7 +5,11 @@
 }
 
 .hint{
+  margin-top: -10px;
+  margin-bottom: 10px;
   color: #FFF;
+  text-align: right;
+  font-size: small;
 }
 
 .hint:hover{

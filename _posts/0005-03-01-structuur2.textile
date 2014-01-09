@@ -6,6 +6,68 @@ description: Een artikel schrijven.
 disabled: true
 ---
 
+
+h2. Document classes
+
+We zagen vorige week dat een *document class* een verzameling is van instellingen die past bij een bepaald type document. De document class stel je in met
+
+{% highlight latex %}
+\documentclass[options]{class}
+{% endhighlight %}
+
+waarbij @options@ een lijst is van opties gescheiden door komma's. Het commando
+
+{% highlight latex %}
+\documentclass[11pt,twoside,a4paper]{article}
+{% endhighlight %}
+
+geeft bijvoorbeeld een artikel met tekstgrootte 11pt, met opmaak voor dubbelzijdig printen op A4-papier.
+
+Er zijn veel document classes voor LaTeX. *Standard document classes* zijn classes die altijd beschikbaar zijn. Belangrijke standard document classes zijn
+
+table(table).
+|_.class   |_.documenttype |
+| @article@ | artikelen in wetenschappelijke tijdschriften, korte rapporten, aantekeningen |
+| @report@  | langere rapporten met hoofdstukken, kleine boeken, theses |
+| @book@    | boeken |
+| @beamer@  | presentaties |
+
+Veelgebruikte opties bij deze classes zijn de volgende.
+
+table(table).
+|_.optie   |_.beschrijving |
+| @10pt@, @11pt@, @12pt@ | stelt de grootte van de tekst in, standaard @10pt@ |
+| @a4paper@, @letterpaper@ | stelt de papiergrootte in, standaard hangt van je distributie af |
+| @twoside@, @oneside@ | bepaalt of het document voor enkelzijdig of dubbelzijdig printen wordt opgemaakt |
+
+
+h2. De document-omgeving
+
+Vorige week zagen we hoe we de _topmatter_ zetten met @\author@, @\title@, @\date@ en @\maketitle@. In deze les zien we meer commando's om de structuur aan te geven in een @article@, @report@ of @book@.
+
+Voor het maken van hoofdstukken en paragrafen gebruik je de volgende commando's.
+
+table(table).
+|_. commando 		|_. niveau	| &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| @\part@			|	-1		| (optioneel)|
+| @\chapter@		|	0		| (alleen in @book@ en @report@)|
+| @\section@		|	1		| |
+| @\subsection@		|	2		| |
+| @\subsubsection@	|	3		| |
+| @\paragraph@		|	4		| |
+| @\subparagraph@	|	5		| |
+
+Het noogste niveau in een @article@ is @\section@ en het hoogste niveau in @book@ en @report@ @\chapter@. Daarboven _kan_ @\part@ worden gebruikt, maar dat hoeft niet.
+
+Met het commando @\tableofcontents@ kun je een *inhoudsopgave* maken.
+
+Bij artikelen is het gebruikelijk om aan het begin een *samenvatting* te zetten. Dit gaat in de @abstract@ omgeving.
+
+h2. Verwijzingen
+
+h2. Bibliografie
+
+
 <div class="panel panel-primary">
 <div class="panel-heading">
 <h3 class="panel-title">Opdracht</h3>
@@ -19,8 +81,10 @@ Maak een zo compact mogelijk LATEX-artikel, dat het volgende doet:
 # maak vier genummerde secties: Introduction, Definitions, Lemmas, Proof
 # maak een inhoudsopgave (via LATEX, niet zelf gaan tikken)
 # maak de titels in de inhoudsopgave klikbaar (als hyperreferenties, dus)
-# maak een bibliografie met tenminste  ́e ́en verwijzing: het artikel van Appel en Haken met hun bewijs van de vierkleurenstelling, inclusief het aantal pagina’s (p. xx–yy).
+# maak een bibliografie met tenminste  een verwijzing: het artikel van Appel en Haken met hun bewijs van de vierkleurenstelling, inclusief het aantal pagina’s (p. xx–yy).
 # de introductie bevat een verwijzing naar een artikel uit je bibliografie (“The proof of Appel and Haken of the Four Colour Theorem comprised X pages [citatienummer]’).
-# Neem in je In Definition-sectie een zin op: “We define ⇤ to be:”, met daarna een gedisplayde en genummerde vergelijking met de formule ⇤ = 1/
+# Neem in je In Definition-sectie een zin op: “We define $\Lambda@ to be:”, met daarna een gedisplayde en genummerde vergelijking met de formule $\Lambda = 1/\Delta$. Label die formule met @\label{lambda}@ Neem in je Lemma-paragraaf een zin op die verwijst naar dit label: ''From formula [formulenr], it is easy to see that $\Delta = 1/ \Lambda$.''
+# label je Lemma-paragraaf met @\label{lemmas}@. Schrijf in de Proof-sectie een zin die verwijst naar dit label. ''Now we will prove the main theorem, using the four lemma's we proved in Section [sectienr].''
+# Optioneel: schrijf het artikel af en submit het bij Mathematische Annalen.
 
 </div></div>

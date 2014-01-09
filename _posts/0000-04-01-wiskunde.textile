@@ -2,7 +2,7 @@
 layout: lesson
 title: Wiskunde schrijven
 category: week1
-description: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, tekst in wiskunde, horizontale witruimte, opmaak, lijst van symbolen.
+description: Wiskundeomgeving, tekens, machten en indices, operatoren, breuken, wortels, puntjes, matrices, haakjes, horizontale witruimte, opmaak, lijst van symbolen.
 ---
 
 Een belangrijke reden voor ons om LaTeX te gebruiken is dat het goed is in het zetten van wiskunde. Simpele wiskunde kan zonder packages gezet worden. Wij gebruiken @mathtools@, een uitbreiding van @amsmath@, omdat we ook ingewikkelde wiskunde willen zetten:
@@ -213,26 +213,7 @@ Een *som* en *integraal* maak je met @\sum@ en @\int@ waarbij je de limieten aan
 \int_0^\infty e^{-x}\, dx
 {% endhighlight %}
 
-Er zijn meer operatoren die op deze manier limieten zetten, zoals @\prod@ $\prod$ en @\bigcup@ $\bigcup$, zie het overzicht. Om meedere regels onder een som te zetten gebruik je @\substack@ en @\\@:
-
-
-<div class="example">
-\[
-\sum_{\substack{
-   0<i<m \\
-   0<j<n
-  }}
- P(i,j)
-\]
-</div>
-
-{% highlight latex %}
-\sum_{\substack{
-0 < i < m \\
-0 < j < n
-}}
-P(i,j)
-{% endhighlight %}
+Er zijn meer operatoren die op deze manier limieten zetten, zoals @\prod@ $\prod$ en @\bigcup@ $\bigcup$, zie het overzicht. 
 
 
 Met @\ldots@ $\ldots$ en @\cdots@ $\cdots$ maak je *puntjes*. Welke puntjes je moet gebruiken hangt af van de context. Zo schrijven we bijvoorbeeld @1,2\ldots,n@ $1,2,\ldots,n$ en @1\cdot 2 \cdots n@ $1\cdot 2\cdots n$. In het algemeen proberen we de puntjes zo te kiezen dat ze op gelijke hoogte liggen met de omringende operatoren. Het commando @\dots@ probeert dit automatisch te doen.
@@ -240,57 +221,10 @@ Met @\ldots@ $\ldots$ en @\cdots@ $\cdots$ maak je *puntjes*. Welke puntjes je m
 
 
 
-*Matrices* maak je met de @pmatrix@-omgeving of een van de varianten. Kolommen worden begrensd door @&@ en rijen door @\\@.
-
-<div class="example">
-\[
-\begin{pmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{pmatrix}
- \qquad
- \begin{bmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{bmatrix}
- \qquad
- \begin{vmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{vmatrix}
-\]
-</div>
-
-{% highlight latex %}
-\begin{pmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{pmatrix}
-
- \begin{bmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{bmatrix}
- 
- \begin{vmatrix}
-  a & b & c \\
-  d & e & f \\
-  g & h & i
- \end{vmatrix}
-{% endhighlight %}
-
-Het is gebruikelijk om in generieke tabellen puntjes te gebruiken. Dit doe je met @\cdots@ $\cdots$, @\vdots@ $\vdots$ en @\ddots@ $\ddots$.
-
-
 
 h2. Haakjes
 
-*Haakdjes* en andere *delimiters* zet je zo:
+*Haakjes* en andere *delimiters* zet je zo:
 
 <div class="example">
 \[
@@ -326,28 +260,26 @@ P\biggl(A=2 \biggm| \frac{A^2}{B}>4\biggr)
 
 Je kunt ook automatisch schalen met @\left@, @\right@ en @\middle@ op de voordehandliggende plaatsen. Dit geeft vaak te grote haakjes dus let goed op!
 
+<div class="panel panel-primary">
+<div class="panel-heading">
+<h3 class="panel-title">Opdracht 2</h3>
+</div>
+<div class="panel-body">
 
-
-h2. Tekst in wiskunde
-
-Tekst in _math mode_ zet je met @\text@. Je moet daarbij goed op de witruimte lettern. Hieronder zie je twee goede regels en een foute.
+Zet de regel
 
 <div class="example">
-\begin{gather*}
-P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}\\[0.5em]
-P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}\\[0.5em]
-P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
-\end{gather*}
+
+\[
+\biggl(\sum_{i=1}^n a_i\biggr)^2
+\]
+
 </div>
 
-{% highlight latex %}
-P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}
+Experimenteer met de grootte van de haakjes om de juiste grootte te vinden.
 
-P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}
+</div></div>
 
-% Fout:
-P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
-{% endhighlight %}
 
 
 h2. Horizontale witruimte
@@ -780,7 +712,7 @@ h5. Overig
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Opdracht 2</h3>
+<h3 class="panel-title">Opdracht 3</h3>
 </div>
 <div class="panel-body">
 # Maak een nieuw LaTeX-bestand met de volgende inhoud.
@@ -838,7 +770,7 @@ h5. Overig
 
 <div class="panel panel-primary">
 <div class="panel-heading">
-<h3 class="panel-title">Opdracht 3</h3>
+<h3 class="panel-title">Opdracht 4</h3>
 </div>
 <div class="panel-body">
 
