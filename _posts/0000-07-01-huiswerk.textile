@@ -33,7 +33,7 @@ Zelf twee opgaven van Hoofdstuk 5, Stochastiek 1 in LaTeX zetten, dat is de bedo
 \usepackage{mathtools, amssymb, amsthm}
 \usepackage[dutch]{babel}
 
-\theoremstyle{plain}                            
+\theoremstyle{definition}                            
 \newtheorem{opgave}{Opgave}        
 \theoremstyle{remark}                                       
 \newenvironment{oplossing}{\begin{proof}[Oplossing]}{\end{proof}}
