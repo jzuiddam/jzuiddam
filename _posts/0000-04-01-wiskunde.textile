@@ -725,7 +725,7 @@ h5. Overig
 \usepackage{amsthm}
 
 \theoremstyle{plain}
-\newtheorem{stelling}{Stelling}[section]
+\newtheorem{stelling}{Stelling}
 \theoremstyle{definition}
 \newtheorem{definitie}[stelling]{Definitie}
 
