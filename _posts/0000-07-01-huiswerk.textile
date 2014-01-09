@@ -94,7 +94,7 @@ Hier de tekst van de uitwerking.
 
 
 #2 Zet de uitwerking van twee huiswerkopgaven (naar keuze) van H5 van Stochastiek 1 in LaTeX. Maak deze opdracht zelfstandig — van alleen maar meekijken leer je niks.
-# Submit je werk op Blackboard: zowel tex-bestand, log-bestand als pdf-bestand submitten. Je log-bestand mag geen LaTeX-errors meer vermelden. Deadline: zondagavond 14-1, 24:00 uur. Niet veel later sluit deze assigment en kun je niet meer inleveren. Niet ingeleverd? Dan geen feedback.
+# Submit je werk op Blackboard: zowel tex-bestand, log-bestand als pdf-bestand submitten. Je log-bestand mag geen LaTeX-errors meer vermelden. Deadline: zondagavond 12-1, 24:00 uur. Niet veel later sluit deze assigment en kun je niet meer inleveren. Niet ingeleverd? Dan geen feedback.
 
 Belangrijk om te onthouden.
 * Alle wiskundetekens tussen enkele dollars, dus de stochast $X$ — anders gezegd: alle wiskunde zoveel mogelijk tussen dollars (niet alleen de moeilijke stukken)
