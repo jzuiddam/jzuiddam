@@ -3,7 +3,6 @@ layout: lesson
 title: Voorbeeldtoets en huiswerk
 category: week2
 description: Een huiswerkopgave LaTexen.
-disabled: true
 ---
 
 De toets van volgende week bestaat uit twee onderdelen:

@@ -3,7 +3,6 @@ layout: lesson
 title: Schrijfgids
 category: week2
 description: Stijlregels voor wiskunde en LaTeX.
-disabled: True
 ---
 
 <div class="hide">
