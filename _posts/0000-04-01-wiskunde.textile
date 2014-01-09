@@ -755,7 +755,7 @@ h5. Overig
 
 <div class="example">
 
-*Stelling 2* (Ongelijkheid van Cauchy-Schwarz) *.* Als $X$ en $Y$ stochastische grootheden zijn met $EX^2 \lt \infty$ en $EY^2 \lt \infty$, dan geldt
+*Stelling 2* (Ongelijkheid van Cauchy-Schwarz) *.* _Als $X$ en $Y$ stochastische grootheden zijn met $EX^2 \lt \infty$ en $EY^2 \lt \infty$, dan geldt_
 \[
 \DeclareMathOperator{\Var}{Var}
 \DeclareMathOperator{\Cov}{Cov}
