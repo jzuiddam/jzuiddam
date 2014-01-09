@@ -106,7 +106,7 @@ Type  H <return>  for immediate help.
 l.3 \select@language{dutch}
 {% endhighlight %}
 
-Dit probleem treedt op wanneer je van taal wisselt met het @babel@-package. De oplossing is om het @.aux@-bestand te wissen. Doe dit in TeXworks met @File -> Remove Aux Files@.
+Dit probleem treedt op wanneer je van taal wisselt met het @babel@-package. De oplossing is om het @.aux@-bestand te wissen. Doe dit in TeXworks met @File -> Remove Aux Files@. (Krijg je een foutmelding over rechten/permissions als je dit doet? Zorg ervoor dat je in een van je eigen mappen werkt, dus niet een temp map. Verplaats zonodig je tex-bestand.)
 
 
 h2. Waarschuwingen
@@ -127,6 +127,22 @@ Overfull \hbox (10.00104pt too wide) in paragraph at lines 6--7
 {% endhighlight %}
 
 Deze waarschuwing geeft aan dat er een woord is dat niet goed op de regel past. Dit komt bijvoorbeeld doordat LaTeX niet weet hoe het een woord moet afbreken of doordat er een lange regel in _math mode_ in de zin staat. Je kunt dit oplossen door afbrekingspunten toe te voegen of de tekst te herschrijven. Desnoods kun je een @\\@ invoegen, maar dit moet je pas doen als de tekst helemaal af is. Het tegenovergestelde van _overfull_ is _underfull_.
+
+h2. Fouten oplossen
+
+Tot slot geven we een aantal algemene tips voor het oplossen van fouten.
+
+h4. Vind het probleem door code tijdelijk in een commentaarregel te zetten
+
+Meestal weet je niet precies waar de fout wordt veroorzaakt in je code. Om hier achter te komen kun je delen van je code veranderen naar commentaar door er @%@en voor te zetten. In TeXworks doe je dat door de code te selecteren en dan op @Format -> Comment@ te klikken.
+
+h4. Verwijder de hulpbestanden
+
+Soms wordt een fout veroorzaakt door de hulpbestanden. Als je een onverklaarbare fout tegenkomt, kan het dus helpen deze te verwijderen. Klik in TeXworks op @File -> Remove Aux Files@.
+
+h4. Compileer regelmatig
+
+Als je zelf aan een LaTeX-bestand werkt, is het een goede gewoonte om steeds nadat je een of twee nieuwe zinnen getikt hebt, je document te LaTeX-en totdat alle fouten verwijderd zijn. Als je dat niet doet, stapelen de fouten zich op en eindig je met een onafzienbare kluwen incorrecte code die bijna niet meer te debuggen valt.
 
 ---
 
@@ -163,7 +179,7 @@ Dit proces kan eindeloos worden voortgezet: het getal $N_k$ heeft ten minste $k$
 \end{document}
 {% endhighlight %}
 
-Als je zelf aan een LaTeX-bestand werkt, is het een goede gewoonte om steeds nadat je een of twee nieuwe zinnen getikt hebt, je document te LaTeX-en totdat alle fouten verwijderd zijn. Als je dat niet doet, stapelen de fouten zich op en eindig je met een onafzienbare kluwen incorrecte code die bijna niet meer de debuggen valt.
+
 
 </div>
 </div>
