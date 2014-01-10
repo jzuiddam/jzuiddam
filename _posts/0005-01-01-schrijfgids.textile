@@ -85,7 +85,7 @@ Bijvoorbeeld:
 één functie, twee variabelen, drie ondergroepen.
 </div>
 
-Uitzondering: als de getallen tot je wiskundige onderwerp behoren, schrijf je ze met cijfers:
+Uitzondering: getallen als wiskundige objecten schrijf je met cijfers:
 
 <div class="example">
 Er zijn zeven partities van 5.
@@ -131,7 +131,7 @@ Geef objecten alleen een naam als dat nodig is. In het volgende voorbeeld is de 
 
 h3. A.5. Vind een balans tussen woorden en symbolen
 
-Wiskundestudenten zijn vaak geneigd alles in formules uit te drukken en gewonemensentaal te vermijden.
+Wiskundestudenten zijn vaak geneigd alles in formules uit te drukken en gewonemensentaal te vermijden. Vergelijk:
 
 <div class="example">
 De grootste gemene deler van $a$ en $b$, geschreven $\ggd(a, b)$, is het grootste gehele getal dat zowel $a$ als $b$ deelt.
@@ -227,7 +227,9 @@ De opmaak van de elementen van de structuur regel je in de preamble. Maak struct
 
 h3. B.2. Houd je texcode netjes
 
-Het schrijven van nette code voorkomt fouten en maakt het gemakkelijker om later iets terug te vinden. Een vuistregel is de code te schrijven zoals de uitvoer eruit ziet. We geven een aantal voorbeelden. Zet de commando's voor een display op aparte regels:
+Het schrijven van nette code voorkomt fouten en maakt het gemakkelijker om later iets terug te vinden. Een vuistregel is de code te schrijven zoals de uitvoer eruit ziet. We geven een aantal voorbeelden.
+
+Zet de commando's voor een display op aparte regels:
 
 {% highlight latex %}
 We vinden
@@ -236,7 +238,7 @@ x = 10.
 \]
 {% endhighlight %}
 
-Zet @\begin{}@ en @\end{}@-commando's van omgevingen op aparte regels:
+Zet @\begin@ en @\end@-commando's van omgevingen op aparte regels:
 
 {% highlight latex %}
 \begin{equation}
@@ -245,7 +247,7 @@ a^2 + b^2 = c^2
 \end{equation}
 {% endhighlight %}
 
-In een align-omgeving zet je de ampersands onder elkaar:
+In een @align@-omgeving, tabel of matrix zet je de ampersands onder elkaar:
 
 {% highlight latex %}
 \begin{align*}
@@ -286,7 +288,7 @@ h3. B.3. Typ geen lege regel als dat niet moet
 
 Een lege regel in je code is een commando; het markeert het begin van een nieuwe paragraaf. Houd hier rekening mee bij het toepassen van B.2.
 
-Een veelgemaakte fout is het schrijven van een witregel na een display terwijl de alinea doorloopt. Het resultaat is een onterechte inspringing (rechts).
+Een veelgemaakte fout is het schrijven van een witregel na een display terwijl de alinea doorloopt. Het resultaat is een onterechte inspringing (onder).
 
 <div class="example" >
 We beschouwen het symmetrische polynoom
@@ -297,6 +299,14 @@ We beschouwen het symmetrische polynoom
 Dit is ten duidelijkste een symmetrisch polynoom.
 </div>
 
+{% highlight latex %}
+We beschouwen het symmetrische polynoom
+\[
+(X_1 - X_2)^2.
+\]
+Dit is ten duidelijkste een symmetrisch polynoom.
+{% endhighlight %}
+
 <div class="example">
 We beschouwen het symmetrische polynoom
 \[
@@ -306,19 +316,28 @@ We beschouwen het symmetrische polynoom
 &nbsp; &nbsp; &nbsp; &nbsp; Dit is ten duidelijkste een symmetrisch polynoom.
 </div>
 
+{% highlight latex %}
+We beschouwen het symmetrische polynoom
+\[
+(X_1 - X_2)^2.
+\]
+
+Dit is ten duidelijkste een symmetrisch polynoom.
+{% endhighlight %}
+
 
 h3. B.4. Gebruik Babel
 
-LaTeX behandelt een tekst standaard als Engelse tekst. Dat zie je aan de namen van paragrafen en figuren, en aan de afbreking van woorden. Als je een Nederlandse tekst schrijft, gebruik dan @\usepackage[dutch]{babel}@ in de preamble.
+LaTeX behandelt een tekst standaard als Engelse tekst. Dat zie je aan de inhoudsopgave, data, figuren, tabellen, en aan de afbreking van woorden. Als je een Nederlandse tekst schrijft, gebruik dan @\usepackage[dutch]{babel}@ in de preamble.
 
 
 h3. B.5. Breek juist af
 
 De tilde @~@ geeft een _non breaking space_. Gebruik de tilde in plaats van een spatie, als op die spatie niet mag worden afgebroken. Voorkom bijvoorbeeld dat een symbool op het begin van een regel wordt gezet: 
 
-<div class="example">
+{% highlight latex %}
 het getal~$n$, de functie~$f$, de Hilbertruimte~$H$.
-</div>
+{% endhighlight %}
 
 Gebruik de tilde ook om rijtjes korte symbolen netjes af te breken: 
 
@@ -341,16 +360,16 @@ voor\-keurs\-be\-han\-de\-ling
 
 In een formule die tussen enkele dollartekens staat, kun je met accolades een afbreekvoorkeur aangeven: @${a^2+b^2}=c^2$@. De accolades zorgen ervoor dat er niet rond de @+@ wordt afgebroken.
 
-Als je echt niet middenin een formule wilt afbreken, zet die dan in een @\hbox{}@. LaTeX zet eerst die @\hbox{}@, daarna pas de zin. Let op: in een @\hbox{}@ moet een wiskundeformule weer opnieuw tussen enkele dollartekens, zelfs al staat die @\hbox{}@ tussen dollartekens.
+Als je echt niet middenin een formule wilt afbreken, zet die dan in een @\hbox{}@. LaTeX zet eerst die @\hbox{}@, daarna pas de zin. Let op: in een @\hbox{}@ moet een wiskundeformule weer opnieuw tussen enkele dollartekens.
 
-Als het dan nog steeds niet lukt, ga dan je tekst herschrijven: keer bijvoorbeeld de volgorde van een zin om. Dit lijkt misschien op opgeven, maar is vaak de meest praktische oplossing. Doe dit niet meteen, maar later -- als je je tekst aan het afronden bent. Het kan immers voorkomen dat het probleem zichzelf oplost doordat teksten gaandeweg het schrijfproces nog verschuiven.
+Als het dan nog steeds niet lukt, ga dan je tekst herschrijven. Keer bijvoorbeeld de volgorde van een zin om. Dit lijkt misschien op opgeven, maar is vaak de meest praktische oplossing. Doe dit niet meteen, maar later -- als je je tekst aan het afronden bent. Het kan immers voorkomen dat het probleem zichzelf oplost doordat teksten gaandeweg het schrijfproces nog verschuiven.
 
 
 h3. B.6. Voorkom een onjuiste grote spatie na een punt
 
 Een punt met een spatie erna wordt door LaTeX opgevat als het einde van een zin. De spatie na de punt krijgt een grotere horizontale ruimte dan een gewone spatie.
 
-De grotere spatie na een punt is meestal goed, behalve in titulatuur en afkortingen. Om grote spaties te voorkomen, schrijf je @Dr.~G.F.~Helminck@ of @Dr.\ G.F.\ Helminck@. De @~@ is een non breaking space, de @\␣@ geeft een gewone spatie, maar het voorkomt wel dat LaTeX het patroon punt-spatie ziet.
+De grotere spatie na een punt is meestal goed, behalve bijvoorbeeld in titulatuur en afkortingen. Om grote spaties te voorkomen, schrijf je @Dr.~G.F.~Helminck@ of @Dr.\ G.F.\ Helminck@. De @~@ is een non breaking space, de @\␣@ geeft een gewone spatie, maar het voorkomt wel dat LaTeX het patroon punt-spatie ziet.
 
 
 h3. B.7. Gebruik @\DeclareMathOperator@ voor nieuwe operatoren.
@@ -362,7 +381,7 @@ Voor het zetten van operatoren als $\Tr$ of $\ord$ maak je zelf een operator met
 \DeclareMathOperator{\ord}{ord}
 {% endhighlight %}
 
-Zo scheid je opmaak van structuur en krijg je de juiste witruimte rondom de operator.
+Zo scheid je opmaak van inhoud en krijg je de juiste witruimte rondom de operator.
 
 <div class="panel panel-primary">
 <div class="panel-heading">
@@ -372,7 +391,7 @@ Zo scheid je opmaak van structuur en krijg je de juiste witruimte rondom de oper
 
 # Kopieer de onderstaande code in een nieuw LaTeX-document. 
 # Pas de tekst aan tot het voldoet aan de vuistregels.
-# Controleer: Geen witregels binnen een paragraaf. Elke formule is onderdeel van een zin. Elke zin begint met een Nederlandse tekst. Er is een evenwicht tussen lopende tekst en displays. De opmaak wordt bepaald door de structuur. Laat je werk controleren door een van de docenten.
+# Controleer: Geen witregels binnen een paragraaf. Elke formule is onderdeel van een zin. Elke zin begint met een Nederlandse tekst. Er is evenwicht tussen lopende tekst en displays. De opmaak wordt bepaald door de structuur. Laat je werk controleren door een van de docenten.
 
 {% highlight latex %}
 \documentclass{scrartcl}
