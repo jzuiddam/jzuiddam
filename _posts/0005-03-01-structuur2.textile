@@ -5,6 +5,7 @@ category: week2
 description: Een artikel schrijven.
 ---
 
+Vorige week zagen we al wat de global structuur van een LaTeXdocument is. In deze les gaan we onze tekst nog meer structuur geven. Denk aan hoofdstukken, paragrafen, inhoudsopgave, verwijzingen, bibliografie. Ook behandelen we tabellen en plaatjes.
 
 h2. Document classes
 
@@ -64,7 +65,74 @@ Bij artikelen is het gebruikelijk om aan het begin een *samenvatting* te zetten.
 
 h2. Figuren en tabellen
 
-(nog te schrijven)
+Tabellen maak je met de @tabular@-omgeving.
+
+<div class="example">
+
+<img src="/../svg/table.svg" height="64" alt="Voorbeeld van een tabel."/>
+
+</div>
+
+{% highlight latex %}
+
+\begin{tabular}{llr}
+\hline
+naam & waarde & aantal \\
+\hline
+aap & 10 & 20 \\
+noot & 10 & 20 \\
+\hline
+\end{tabular}
+
+{% endhighlight %}
+
+Met de opties @l@, @c@ en @r@ geef je het aantal kolommen en het type kolom aan: links uitgelijnd, rechts uitgelijn of gecentreerd. Met @\hline@ maak je een horizontale lijn.
+
+Om de tabel netjes met een nummer en een onderschrift op de pagina te krijgen gebruiken we de @table@-omgeving.
+
+{% highlight latex %}
+
+\begin{table}
+  \centering
+  \begin{tabular}{llr}
+    \hline
+    naam & waarde & aantal \\
+    \hline
+    aap & 10 & 20 \\
+    noot & 10 & 20 \\
+    \hline
+  \end{tabular}
+  \caption{De waarde van aap en noot}
+  \label{tab:aapnoot}
+\end{table}
+
+{% endhighlight %}
+
+Je ziet dat we de @tabular@-omgeving in een @table@-omgeving hebben gezet. De @table@-omgeving maakt een zogenaamde *float*. Dit is een vak waarvan LaTeX zelf bepaalt waar het komt te staan op de pagina. LaTeX probeert tabellen en figuren bij elkaar te zetten zodat de tekst zo min mogelijk onderbroken wordt. We hebben met @\caption@ een bijschrijft toegevoegd en met @\label@ een label, waarmee we naar deze tabel kunnen verwijzen, zie de volgende paragraaf. Zie "Wikibooks/Tables":http://en.wikibooks.org/wiki/LaTeX/Tables voor meer opties.
+
+Figuren kunnen we laden met het package @graphicx@ en het commando @\includegraphics@. Ondersteunde bestandstypen zijn pdf, png en jpg. Bijvoorbeeld als je een afbeelding @figuur.pdf@ wilt zetten
+
+{% highlight latex %}
+
+\includegraphics{figuur}
+
+{% endhighlight %}
+
+Je geeft @includegraphics@ als argument de naam van het bestand _zonder extensie_. LaTeX zoekt vervolgens zelf een bestand met deze naam en een extensie die het ondersteunt. Dit gaat in een bepaalde volgorde. Let dus op als je bestanden hebt met dezelfde naam en een andere extensie.
+
+Voor figuren is er ook een speciale _float_, de @figure@-omgeving:
+
+{% highlight latex %}
+
+\begin{figure}
+\includegraphics{figuur}
+\caption{Een figuur.}
+\label{fig:voorbeeld}
+\end{figure}
+
+{% endhighlight %}
+
+Zie "Wikibooks/Importing Graphics":http://en.wikibooks.org/wiki/LaTeX/Importing_Graphics voor meer opties.
 
 h2. Verwijzingen
 
@@ -79,7 +147,9 @@ In paragraaf \ref{sec:afgeleide} hebben we gezien wat een afgeleide is.
 
 {% endhighlight %}
 
-Voor @\part@, @\chapter@, etc werkt het op dezelfde manier. Voor stelling-omgevingen zet je het label net na de @\begin{stelling}@. Je moet een aantal keer compileren voordat de juiste verwijzing verschijnt. Het voordeel van deze manier van verwijzen is dat de verwijzing blijft kloppen als je tekst invoegt of de volgorde verandert.
+Voor @\part@, @\chapter@, etc werkt verwijzen op dezelfde manier. Voor stelling-omgevingen zet je het label net na de @\begin{stelling}@. Bij floats als @figuur@ en @table@ gebruik je een label zoals aangegeven in de vorige paragraaf.
+
+Je moet een aantal keer compileren voordat de juiste verwijzing verschijnt. Het voordeel van deze manier van verwijzen is dat de verwijzing blijft kloppen als je tekst invoegt of de volgorde verandert.
 
 h2. Bibliografie
 
