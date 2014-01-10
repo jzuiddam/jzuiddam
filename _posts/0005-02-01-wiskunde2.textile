@@ -2,7 +2,7 @@
 layout: lesson
 title: Gevorderde wiskunde
 category: week2
-description: 
+description: gather, align, matrices, tekst in wiskunde, cases, multiline subscripts, verwijzingen.
 ---
 
 <div class="hide">
