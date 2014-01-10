@@ -20,6 +20,7 @@ description:
 </notextile>
 </div>
 
+In deze les bespreken we een aantal nieuwe belangrijke constructies voor het zetten van wiskunde.
 
 h2. Geavanceerde omgevingen
 
@@ -60,6 +61,7 @@ g(x) &= x^3 - 3
 {% endhighlight %}
 
 In bovenstaande omgevingen kun je met @\\[1em]@ de witruimte tussen regels vergroten. Vervang @1em@ door de gewenste grootte. (Een 'em' is gelijk aan de grootte van je font, bijvoorbeeld 12pt.)
+
 
 h2. Matrices
 
@@ -111,13 +113,12 @@ Het is gebruikelijk om in generieke matrices puntjes te gebruiken. Dit doe je me
 
 h2. Tekst in wiskunde
 
-Tekst in _math mode_ zet je met @\text@. Je moet daarbij goed op de witruimte letten. Hieronder zie je twee goede regels en een foute.
+Tekst in _math mode_ zet je met @\text@. Je moet daarbij goed op de witruimte letten. Hieronder zie je twee goede voorbeelden
 
 <div class="example">
 \begin{gather*}
 P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}\\[0.5em]
 P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}\\[0.5em]
-P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
 \end{gather*}
 </div>
 
@@ -125,9 +126,43 @@ P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
 P := \{ \text{natuurlijke getallen $p$ zodat $p$ is priem} \}
 
 P := \{ \text{natuurlijke getallen } p \text{ zodat } p \text{ is priem} \}
+{% endhighlight %}
 
+en een voorbeeld van hoe het niet moet:
+
+<div class="example">
+\[
+P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
+\]
+</div>
+
+{% highlight latex %}
 % Fout:
 P := \{ \text{natuurlijke getallen} p \text{zodat} p \text{is priem} \}
+{% endhighlight %}
+
+h2. Cases
+
+Een veelgebuikte constructie voor bijvoorbeeld functiedefinities is de volgende
+
+<div class="example">
+\[
+f = 
+\begin{cases}
+x^2 & \text{als $x \geq 0$,}\\
+0   & \text{anders.}
+\end{cases}
+\]
+</div>
+
+{% highlight latex %}
+
+f(x) = 
+\begin{cases}
+x^2 & \text{als $x \geq 0$},\\
+0   & \text{anders}.
+\end{cases}
+
 {% endhighlight %}
 
 h2. Multiline subscript
@@ -199,7 +234,19 @@ Als je het package @hyperref@ gebruikt dan zijn de verwijzingen klikbaar.
 </div>
 <div class="panel-body">
 
-Zet de volgende wiskundige uitdrukkingen in displays.
+# Zet de volgende display en verwijzing. Waar zet je de labels? (Je hoeft niet de precieze nummers (6) en (7) na te maken.)
+
+<div class="example">
+Definieer
+\begin{align}
+q &= 10 \label{eq:vba}\\
+r &= 100. \label{eq:vbb}
+\end{align}
+De waarden in \eqref{eq:vba} en \eqref{eq:vbb} gaan we gebruiken.
+</div>
+
+
+#2 Zet de volgende wiskundige uitdrukkingen in displays.
 
 <notextile>
 <div class="example">
@@ -304,5 +351,19 @@ Let erop dat de haakjes de juiste grootte hebben.
 
 
 Laat je werk controleren.
+
+</div></div>
+
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+* @gather@, @gather*@, @align@, @align*@
+* Hoe maak je matrices, cases?
+* Hoe zet je tekst in wiskunde?
+* Hoe maak je verwijzingen?
 
 </div></div>
