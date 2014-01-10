@@ -29,7 +29,8 @@ Zelf twee opgaven van Hoofdstuk 5, Stochastiek 1 in LaTeX zetten, dat is de bedo
 # Gebruik de volgende modelcode.
 
 {% highlight tex %}
-\documentclass[a4paper,12pt]{letter} 
+
+\documentclass[a4paper,12pt]{article} 
 \usepackage{mathtools, amssymb, amsthm}
 \usepackage[dutch]{babel}
 
@@ -47,10 +48,8 @@ Zelf twee opgaven van Hoofdstuk 5, Stochastiek 1 in LaTeX zetten, dat is de bedo
 \begin{document}
 
 %% Kopregel
-\noindent
-{\large Opgaven Stochastiek 1, Hoofdstuk 5}\\
-O. P. Losser, 1234567\\
-\today\smallskip\hrule
+\subsection*{Opgaven Stochastiek 1, Hoofdstuk 5}
+\subsubsection*{O. P. Losser, 1234567\\ \today}
 
 %% Opgave
 % Stel de teller in als je niet bij opgave 1 wil beginnen. 
