@@ -108,7 +108,7 @@ Om de tabel netjes met een nummer en een onderschrift op de pagina te krijgen ge
 
 {% endhighlight %}
 
-Je ziet dat we de @tabular@-omgeving in een @table@-omgeving hebben gezet. De @table@-omgeving maakt een zogenaamde *float*. Dit is een vak waarvan LaTeX zelf bepaalt waar het komt te staan op de pagina. LaTeX probeert tabellen en figuren bij elkaar te zetten zodat de tekst zo min mogelijk onderbroken wordt. We hebben met @\caption@ een bijschrijft toegevoegd en met @\label@ een label, waarmee we naar deze tabel kunnen verwijzen, zie de volgende paragraaf. Zie "Wikibooks/Tables":http://en.wikibooks.org/wiki/LaTeX/Tables voor meer opties.
+Je ziet dat we de @tabular@-omgeving in een @table@-omgeving hebben gezet. De @table@-omgeving maakt een zogenaamde *float*. Dit is een vak waarvan LaTeX zelf bepaalt waar het komt te staan op de pagina. LaTeX probeert tabellen en figuren bij elkaar te zetten zodat de tekst zo min mogelijk onderbroken wordt. We hebben met @\caption@ een bijschrijft toegevoegd en met @\label@ een label, waarmee we naar deze tabel kunnen verwijzen, zie de volgende paragraaf. Wil je tabellen die er professioneler uitzien, kijk dan eens naar het "booktabs package":http://archive.cs.uu.nl/mirror/CTAN/macros/latex/contrib/booktabs/booktabs.pdf. Zie "Wikibooks/Tables":http://en.wikibooks.org/wiki/LaTeX/Tables voor meer opties.
 
 Figuren kunnen we laden met het package @graphicx@ en het commando @\includegraphics@. Ondersteunde bestandstypen zijn pdf, png en jpg. Bijvoorbeeld als je een afbeelding @figuur.pdf@ wilt zetten
 
@@ -153,7 +153,34 @@ Je moet een aantal keer compileren voordat de juiste verwijzing verschijnt. Het 
 
 h2. Bibliografie
 
-(nog te schrijven)
+Een bibliografie kunnen we als volgt zetten.
+
+{% highlight latex %}
+
+\documentclass{article}
+
+\begin{document}
+
+We referen naar Lamport \cite{lamport94}.
+
+\begin{thebibliography}{x}
+
+\bibitem{lamport94}
+  Leslie Lamport,
+  \emph{\LaTeX: A Document Preparation System}.
+  Addison Wesley, Massachusetts,
+  2nd Edition,
+  1994.
+
+\end{thebibliography}
+\end{document}
+
+{% endhighlight %}
+
+Je ziet dat we een bibliografie in de @thebibliography@-omgeving zetten. Het argument geeft aan dat de teller voor citaties niet meer dan één karakter zal innemen. Voor grotere citaties geef je meer karakters, bijvoorbeeld @xx@ voor 99 citaties. Een citatie staat in een @\bibitem@. De eerste groep die volgt is het label. We verwijzen naar deze citatie met @\cite@ met als argument dit label. Dan volgt de citatie zelf.
+
+
+Bovenstaande manier van citeren bevelen we niet aan voor teksten met veel citaties. Probeer dan *bibtex*, zie "Wikibooks/Bibliography Management":http://en.wikibooks.org/wiki/LaTeX/Bibliography_Management.
 
 <div class="panel panel-primary">
 <div class="panel-heading">
