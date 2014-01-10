@@ -171,15 +171,15 @@ Als je alle formules inline zet, krijg je een 'dichte' tekst die moeilijk leesba
 Een expressie die te groot is voor een tekstregel kun je soms anders schrijven, zodat geen display nodig is. Je kunt bijvoorbeeld de expressie $\frac{f+2}{f+1}$ vervangen door $(f+2)/(f+1)$.
 
 
-h3. A.9. Definities en stellingen
+h3. A.9. Geef definities en stellingen de juiste opmaak.
 
-Geef definities en stellingen een nummer en gebruik dezelfde 'teller' door de hele tekst. Zet voor en na definities en stellingen een witregel. Zet definities in romeins font en het begrip dat gedefinieerd wordt cursief:
+Belangrijke definities en stellingen zet je in een eigen alinea die begint met een kopje *Definitie 1.* of iets dergelijks. Geef deze definities en stellingen een nummer en gebruik dezelfde 'teller' door de hele tekst. Zet voor en na definities en stellingen een witregel. Zet definities in romeins font en het begrip dat gedefinieerd wordt cursief:
 
 <div class="example">
 *Definitie A.2.* Een _even_ getal is een getal dat geheel deelbaar is door 2.
 </div>
 
-Stellingen worden traditioneel cursief gezet:
+Stellingen, proposities, lemma's, etc. worden traditioneel cursief gezet:
 
 <div class="example">
 *Stelling A.3.* _Het getal $n^5 - n$ is deelbaar door 10 voor alle $n\in\N$._
@@ -193,7 +193,7 @@ h2. B. LaTeX
 
 In deze paragraaf bespreken we een aantal goede vuistregels bij het gebruiken van LaTeX. Veel van deze vuistregels hebben we al eerder gezien.
 
-h3. B.1. Gebruik structuurcommando's
+h3. B.1. Gebruik en maak structuurcommando's
 
 De kracht van LaTeX is de mogelijkheid om een tekst structuur te geven zonder de opmaak vast te leggen. Een tekst krijgt structuur met commando's als
 * @\chapter{}@
@@ -468,6 +468,33 @@ Dus $\sqrt2$ is niet rationaal
 
 {% endhighlight %}
 
+</div></div>
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+
+# Wiskunde schrijven:
+## Schrijf zinnen met een hoofdletter en een punt.
+## Verdeel de tekst in alinea's en paragrafen.
+## Schrijf goed Nederlands.
+## Schrijf in- en uitleidingen.
+## Wees zorgvuldig met naamgeving.
+## Vind een balans tussen woorden en symbolen.
+## Nummer formules alleen als dat nodig is.
+## Geef figuren en tabellen een onderschrift.
+## Gebruik displays als dat nodig is.
+## Geef definities en stellingen de juiste opmaak.
+#2 LaTeX:
+## Gebruik en maak structuurcommando's
+## Houd je code netjes.
+## Typ geen lege regel als dat niet moet.
+## Gebruik Babel.
+## Breek juist af.
+## Voorkom een onjuiste spatie na een punt.
+## Gebruik @\DeclareMathOperator@ voor nieuwe operatoren.
 </div></div>
 
 
