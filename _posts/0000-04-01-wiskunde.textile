@@ -162,22 +162,28 @@ Een *operator* is een functie geschreven als een woord, bijvoorbeeld $\sin$ en $
 
 <div class="example">
 \[
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\ord}{ord}
-\ord{}_a\,\, f = 2
+\DeclareMathOperator{\Poisson}{Poisson}
+\tr A,\quad \ord{}_a\,\, f = 2,\quad \Poisson(\lambda)
 \]
 </div>
 
 {% highlight latex %}
 \documentclass[a4paper]{article}
 \usepackage{mathtools}
+\DeclareMathOperator{\tr}{tr}
 \DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\Poisson}{Poisson}
 
 \begin{document}
 \[
-\ord_a f = 2
+\tr A, \ord_a f = 2, \Poisson(\lambda)
 \]
 \end{document}
 {% endhighlight %}
+
+
 
 
 h2. Veelgebruikte constructies
