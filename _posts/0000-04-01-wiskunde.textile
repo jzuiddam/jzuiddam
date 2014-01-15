@@ -142,12 +142,12 @@ a^{n+1}  a_{i/2}
 </div>
 <div class="panel-body">
 
-Zet de toren
+Zet de machten
 
 <div class="example">
 
 \[
-a^{b^c}
+(a^b)^c,\quad a^{b^c}
 \]
 
 </div>
