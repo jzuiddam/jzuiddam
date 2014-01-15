@@ -59,9 +59,81 @@ table(table).
 
 Het noogste niveau in een @article@ is @\section@ en het hoogste niveau in @book@ en @report@ @\chapter@. Daarboven _kan_ @\part@ worden gebruikt, maar dat hoeft niet.
 
-Met het commando @\tableofcontents@ kun je een *inhoudsopgave* maken.
+Met het commando @\tableofcontents@ kun je een *inhoudsopgave* maken. Met het package @hyperref@ zijn de onderdelen van deze inhoudsopgave klikbaar.
 
 Bij artikelen is het gebruikelijk om aan het begin een *samenvatting* te zetten. Dit gaat in de @abstract@ omgeving.
+
+
+h2. Definities en stellingen
+
+Definities, stellingen, lemma's etc. zetten we met het package @amsthm@. Dit package heeft standaard drie typen omgevingen: @plain@, @definition@ en @remark@. Zet bijvoorbeeld het volgende in de preamble.
+
+{% highlight latex %}
+
+\theoremstyle{plain}
+\newtheorem{stelling}{Stelling}
+
+\theoremstyle{definition}
+\newtheorem{definitie}{Definitie}
+
+\theoremstyle{remark}
+\newtheorem{opmerking}{Opmerking}
+\newtheorem{voorbeeld}{Voorbeeld}
+
+{% endhighlight %}
+
+Het commando @\newtheorem{naam}{Kopje}@ maakt een nieuwe omgeving met naam @naam@ en kopje @Kopje@. Het commando @\theoremstyle@ bepaalt welk type de omgevingen hebben.
+Bovenstaande code maakt vier omgevingen: @stelling@, @definitie@, @opmerking@ en @voorbeeld@. De drie typen krijgen alle een andere opmaak.
+
+<div class="example">
+
+*Stelling 1.* _Lorem ipsum._
+
+*Definitie 1.* Lorem ipsum.
+ 
+_Opmerking 1._ Lorem ipsum.
+
+_Voorbeeld 1._ Lorem ipsum.
+
+</div>
+
+{% highlight latex %}
+
+\begin{stelling} 
+Lorem ipsum.
+\end{stelling}
+
+\begin{definitie} 
+Lorem ipsum.
+\end{definitie}
+ 
+\begin{opmerking} 
+Lorem ipsum.
+\end{opmerking}
+
+\begin{voorbeeld} 
+Lorem ipsum.
+\end{voorbeeld}
+
+{% endhighlight %}
+
+Je ziet dat de omgevingen automatisch genummerd worden. Iedere omgevingen krijgt standaard een eigen 'teller'. Het is gebruikelijk (en overzichtelijk) om voor alle omgevingen dezelfde teller te gebruiken. Je kunt aangeven welke teller een @amsthm@-omgeving moet gebruiken door de naam die teller op te geven in een optioneel argument van @\newtheorem@. De volgende code zorgt er bijvoorbeeld voor dat alle omgevingen de teller van de @stelling@-omgeving gebruiken.
+
+{% highlight latex %}
+
+\theoremstyle{plain}
+\newtheorem{stelling}{Stelling}
+
+\theoremstyle{definition}
+\newtheorem{definitie}[stelling]{Definitie}
+
+\theoremstyle{remark}
+\newtheorem{opmerking}[stelling]{Opmerking}
+\newtheorem{voorbeeld}[stelling]{Voorbeeld}
+
+{% endhighlight %}
+
+Bewijzen zet je met @amsthm@ in de @proof@-omgeving.
 
 h2. Figuren en tabellen
 
@@ -188,17 +260,29 @@ Bovenstaande manier van citeren bevelen we niet aan voor teksten met veel citati
 </div>
 <div class="panel-body">
 
-Maak een zo compact mogelijk LATEX-artikel, dat het volgende doet:
+Maak een zo compact mogelijk LaTeX-artikel, dat het volgende doet:
 # het is een artikel
-# jij bent auteur; de titel is “A short proof of the Four Color Theorem” (gebruik LATEX om dit te formatten)
-# neem na de titel een illustratie op van het vierkleurenprobleem (alleen centreren, geen onderschrift oid. toevoegen)
-# maak vier genummerde secties: Introduction, Definitions, Lemmas, Proof
-# maak een inhoudsopgave (via LATEX, niet zelf gaan tikken)
-# maak de titels in de inhoudsopgave klikbaar (als hyperreferenties, dus)
-# maak een bibliografie met tenminste  een verwijzing: het artikel van Appel en Haken met hun bewijs van de vierkleurenstelling, inclusief het aantal pagina’s (p. xx–yy).
-# de introductie bevat een verwijzing naar een artikel uit je bibliografie (“The proof of Appel and Haken of the Four Colour Theorem comprised X pages [citatienummer]’).
-# Neem in je In Definition-sectie een zin op: “We define $\Lambda$ to be:”, met daarna een gedisplayde en genummerde vergelijking met de formule $\Lambda = 1/\Delta$. Label die formule met @\label{lambda}@ Neem in je Lemma-paragraaf een zin op die verwijst naar dit label: “From formula [formulenr], it is easy to see that $\Delta = 1/ \Lambda$.''
-# label je Lemma-paragraaf met @\label{lemmas}@. Schrijf in de Proof-sectie een zin die verwijst naar dit label. ''Now we will prove the main theorem, using the four lemma's we proved in Section [sectienr].''
-# Optioneel: schrijf het artikel af en submit het bij Mathematische Annalen.
+# jij bent auteur; de titel is “Een kort bewijs van de Vierkleurenstelling”
+# neem na de titel een illustratie op van het vierkleurenprobleem (alleen centreren, geen onderschrift of iets dergelijks toevoegen)
+# maak vier genummerde paragrafen: Inleiding, Definities, Lemma's, Bewijs.
+# maak een inhoudsopgave (via LaTeX, niet zelf gaan tikken)
+# maak de onderdelen in de inhoudsopgave klikbaar
+# maak een bibliografie met tenminste een verwijzing: het artikel van Appel en Haken met hun bewijs van de Vierkleurenstelling.
+# de inleiding bevat een verwijzing naar een artikel uit je bibliografie. Gebruik hiervoor @\cite@.
+# label je Lemma-paragraaf met @\label{lemmas}@. Schrijf in de Bewijs-paragraaf een zin die verwijst naar dit label.
+
+</div></div>
+
+
+<div class="panel panel-success">
+<div class="panel-heading">
+<h3 class="panel-title">Onthouden</h3>
+</div>
+<div class="panel-body">
+* Hoe maak je hoofdstukken, paragafen, etc?
+* Hoe maak je definities en stellingen?
+* Hoe maak je figuren en tabellen?
+* Hoe maak je verwijzingen?
+* Hoe maak je een bibliografie?
 
 </div></div>
