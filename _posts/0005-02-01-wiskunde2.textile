@@ -113,7 +113,7 @@ Het is gebruikelijk om in generieke matrices puntjes te gebruiken. Dit doe je me
 
 h2. Tekst in wiskunde
 
-Tekst in _math mode_ zet je met @\text@. Je moet daarbij goed op de witruimte letten. Hieronder zie je twee goede voorbeelden
+Tekst in _math mode_ zet je met @\text@ of @\textnormal@. Het commando @\text@ gebruikt het font van de huidige omgeving, @\textnormal@ gebruikt roman. Je moet bij deze commando's goed op de witruimte letten. Hieronder zie je twee goede voorbeelden
 
 <div class="example">
 \begin{gather*}
