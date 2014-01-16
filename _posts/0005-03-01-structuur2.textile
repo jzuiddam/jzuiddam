@@ -57,7 +57,7 @@ table(table).
 | @\paragraph@		|	4		| |
 | @\subparagraph@	|	5		| |
 
-Het noogste niveau in een @article@ is @\section@ en het hoogste niveau in @book@ en @report@ @\chapter@. Daarboven _kan_ @\part@ worden gebruikt, maar dat hoeft niet.
+Het hoogste niveau in een @article@ is @\section@ en het hoogste niveau in @book@ en @report@ @\chapter@. Daarboven _kan_ @\part@ worden gebruikt, maar dat hoeft niet.
 
 Met het commando @\tableofcontents@ kun je een *inhoudsopgave* maken. Met het package @hyperref@ zijn de onderdelen van deze inhoudsopgave klikbaar.
 
