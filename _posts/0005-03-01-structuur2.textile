@@ -190,7 +190,7 @@ Figuren kunnen we laden met het package @graphicx@ en het commando @\includegrap
 
 {% endhighlight %}
 
-Je geeft @includegraphics@ als argument de naam van het bestand _zonder extensie_. LaTeX zoekt vervolgens zelf een bestand met deze naam en een extensie die het ondersteunt. Dit gaat in een bepaalde volgorde. Let dus op als je bestanden hebt met dezelfde naam en een andere extensie.
+Je geeft @includegraphics@ als argument de naam van het afbeeldingsbestand _zonder extensie_. LaTeX zoekt vervolgens in de map waar het LaTeX-bestand staat een bestand met de gegeven naam en een extensie die het ondersteunt. Dit gaat in een bepaalde volgorde. Let dus op als je bestanden hebt met dezelfde naam en een andere extensie.
 
 Voor figuren is er ook een speciale _float_, de @figure@-omgeving:
 
