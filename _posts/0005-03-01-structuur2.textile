@@ -117,7 +117,7 @@ Lorem ipsum.
 
 {% endhighlight %}
 
-Je ziet dat de omgevingen automatisch genummerd worden. Iedere omgevingen krijgt standaard een eigen 'teller'. Het is gebruikelijk (en overzichtelijk) om voor alle omgevingen dezelfde teller te gebruiken. Je kunt aangeven welke teller een @amsthm@-omgeving moet gebruiken door de naam die teller op te geven in een optioneel argument van @\newtheorem@. De volgende code zorgt er bijvoorbeeld voor dat alle omgevingen de teller van de @stelling@-omgeving gebruiken.
+Je ziet dat de omgevingen automatisch genummerd worden. Iedere omgevingen krijgt standaard een eigen 'teller'. Het is gebruikelijk (en overzichtelijk) om voor alle omgevingen dezelfde teller te gebruiken. Je kunt aangeven welke teller een @amsthm@-omgeving moet gebruiken door de naam van de teller op te geven als een optioneel argument bij @\newtheorem@. De volgende code zorgt er bijvoorbeeld voor dat alle omgevingen de teller van de @stelling@-omgeving gebruiken.
 
 {% highlight latex %}
 
