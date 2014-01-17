@@ -219,7 +219,7 @@ In paragraaf \ref{sec:afgeleide} hebben we gezien wat een afgeleide is.
 
 {% endhighlight %}
 
-Voor @\part@, @\chapter@, etc werkt verwijzen op dezelfde manier. Voor stelling-omgevingen zet je het label net na de @\begin{stelling}@. Bij floats als @figuur@ en @table@ gebruik je een label zoals aangegeven in de vorige paragraaf.
+Voor @\part@, @\chapter@, etc. werkt verwijzen op dezelfde manier. Voor stelling-omgevingen zet je het label net na de @\begin{stelling}@. Bij floats als @figuur@ en @table@ gebruik je een label zoals aangegeven in de vorige paragraaf.
 
 Je moet een aantal keer compileren voordat de juiste verwijzing verschijnt. Het voordeel van deze manier van verwijzen is dat de verwijzing blijft kloppen als je tekst invoegt of de volgorde verandert.
 
