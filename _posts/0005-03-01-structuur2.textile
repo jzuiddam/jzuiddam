@@ -2,7 +2,7 @@
 layout: lesson
 title: Gevorderde documentstructuur
 category: week2
-description: Een artikel schrijven.
+description: Een artikel schrijven: hoofdstukken, paragrafen, definities, stellingen, figuren, tabellen, floats, verwijzingen, bibliografie
 ---
 
 Vorige week zagen we al wat de globale structuur van een LaTeXdocument is. In deze les gaan we onze tekst nog meer structuur geven. Denk aan hoofdstukken, paragrafen, inhoudsopgave, verwijzingen, bibliografie. Ook behandelen we tabellen en plaatjes.
