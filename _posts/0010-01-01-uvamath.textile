@@ -1,0 +1,104 @@
+---
+layout: lesson
+title: Document class uvamath
+category: week3
+description: De uvamath document class.
+---
+
+Voor het project gebruiken we de @uvamath@ document class. In deze les leren we hoe we die class gebruiken.
+
+
+# Download de "uvamath class":https://github.com/jzuiddam/uvamath/archive/master.zip. Pak het zip-bestand uit.
+
+De map waarin je het zip-bestand hebt uitgepakt, bevat drie bestanden:
+
+* @uvalogo.png@: het UvA-logo
+* @uvamath.cls@: de uvamath document class
+* @verslag.tex@: modelbestand voor je verslag
+
+#2 Open @verslag.tex@. Hierin schrijf je het verslag. We zien het volgende.
+
+Het bestand begint met het laden van de @uvamath@ class en een aantal noodzakelijke packages.
+
+{% highlight latex %}
+
+% Voor Engelse tekst, gebruik de optie english achter documentclass.
+\documentclass{uvamath}
+\usepackage[dutch]{babel}
+
+\usepackage{graphicx}
+\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage{lipsum} % alleen voor voorbeeldteksten
+
+{% endhighlight %}
+
+De @uvamath@ class is standaard ingesteld op Nederlands. Voor Engelse teksten gebruik je de optie @english@ bij zowel @\documentclass@ als @babel@:
+
+{% highlight latex %}
+
+\documentclass[english]{uvamath}
+\usepackage[english]{babel}
+
+{% endhighlight %}
+
+Vervolgens geven we de titel, auteurs, etc. op. 
+
+{% highlight latex %}
+
+\title{Lossless Image Coding}
+\author[henk@science.uva.nl, 6127901]{Henk de Vries}
+%\author[ingrid@science.uva.nl, 6123102]{Ingrid de Vries}
+%\author[ingrid@science.uva.nl, 6123102]{Ingrid de Vries}
+
+\what{Projectverslag jaar 2} % voorbeeld
+\supervisors{prof.\ dr.\ Carl Friedrich Gauss}
+\secondgrader{dr.\ Karl Weierstrass}
+
+\coverimage{\rule{9cm}{9cm}\\\emph{Voeg een plaatje in.}}
+%\coverimage{\includegraphics[scale=0.5]{bestandsnaam}}
+
+{% endhighlight %}
+
+Je kunt meerdere auteurs toevoegen door het commando @\author@ te herhalen. Als optioneel argument achter @\author@ geef je je emailadres en studentnummer.
+
+Nu zetten we de frontmatter, een samenvatting en de inhoudsopgave.
+
+{% highlight latex %}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\lipsum[2-3] %voorbeeldtekst
+\end{abstract}
+
+\tableofcontents
+
+{% endhighlight %}
+
+Zoals je ziet staat de samenvatting in de @abstract@-omgeving.
+
+In de rest van het bestand schrijf je de inhoud van het document. Maak hoofdstukken met @\chapter@ en start het appendixdeel met @\appendix@.
+
+{% highlight latex %}
+
+\chapter{Inleiding}
+\lipsum
+
+\chapter{Theorie}
+\lipsum[2] 
+
+\chapter{Resultaten}
+\lipsum[2]
+
+\chapter{Conclusie}
+\lipsum[1]
+
+\appendix
+
+\chapter{Experimenten}
+\lipsum[2]
+
+\end{document}
+
+{% endhighlight %}
