@@ -54,12 +54,11 @@ Vervolgens geven we de titel, auteurs, etc. op.
 \supervisors{prof.\ dr.\ Carl Friedrich Gauss}
 \secondgrader{dr.\ Karl Weierstrass}
 
-\coverimage{\rule{9cm}{9cm}\\\emph{Voeg een plaatje in.}}
-%\coverimage{\includegraphics[scale=0.5]{bestandsnaam}}
+\coverimage{\includegraphics[scale=0.5]{bestandsnaam}}
 
 {% endhighlight %}
 
-Je kunt meerdere auteurs toevoegen door het commando @\author@ te herhalen. Als optioneel argument achter @\author@ geef je je emailadres en studentnummer.
+Je kunt meerdere auteurs toevoegen door het commando @\author@ te herhalen. Als optioneel argument achter @\author@ geef je je emailadres en studentnummer. Vul voor @bestandsnaam@ de bestandsnaam van een plaatje in. Zorg ervoor dat het plaatje in dezelfde map staat als je tex-bestand. Met @scale@ kun je het plaatje schalen.
 
 Nu zetten we de frontmatter, een samenvatting en de inhoudsopgave.
 
