@@ -691,6 +691,15 @@ h5. Binaire operatoren
 '\\beth',
 '\\gimel']-->
 
+h5. Grote operatoren
+
+| @\sum@ | $\sum$           |&emsp;&emsp;&emsp;&emsp; | @\prod@     |$\prod$      |&emsp;&emsp;&emsp;&emsp; | @\coprod@   | $\coprod$   |
+| @\bigoplus@ | $\bigoplus$ |                         | @\bigotimes@|$\bigotimes$ |                         | @\bigodot@  | $\bigodot$  |
+| @\bigcup@ | $\bigcup$     |                         | @\bigcap@   |$\bigcap$    |                         | @\biguplus@ | $\biguplus$ |
+| @\bigsqcup@ | $\bigsqcup$ |                         | @\bigvee@   |$\bigvee$    |                         | @\bigwedge@ | $\bigwedge$ |
+| @\int@ | $\int$           |                         | @\oint@     |$\oint$      |                         | @\iint@     | $\iint$     |
+| @\iiint@ | $\iiint$       |                         | @\iiiint@   |$\iiiint$    |                         | @\idotsint@ | $\idotsint$ |
+
 h5. Overig
 
 | @\partial@ | $\partial$ |
