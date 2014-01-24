@@ -8,17 +8,18 @@ description: De uvamath document class.
 Voor het project gebruiken we de @uvamath@ document class. In deze les leren we hoe we die class gebruiken.
 
 
-# Download de "uvamath class":https://github.com/jzuiddam/uvamath/archive/master.zip. Pak het zip-bestand uit.
-
+*1. Download de "uvamath class":https://github.com/jzuiddam/uvamath/archive/master.zip. Pak het zip-bestand uit.*
 De map waarin je het zip-bestand hebt uitgepakt, bevat drie bestanden:
 
-* @uvalogo.png@: het UvA-logo
-* @uvamath.cls@: de uvamath document class
-* @verslag.tex@: modelbestand voor je verslag
+* @uvalogo.png@ -- het UvA-logo
+* @uvamath.cls@ -- de uvamath document class
+* @verslag.tex@ -- modelbestand voor je verslag
 
-#2 Open @verslag.tex@. Hierin schrijf je het verslag. We zien het volgende.
+*2. Open @verslag.tex@.*
+Hierin schrijf je het verslag.
 
-Het bestand begint met het laden van de @uvamath@ class en een aantal noodzakelijke packages.
+*3. Vul de gegevens in.*
+Het bestand @verslag.tex@ begint met het laden van de uvamath class en een aantal noodzakelijke packages.
 
 {% highlight latex %}
 
@@ -32,7 +33,7 @@ Het bestand begint met het laden van de @uvamath@ class en een aantal noodzakeli
 
 {% endhighlight %}
 
-De @uvamath@ class is standaard ingesteld op Nederlands. Voor Engelse teksten gebruik je de optie @english@ bij zowel @\documentclass@ als @babel@:
+De uvamath class is standaard ingesteld op Nederlands. Voor Engelse teksten gebruik je de optie @english@ bij zowel @\documentclass@ als @babel@:
 
 {% highlight latex %}
 
