@@ -43,7 +43,7 @@ En nog meer tekst.
 
 Dit geeft een titelslide en twee slides met een kopje en wat tekst.
 
-Om de informatie in je presentatie te ordenen gebruik je de @block@, @enumerate@ en @itemize@-omgevingen. De @block@-omgeving is een speciale @beamer@-omgeving die je als volgt gebruikt.
+Om de informatie in je presentatie te ordenen gebruik je de @block@, @columns@, @enumerate@ en @itemize@-omgevingen. De @block@-omgeving is een speciale @beamer@-omgeving die je als volgt gebruikt.
 
 {% highlight latex %}
 
@@ -58,6 +58,28 @@ Dit is een stelling.
 \end{block}
 
 \end{frame}
+{% endhighlight %}
+
+Met de @columns@-omgeving kun je elementen naast elkaar zetten. Je maakt zo bijvoorbeeld twee kolommen met breedte 3cm.
+
+{% highlight latex %}
+
+\begin{frame}{Mathematica}
+
+\begin{columns}
+
+  \begin{column}{3cm}
+  asdf
+  \end{column}
+
+  \begin{column}{3cm}
+  asdf
+  \end{column}
+
+\end{columns}
+
+\end{frame}
+
 {% endhighlight %}
 
 
@@ -116,5 +138,26 @@ h2. Voorbeeldpresentatie
 
 Zie blackboard voor een voorbeeldbestand met een mogelijke indeling voor je presentatie.
 
+h2. Stijltips voor een korte presentatie
+
+h4. Isoleer de hoofdzaak, en vertel die in een vroeg stadium.
+
+Probeer je medestudenten één ding mee te geven; als dat lukt, is je presentatie al geslaagd. Als je wilt dat het publiek iets onthoud, vertel het dan vroeg in de presentatie.
+
+h4. Gebruik weinig tekst en veel plaatjes.
+
+Een presentatie is in beginsel een verhaal dat de spreker mondeling vertelt aan het publiek. De @beamer@ slides dienen alleen ter ondersteuning. Schrijf daarom niet alles wat je vertelt in je slides, maar alleen steekwoorden, kernzinnen en belangrijke formules. Probeer tekst te vervangen door plaatjes als dat kan.
+
+h4. Gebruik weinig abstracte definities en veel voorbeelden.
+
+Abstracte definities kunnen voor je publiek moeilijk te begrijpen zijn. Omring je definities daarom altijd met voorbeelden. Soms werkt het zelfs goed om een voorbeeld te geven voordat je de definitie geeft.
+
+h4. Let op de tijd.
+
+Voor deze presentatie krijg je 5 minuten. Hou hier rekening mee bij het maken van je presentatie en oefen je presentatie om te zien of het de juiste lengte heeft.
+
+---
+h3. Referenties
+# Landsman. "_Hoe geef ik een wiskundige voordracht?_":http://www.nieuwarchief.nl/serie5/pdf/naw5-2001-02-4-351.pdf
 
 
