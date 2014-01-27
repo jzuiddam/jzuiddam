@@ -1,0 +1,119 @@
+---
+layout: lesson
+title: LaTeX Beamer
+category: week4
+description: Presentaties met LaTeX Beamer
+---
+
+h2. Structuur van een presentatie
+
+In LaTeX kun je presentaties maken met de document class @beamer@. Een lege beamer presentatie ziet er zo uit.
+
+{% highlight latex %}
+
+\documentclass{beamer}
+\usetheme{Copenhagen}
+
+\author{Bert}
+\title{A tale of two primes}
+
+\begin{document}
+
+\end{document}
+
+{% endhighlight %}
+
+Om slides te maken gebruik je de @frame@-omgeving met als argument de title van je slide. Schrijf bijvoorbeeld (in de @document@-omgeving)
+
+{% highlight latex %}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Artikel}
+Hier kun je tekst schrijven.
+\end{frame}
+
+\begin{frame}{Mathematica}
+En nog meer tekst.
+\end{frame}
+
+{% endhighlight %}
+
+Dit geeft een titelslide en twee slides met een kopje en wat tekst.
+
+Om de informatie in je presentatie te ordenen gebruik je de @block@, @enumerate@ en @itemize@-omgevingen. De @block@-omgeving is een speciale @beamer@-omgeving die je als volgt gebruikt.
+
+{% highlight latex %}
+
+\begin{frame}{Artikel}
+
+\begin{block}{Definitie}
+Dit is een definitie.
+\end{block}
+
+\begin{block}{Stelling van Euclides}
+Dit is een stelling.
+\end{block}
+
+\end{frame}
+{% endhighlight %}
+
+
+Als je de elementen van je slide een voor een wilt laten verschijnen gebruik je het commando @\pause@. Dit commando kun je bijna overal in de code plaatsen. Bijvoorbeeld tussen twee @block@-omgevingen
+
+{% highlight latex %}
+
+\begin{frame}{Artikel}
+
+\begin{block}{Definitie}
+Dit is een definitie.
+\end{block}
+
+\pause
+
+\begin{block}{Stelling van Euclides}
+Dit is een stelling.
+\end{block}
+
+\end{frame}
+
+{% endhighlight %}
+
+
+of in een @enumerate@
+
+{% highlight latex %}
+
+\begin{frame}{Titel}
+
+\begin{enumerate}
+\item Element
+\pause
+\item Element
+\pause
+\item Element
+\end{enumerate}
+
+\end{frame}
+
+{% endhighlight %}
+
+
+h2. Opmaak
+
+In bovenstaand voorbeeld gebruikten we het thema @Copenhagen@. Er zijn meer thema's. Zie bijvoorbeeld de "Beamer Theme Matrix":http://www.hartwork.org/beamer-theme-matrix/. Probeer bijvoorbeeld in de preamble
+
+{% highlight latex %}
+
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+
+h2. Voorbeeldpresentatie
+
+Zie blackboard voor een voorbeeldbestand met een mogelijke indeling voor je presentatie.
+
+{% endhighlight %}
+
+
