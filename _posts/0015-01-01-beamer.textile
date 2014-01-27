@@ -110,10 +110,11 @@ In bovenstaand voorbeeld gebruikten we het thema @Copenhagen@. Er zijn meer them
 \usetheme{Warsaw}
 \usecolortheme{beaver}
 
+{% endhighlight %}
+
 h2. Voorbeeldpresentatie
 
 Zie blackboard voor een voorbeeldbestand met een mogelijke indeling voor je presentatie.
 
-{% endhighlight %}
 
 
