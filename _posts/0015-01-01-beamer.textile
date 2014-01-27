@@ -7,7 +7,7 @@ description: Presentaties met LaTeX Beamer
 
 h2. Structuur van een presentatie
 
-In LaTeX kun je presentaties maken met de document class @beamer@. Een lege beamer presentatie ziet er zo uit.
+In LaTeX kun je presentaties maken met de document class @beamer@. Een lege beamerpresentatie ziet er zo uit.
 
 {% highlight latex %}
 
