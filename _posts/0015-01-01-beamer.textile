@@ -154,7 +154,7 @@ Abstracte definities kunnen voor je publiek moeilijk te begrijpen zijn. Omring j
 
 h4. Let op de tijd.
 
-Voor deze presentatie krijg je 5 minuten. Hou hier rekening mee bij het maken van je presentatie en oefen je presentatie om te zien of het de juiste lengte heeft.
+Voor deze presentatie krijg je 5 minuten. Hou hier rekening mee bij het maken van je presentatie en oefen je presentatie om te zien of het de juiste lengte heeft. Stem het aantal slides af op de lengte van de presentatie.
 
 ---
 h3. Referenties
