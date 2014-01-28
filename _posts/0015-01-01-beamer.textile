@@ -60,6 +60,8 @@ Dit is een stelling.
 \end{frame}
 {% endhighlight %}
 
+Als je geen kopje boven je @block@ wilt geef je een lege groep @{}@ achter @\begin{block}@.
+
 Met de @columns@-omgeving kun je elementen naast elkaar zetten. Je maakt zo bijvoorbeeld twee kolommen met breedte 3cm.
 
 {% highlight latex %}
